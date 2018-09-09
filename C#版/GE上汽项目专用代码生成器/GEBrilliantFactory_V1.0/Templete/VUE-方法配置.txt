@@ -1,0 +1,50 @@
+// 获取$ChinaComment$分页列表
+export function get$Modulelogo$List (data) {
+  return service({
+    method: 'post',
+    headers: {'Content-Type': 'application/json;charset=UTF-8'},
+    data: data,
+    url: '/rcsintegr/get$Modulelogo$List',
+    timeout: defaultTimeout
+  })
+}
+// 获取单个$ChinaComment$
+export function getSingle$Modulelogo$ (data) {
+  return service({
+    method: 'post',
+    headers: {'Content-Type': 'application/json;charset=UTF-8'},
+    data: data,
+    url: '/rcsintegr/getSingle$Modulelogo$',
+    timeout: defaultTimeout
+  })
+}
+// 更新$ChinaComment$
+export function update$Modulelogo$ (data) {
+  return service({
+    method: 'post',
+    headers: {'Content-Type': 'application/json;charset=UTF-8'},
+    data: data,
+    url: '/rcsintegr/update$Modulelogo$',
+    timeout: defaultTimeout
+  })
+}
+// 新增$ChinaComment$
+export function insert$Modulelogo$ (data) {
+  return service({
+    method: 'post',
+    headers: {'Content-Type': 'application/json;charset=UTF-8'},
+    data: data,
+    url: '/rcsintegr/insert$Modulelogo$',
+    timeout: defaultTimeout
+  })
+}
+// 删除$ChinaComment$
+export function del$Modulelogo$ (data) {
+  return service({
+    method: 'post',
+    headers: {'Content-Type': 'application/json;charset=UTF-8'},
+    data: data,
+    url: '/rcsintegr/del$Modulelogo$',
+    timeout: defaultTimeout
+  })
+}

@@ -175,6 +175,14 @@ namespace GenerateCode_GEBrilliantFactory
         /// <summary>
         /// InsertSQL
         /// </summary>
-        SQL_Insert=14
+        SQL_Insert=14,
+        /// <summary>
+        /// VUE方法配置
+        /// </summary>
+        VUE_FunConfig=15,
+        /// <summary>
+        /// VUE文件
+        /// </summary>
+        VUEFile=16
     }
 }

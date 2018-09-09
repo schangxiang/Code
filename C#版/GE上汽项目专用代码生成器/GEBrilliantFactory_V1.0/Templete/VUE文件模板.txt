@@ -1,0 +1,250 @@
+<template>
+  <div>
+    <div class="wrap-out-box">
+      <div class="han-box">
+        <el-form :inline="true" class="demo-form-inline" v-bind:model="serachObj">
+		  $el-form-itemForSearch$
+          <el-form-item>
+            <el-button type="primary" icon="el-icon-search" @click="fetchData">查询</el-button>
+            <el-button type="success" icon="el-icon-plus" @click="addData">新增</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+      <div class="table-box">
+        <el-table v-bind:data="$TableAlias$List">
+		  $el-table-column$
+          <el-table-column fixed="right" label="操作" width="150">
+            <template slot-scope="scope">
+              <el-button @click="handleClickForUpdate(scope.row)" type="text" size="small" icon="el-icon-edit" >修改</el-button>
+              <el-button @click="handleClickForDelete(scope.row)" type="text" size="small" icon="el-icon-delete" >删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
+      <div class="pagination-box">
+        <el-pagination v-bind:current-Page="pageIndex" v-bind:page-size="pageSize" :total="total"
+                       layout="total,sizes,prev,pager,next,jumper" v-bind:page-sizes="pageSizes"
+                       v-on:size-change="sizeChange" v-on:current-change="pageIndexChange">
+        </el-pagination>
+      </div>
+      <div>
+        <el-dialog
+          :title="dialogTitle"
+          :visible.sync="dialogVisible"
+          width="40%"
+          >
+          <el-form v-bind:model="$TableAlias$" ref="$TableAlias$" label-position="left" label-width="100px">
+            <el-row :gutter="20">
+			  $el-col$
+              <el-col :span="12">
+                <el-form-item>
+                  <el-button type="primary" :disabled="submitDisabled" @click="updateData('$TableAlias$')">确 定</el-button>
+                  <el-button @click="dialogVisible = false">取 消</el-button>
+                </el-form-item>
+              </el-col>
+            </el-row>
+          </el-form>
+        </el-dialog>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+import {getSingle$Modulelogo$, get$Modulelogo$List, update$Modulelogo$, insert$Modulelogo$, del$Modulelogo$} from 'api/wipmgmt'
+
+export default {
+  data() {
+    return {
+      serachObj: {}, // 查询对象
+      isAdd: false, // 是否是新增
+      submitDisabled: false, // 提交按钮禁用
+      $TableAlias$List: [], // 列表对象
+      $TableAlias$: {}, // 行对象
+      dialogVisible: false, // dialog显示隐藏
+      dialogTitle: '新增',
+      pageSizes: [10, 20, 50, 100],
+      total: 0, // 总条数
+      pageIndex: 1, // 第几页
+      pageSize: 10 // 总条数
+    }
+  },
+  mounted() {
+    this.fetchData()
+  },
+  methods: {
+    // 重新加载列表
+    afreshFetchData() {
+      this.pageIndex = 1
+      this.pageSize = 10
+      this.fetchData()
+    },
+    // 加载列表
+    fetchData() {
+      this.$TableAlias$List = []
+      this.serachObj.pageIndex = this.pageIndex
+      this.serachObj.pageSize = this.pageSize
+      get$Modulelogo$List(this.serachObj).then(res => {
+        this.total = res.resData.total
+        this.$TableAlias$List = res.resData.rows
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    // 改变总条数动作
+    sizeChange(pageSize) {
+      this.pageSize = pageSize
+      this.fetchData()
+    },
+    // 改变页码动作
+    pageIndexChange(pageIndex) {
+      this.pageIndex = pageIndex
+      this.fetchData()
+    },
+    // 新增数据
+    addData() {
+      this.isAdd = true
+      this.dialogTitle = '新增'
+      this.$TableAlias$ = {}
+      this.dialogVisible = true
+      this.submitDisabled = false
+    },
+    // 点击 【删除】
+    handleClickForDelete(row) {
+      this.$confirm('确定要删除吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.isAdd = false
+        this.$TableAlias$ = {}
+        var data = {
+          id: row.id
+        }
+        del$Modulelogo$(data).then(res => {
+          if (res.resCode === '00000') {
+            this.$notify({
+              title: '成功',
+              message: '删除成功',
+              type: 'success'
+            })
+            this.afreshFetchData()
+          } else {
+            this.$notify.error({
+              title: '错误',
+              message: res.resMsg
+            })
+          }
+        }).catch(err => {
+          console.log(err)
+        })
+      }).catch(() => {
+        this.$notify.info({
+          title: '提示',
+          message: '已取消删除'
+        })
+      })
+    },
+    // 点击 【修改】
+    handleClickForUpdate(row) {
+      this.isAdd = false
+      this.dialogTitle = '编辑'
+      this.$TableAlias$ = {}
+      var data = {
+        id: row.id
+      }
+      getSingle$Modulelogo$(data).then(res => {
+        if (res.resCode === '00000') {
+          this.$TableAlias$ = res.resData
+          this.dialogVisible = true
+          this.submitDisabled = false
+        } else {
+          this.$notify.error({
+            title: '错误',
+            message: res.resMsg
+          })
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    // 更新数据
+    updateData(formName) {
+      this.submitDisabled = true
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          var data = this.$TableAlias$
+          if (this.isAdd) {
+            insert$Modulelogo$(data).then(res => {
+              if (res.resCode === '00000') {
+                this.dialogVisible = false
+                this.$notify({
+                  title: '成功',
+                  message: '新增成功',
+                  type: 'success'
+                })
+                this.afreshFetchData()
+              } else {
+                this.submitDisabled = false
+                this.$notify.error({
+                  title: '错误',
+                  message: '新增失败'
+                })
+              }
+            }).catch(err => {
+              console.log(err)
+            })
+          } else {
+            update$Modulelogo$(data).then(res => {
+              if (res.resCode === '00000') {
+                this.dialogVisible = false
+                this.$notify({
+                  title: '成功',
+                  message: '更新成功',
+                  type: 'success'
+                })
+                this.afreshFetchData()
+              } else {
+                this.submitDisabled = false
+                this.$notify.error({
+                  title: '错误',
+                  message: '更新失败'
+                })
+              }
+            }).catch(err => {
+              console.log(err)
+            })
+          }
+        } else {
+          this.submitDisabled = false
+          return false
+        }
+      })
+    }
+  },
+  components: {
+  }
+}
+</script>
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import '~common/stylus/variable';
+
+  .han-box {
+    padding-bottom: 0;
+  }
+
+  .pagination-box {
+    padding: 20px;
+    padding-bottom: 0;
+    text-align: right;
+  }
+
+  .table-box {
+    padding-top: 20px;
+
+  .el-table {
+    border: 1px solid #ddd;
+  }
+
+  }
+</style>

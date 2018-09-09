@@ -108,6 +108,14 @@ namespace GenerateCode_GEBrilliantFactory
                     entityName = _tableName + "InsertSQL";
                     fileTypeName = ".txt";
                     break;
+                case FileType.VUE_FunConfig:
+                    entityName = _tableName + "-VUE方法配置";
+                    fileTypeName = ".txt";
+                    break;
+                case FileType.VUEFile:
+                    entityName = _tableName;
+                    fileTypeName = ".vue";
+                    break;
             }
             if (!Directory.Exists(_strPath + "\\" + _tableName))
             {

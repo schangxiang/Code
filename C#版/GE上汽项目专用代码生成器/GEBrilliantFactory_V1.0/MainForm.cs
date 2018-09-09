@@ -116,6 +116,15 @@ namespace GenerateCode_GEBrilliantFactory
                     entityName, chinaComment, filePrefixName, primaryKey, tableAlias, primaryKeyName, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.WCF_InterFaceRealize, filePrefixName, entityName, modulelogo);
 
+
+                //VUE方法配置
+                str_generate = VUE_FunConfig_Generate.CreateText(modulelogo,chinaComment);
+                tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.VUE_FunConfig, filePrefixName, entityName, modulelogo);
+
+                //VUE文件
+                str_generate = VUE_Generate.CreateText(tableAlias,modulelogo, columnList);
+                tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.VUEFile, filePrefixName, entityName, modulelogo);
+
             }
             catch (Exception ex)
             {

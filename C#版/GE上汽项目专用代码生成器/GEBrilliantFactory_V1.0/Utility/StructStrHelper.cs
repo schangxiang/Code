@@ -544,6 +544,35 @@ where obj.name='" + tableName + "'  ";
         }
 
 
+        /// <summary>
+        /// 获取最新的列List集合ForUpdate(去掉 id delFlag,creator和createTime)
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <returns></returns>
+        private static List<ColumnModel> GetNewColumnModelListForVUESerachOrEdit(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            List<ColumnModel> newList = new List<ColumnModel>();
+            ColumnModel columnModel = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {//需要去掉 创建人和创建时间
+                columnModel = columnNameList[i];
+                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "lastModifier".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "lastModifyTime".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "id".ToUpper()
+                    )
+                {
+                    continue;
+                }
+                newList.Add(columnModel);
+            }
+            return newList;
+        }
+
+
         private static string GetSqlParameterStr(ColumnModel columnModel)
         {
             string str = "              new SqlParameter(\"@" + columnModel.ColumnName + "\",";
@@ -710,6 +739,92 @@ where obj.name='" + tableName + "'  ";
 
                 }
                 sb.Append("                };\n");
+                return sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region VUE文件
+
+        /// <summary>
+        /// 获取VUE el-table-column
+        /// </summary>
+        /// <param name="columnModelList"></param>
+        /// <returns></returns>
+        public static string GetElTableColumnStr(List<ColumnModel> columnModelList)
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                List<ColumnModel> newList=GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                foreach (var columnModel in newList)
+                {
+                    sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" > \n");
+                    sb.Append("          </el-table-column> \n");
+                }
+                return sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// 获取VUE el-form-item
+        /// </summary>
+        /// <param name="columnModelList"></param>
+        /// <returns></returns>
+        public static string GetElFormItemStr(List<ColumnModel> columnModelList)
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                List<ColumnModel> newList = GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                foreach (var columnModel in newList)
+                {
+                    sb.Append("              <el-col :span=\"12\"> \n");
+
+                    sb.Append("                <el-form-item label=\"" + columnModel.Description + "\" prop=\"" + columnModel.ColumnName + "\" :rules=\"[{ required: true, message: '" + columnModel.Description + "不能为空'}]\"> \n");
+                    sb.Append("                  <el-input v-model=\"$TableAlias$." + columnModel.ColumnName + "\"></el-input> \n");
+                    sb.Append("                </el-form-item> \n");
+
+                    sb.Append("              </el-col> \n");
+                }
+                return sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// 获取VUE el-form-item 查询用
+        /// </summary>
+        /// <param name="columnModelList"></param>
+        /// <returns></returns>
+        public static string GetElFormItemForSearchStr(List<ColumnModel> columnModelList)
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                List<ColumnModel> newList = GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                foreach (var columnModel in newList)
+                {
+                    sb.Append("          <el-form-item label=\"" + columnModel.Description + "\"> \n");
+
+                    sb.Append("<el-input v-model=\"serachObj." + columnModel.ColumnName + "\" placeholder=\"请输入" + columnModel.Description + "\"></el-input>\n");
+
+                    sb.Append("          </el-form-item> \n");
+                }
                 return sb.ToString();
             }
             catch (Exception ex)
