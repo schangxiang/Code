@@ -1,0 +1,71 @@
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using WIP_common;
+using WIP_Models;
+
+namespace $Wcf_NameSpacePath$
+{
+    [ServiceContract]
+    public interface I$Modulelogo$Service
+    {
+        #region 插入$ChinaComment$
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "insert$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<string> Insert$Modulelogo$($EntityName$ model);
+
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "insert$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Insert$Modulelogo$0($EntityName$ model);
+
+        #endregion
+
+        #region 更新$ChinaComment$
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "update$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<string> Update$Modulelogo$($EntityName$ model);
+
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "update$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Update$Modulelogo$0($EntityName$ model);
+
+        #endregion
+
+        #region 获取$ChinaComment$列表（分页）
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "get$Modulelogo$List", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<PageResultModel<$EntityName$>> Get$Modulelogo$List(Query$Modulelogo$Model queryModel);
+
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "get$Modulelogo$List", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Get$Modulelogo$List0();
+
+        #endregion
+
+        #region 获取单个$ChinaComment$
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "getSingle$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<$EntityName$> GetSingle$Modulelogo$(Query$Modulelogo$Model model);
+
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "getSingle$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string GetSingle$Modulelogo$0(Query$Modulelogo$Model model);
+
+        #endregion
+
+		#region 删除$ChinaComment$
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "del$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<bool> Del$Modulelogo$(Query$Modulelogo$Model model);
+
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "del$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Del$Modulelogo$0(Query$Modulelogo$Model model);
+
+        #endregion
+    }
+}

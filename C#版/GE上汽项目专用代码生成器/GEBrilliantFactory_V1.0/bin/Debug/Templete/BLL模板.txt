@@ -1,0 +1,157 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using WIP_common;
+using WIP_DAL;
+using WIP_Models;
+
+namespace WIP_BLL
+{
+    /// <summary>
+    /// $ChinaComment$业务处理类
+    /// </summary>
+    public partial class $FilePrefixName$BLL
+    {
+        private readonly $FilePrefixName$DAL dal = new $FilePrefixName$DAL();
+
+        #region Add
+
+		 /// <summary>
+        /// 增加一条$ChinaComment$数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>插入的最新主键值</returns>
+        public int Add($EntityName$ model)
+        {
+		    model.createTime = model.lastModifyTime = DateTime.Now;
+			model.delFlag=false;
+            return dal.Add(model);
+        }
+
+        #endregion
+
+        #region Edit
+
+        /// <summary>
+        /// 更新一条$ChinaComment$数据
+        /// </summary>
+        /// <param name="model">要更新的$ChinaComment$实体</param>
+        /// <returns>是否更新成功</returns>
+        public bool Update($EntityName$ model)
+        {
+		    model.lastModifyTime = DateTime.Now;
+            return dal.Update(model);
+        }
+
+        #endregion
+
+        #region Del
+
+        /// <summary>
+        /// 删除一条$ChinaComment$数据
+        /// </summary>
+        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <returns>是否删除成功</returns>
+        public bool Delete(string $PrimaryKey$)
+        {
+            return dal.Delete($PrimaryKey$);
+        }
+
+        #endregion
+
+        #region QueryList(Page)
+
+        /// <summary>
+        /// 获得$ChinaComment$数据列表(分页)
+        /// </summary>
+        /// <param name="strOrderBy">排序字段</param>
+        /// <param name="strWhere">查询条件</param>
+        /// <param name="model">分页数据</param>
+        /// <returns>$ChinaComment$分页数据</returns>
+        public PageResultModel<$EntityName$> GetModelListForPage(string strOrderBy, string strWhere, Query$Modulelogo$Model model)
+        {
+            DataSet ds = dal.GetListForPage(strOrderBy, strWhere, model);
+            List<$EntityName$> list = DataTableToList(ds.Tables[0]);
+            int total = dal.GetRecordCount(strWhere);
+            PageResultModel<$EntityName$> result = new PageResultModel<$EntityName$>();
+            result.total = total;
+            result.rows = list;
+            return result;
+        }
+
+        #endregion
+
+		#region QueryList
+
+        /// <summary>
+        /// 获得$ChinaComment$数据列表
+        /// </summary>
+        /// <param name="strWhere">查询条件</param>
+        /// <returns>$ChinaComment$数据集合</returns>
+        public List<$EntityName$> GetModelList(string strWhere)
+        {
+            DataSet ds = dal.GetList(strWhere);
+            return DataTableToList(ds.Tables[0]);
+        }
+
+        #endregion
+
+        #region Query(Single)
+
+        /// <summary>
+        /// 得到一个$ChinaComment$实体
+        /// </summary>
+        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <returns>$ChinaComment$实体</returns>
+        public $EntityName$ GetModel(string $PrimaryKey$)
+        {
+
+            return dal.GetModel($PrimaryKey$);
+        }
+
+        #endregion
+
+        #region Other
+
+        /// <summary>
+        /// 是否存在该$ChinaComment$记录
+        /// </summary>
+        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <returns></returns>
+        public bool Exists(string $PrimaryKey$)
+        {
+            return dal.Exists($PrimaryKey$);
+        }
+
+        #endregion
+
+		#region Common
+
+		/// <summary>
+        /// 获得$ChinaComment$数据列表
+        /// </summary>
+        private List<$EntityName$> DataTableToList(DataTable dt)
+        {
+            List<$EntityName$> modelList = new List<$EntityName$>();
+            int rowsCount = dt.Rows.Count;
+            if (rowsCount > 0)
+            {
+                $EntityName$ model;
+                for (int n = 0; n < rowsCount; n++)
+                {
+                    model = new $EntityName$();
+                    var dataRow = dt.Rows[n];
+
+                    $ToSingleModel$
+
+
+                    modelList.Add(model);
+                }
+            }
+            return modelList;
+        }
+
+		#endregion
+
+    }
+}
