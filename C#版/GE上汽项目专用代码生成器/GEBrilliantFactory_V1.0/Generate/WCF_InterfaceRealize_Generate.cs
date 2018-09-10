@@ -13,7 +13,7 @@ namespace GenerateCode_GEBrilliantFactory
     public class WCF_InterfaceRealize_Generate
     {
         public static string CreateText(string Wcf_NameSpacePath, string Modulelogo, string entityName,
-            string ChinaComment,string filePrefixName,string PrimaryKey,string TableAlias,string PrimaryKeyName,
+            string ChinaComment,string filePrefixName,string PrimaryKey,string TableAlias,
             List<ColumnModel> columnNameList)
         {
             var str = TextHelper.ReadText(@"Templete\WCF接口实现模板.txt");
@@ -24,8 +24,6 @@ namespace GenerateCode_GEBrilliantFactory
             str = str.Replace("$Modulelogo$", Modulelogo);//模块简写
             str = str.Replace("$FilePrefixName$", filePrefixName);//模块名
             str = str.Replace("$PrimaryKey$", PrimaryKey);//主键名
-           
-            str = str.Replace("$PrimaryKeyName$", PrimaryKeyName);//主键名称
 
             str = str.Replace("$ValidateEmpty$", StructStrHelper.GetValidateEmptyStr(columnNameList));
             str = str.Replace("$WhereQuery$", StructStrHelper.GetStrForWhereQuery(columnNameList));

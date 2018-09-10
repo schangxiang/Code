@@ -80,7 +80,7 @@ namespace WIP_DAL
         /// <summary>
         /// 删除一条$ChinaComment$数据
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
 		/// <param name="transModel">事务类</param>
         /// <returns>是否删除成功</returns>
         public bool Delete(string $PrimaryKey$,TransactionModel transModel = null)
@@ -149,7 +149,7 @@ namespace WIP_DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) FROM $TableName$ ");
+            strSql.Append("select count(1) FROM $TableName$ AS $TableAlias$ ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -190,7 +190,7 @@ namespace WIP_DAL
         /// <summary>
         /// 得到一个$ChinaComment$实体
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns>$ChinaComment$实体</returns>
         public $EntityName$ GetModel(string $PrimaryKey$)
         {
@@ -224,7 +224,7 @@ namespace WIP_DAL
         /// <summary>
         /// 是否存在该$ChinaComment$记录
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns>是否存在该$ChinaComment$记录</returns>
         public bool Exists(string $PrimaryKey$)
         {

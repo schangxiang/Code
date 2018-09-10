@@ -13,7 +13,8 @@ namespace GenerateCode_GEBrilliantFactory
     public class DAL_Generate
     {
         public static string CreateDALText(string filePrefixName, string TableName, string entityName, string Author,
-            string ChinaComment, string PrimaryKey,string PimaryKeyName, string Modulelogo, List<ColumnModel> columnNameList)
+            string ChinaComment, string primaryKey, string primaryKeyDesc, string Modulelogo,string tableAlias,
+            List<ColumnModel> columnNameList)
         {
            
             var str_dal = TextHelper.ReadText(@"Templete\DAL模板.txt");
@@ -33,11 +34,12 @@ namespace GenerateCode_GEBrilliantFactory
             str_dal = str_dal.Replace("$ChinaComment$", ChinaComment);//中文注释
             str_dal = str_dal.Replace("$CurDate$", CommonHelper.GetCurDate());//当前时间
             str_dal = str_dal.Replace("$EntityName$", entityName);//实体类名
+            str_dal = str_dal.Replace("$TableAlias$", tableAlias);//表别名
 
             str_dal = str_dal.Replace("$FilePrefixName$", filePrefixName);//模块名
             str_dal = str_dal.Replace("$Modulelogo$", Modulelogo);//模块简写
-            str_dal = str_dal.Replace("$PrimaryKey$", PrimaryKey);//主键
-            str_dal = str_dal.Replace("$PrimaryName$", PimaryKeyName);//主键名字
+            str_dal = str_dal.Replace("$PrimaryKey$", primaryKey);//主键
+            str_dal = str_dal.Replace("$PrimaryKeyDesc$", primaryKeyDesc);//主键描述
 
           
 

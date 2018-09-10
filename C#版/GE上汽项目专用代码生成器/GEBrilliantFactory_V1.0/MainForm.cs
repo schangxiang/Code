@@ -17,7 +17,7 @@ namespace GenerateCode_GEBrilliantFactory
             this.tbPath.Text = "D:\\C#AutoCreateCodeFile";
 
             this.tb_Primary.Text = "id";//主键名
-            this.tb_PrimaryName.Text = "主键";
+            this.tb_PrimaryDesc.Text = "主键";
             this.tb_OrderBy.Text = "LastModifyTime";//排序字段
 
             this.tb_TableName.Text = "Base_Xiangzi";//表名
@@ -54,7 +54,7 @@ namespace GenerateCode_GEBrilliantFactory
             try
             {
                 string primaryKey = this.tb_Primary.Text.Trim();//主键名
-                string primaryKeyName = this.tb_PrimaryName.Text.Trim();//主键名
+                string primaryKeyDesc = this.tb_PrimaryDesc.Text.Trim();//主键描述
                 string tableName = this.tb_TableName.Text.Trim();//表名
                 string wcf_NameSpacePath = this.tb_WCF_NameSpacePath.Text.Trim();//WCF项目命名空间 
                 string filePrefixName = this.tb_FileName.Text.Trim();//文件前缀名
@@ -64,15 +64,24 @@ namespace GenerateCode_GEBrilliantFactory
                 string entityName = this.tb_EntityName.Text.Trim();//实体类名
                 string tableAlias = this.tb_EntityProName.Text.Trim();//实体类对象名/表别名
                 string orderByName = this.tb_OrderBy.Text.Trim();//排序字段名称
+                string routePrefix = this.tb_RoutePrefix.Text.Trim();//WCF路由前缀
 
                 if (tableName == "")
                 {
                     MessageBox.Show("请输入表名！");
+                    this.tb_TableName.Focus();
                     return;
                 }
                 if (primaryKey == "")
                 {
                     MessageBox.Show("请输入主键名！");
+                    this.tb_Primary.Focus();
+                    return;
+                }
+                if (routePrefix == "")
+                {
+                    MessageBox.Show("请输入WCF路由前缀！");
+                    this.tb_RoutePrefix.Focus();
                     return;
                 }
                 List<ColumnModel> columnList = StructStrHelper.GetColumnList(tableName);
@@ -92,17 +101,16 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //生成DAL文件
                 str_generate = DAL_Generate.CreateDALText(filePrefixName, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyName, modulelogo, columnList);
+                   chinaComment, primaryKey, primaryKeyDesc, modulelogo,tableAlias, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.DAL, filePrefixName, entityName, modulelogo);
 
                 //生成BLL文件
                 str_generate = BLL_Generate.CreateBLLText(filePrefixName, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyName, modulelogo, columnList);
+                   chinaComment, primaryKey, primaryKeyDesc, modulelogo, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.BLL, filePrefixName, entityName, modulelogo);
 
                 //生成QueryModel文件
-                str_generate = QueryModel_Generate.CreateQueryModelLText(modulelogo, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyName, columnList);
+                str_generate = QueryModel_Generate.CreateQueryModelLText(modulelogo,chinaComment,columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.QueryModel, filePrefixName, entityName, modulelogo);
 
 
@@ -113,16 +121,16 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //生成WCF接口实现文件
                 str_generate = WCF_InterfaceRealize_Generate.CreateText(wcf_NameSpacePath, modulelogo,
-                    entityName, chinaComment, filePrefixName, primaryKey, tableAlias, primaryKeyName, columnList);
+                    entityName, chinaComment, filePrefixName, primaryKey, tableAlias, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.WCF_InterFaceRealize, filePrefixName, entityName, modulelogo);
 
 
                 //VUE方法配置
-                str_generate = VUE_FunConfig_Generate.CreateText(modulelogo,chinaComment);
+                str_generate = VUE_FunConfig_Generate.CreateText(modulelogo, chinaComment, routePrefix);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.VUE_FunConfig, filePrefixName, entityName, modulelogo);
 
                 //VUE文件
-                str_generate = VUE_Generate.CreateText(tableAlias,modulelogo, columnList);
+                str_generate = VUE_Generate.CreateText(tableAlias, modulelogo, primaryKey, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.VUEFile, filePrefixName, entityName, modulelogo);
 
             }
@@ -195,7 +203,7 @@ namespace GenerateCode_GEBrilliantFactory
             }
 
             string createPerson = this.tb_CreatePerson.Text.Trim();//创建人
-            var str_generate = InsertSQL_Generate.CreateInsertSQLText(tableName,createPerson,columnList);
+            var str_generate = InsertSQL_Generate.CreateInsertSQLText(tableName, createPerson, columnList);
             bool tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.SQL_Insert, "", "", "");
             MessageBox.Show("生成文件成功！");
             //成功之后打开文件夹
@@ -203,6 +211,11 @@ namespace GenerateCode_GEBrilliantFactory
             {
 
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

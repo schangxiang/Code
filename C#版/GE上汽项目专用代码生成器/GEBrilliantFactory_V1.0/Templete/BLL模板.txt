@@ -50,7 +50,7 @@ namespace WIP_BLL
         /// <summary>
         /// 删除一条$ChinaComment$数据
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns>是否删除成功</returns>
         public bool Delete(string $PrimaryKey$)
         {
@@ -101,7 +101,7 @@ namespace WIP_BLL
         /// <summary>
         /// 得到一个$ChinaComment$实体
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns>$ChinaComment$实体</returns>
         public $EntityName$ GetModel(string $PrimaryKey$)
         {
@@ -116,7 +116,7 @@ namespace WIP_BLL
         /// <summary>
         /// 是否存在该$ChinaComment$记录
         /// </summary>
-        /// <param name="$PrimaryKey$">$PrimaryName$</param>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns></returns>
         public bool Exists(string $PrimaryKey$)
         {

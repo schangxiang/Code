@@ -12,8 +12,8 @@ namespace GenerateCode_GEBrilliantFactory
     /// </summary>
     public class QueryModel_Generate
     {
-        public static string CreateQueryModelLText(string Modulelogo, string TableName, string entityName, string Author,
-            string ChinaComment, string PimaryKey,string PimaryKeyName,  List<ColumnModel> columnNameList)
+        public static string CreateQueryModelLText(string Modulelogo,
+            string ChinaComment,List<ColumnModel> columnNameList)
         {
             var str_dal = TextHelper.ReadText(@"Templete\QueryModel模板.txt");
 

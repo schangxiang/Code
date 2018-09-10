@@ -4,7 +4,7 @@ export function get$Modulelogo$List (data) {
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/rcsintegr/get$Modulelogo$List',
+    url: '/$RoutePrefix$/get$Modulelogo$List',
     timeout: defaultTimeout
   })
 }
@@ -14,7 +14,7 @@ export function getSingle$Modulelogo$ (data) {
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/rcsintegr/getSingle$Modulelogo$',
+    url: '/$RoutePrefix$/getSingle$Modulelogo$',
     timeout: defaultTimeout
   })
 }
@@ -24,7 +24,7 @@ export function update$Modulelogo$ (data) {
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/rcsintegr/update$Modulelogo$',
+    url: '/$RoutePrefix$/update$Modulelogo$',
     timeout: defaultTimeout
   })
 }
@@ -34,7 +34,7 @@ export function insert$Modulelogo$ (data) {
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/rcsintegr/insert$Modulelogo$',
+    url: '/$RoutePrefix$/insert$Modulelogo$',
     timeout: defaultTimeout
   })
 }
@@ -44,7 +44,7 @@ export function del$Modulelogo$ (data) {
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/rcsintegr/del$Modulelogo$',
+    url: '/$RoutePrefix$/del$Modulelogo$',
     timeout: defaultTimeout
   })
 }

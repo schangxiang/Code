@@ -51,12 +51,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tb_OrderBy = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_PrimaryName = new System.Windows.Forms.TextBox();
+            this.tb_PrimaryDesc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tb_Modulelogo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_InsertSql = new System.Windows.Forms.Button();
+            this.tb_RoutePrefix = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPath
@@ -251,12 +253,12 @@
             this.label10.TabIndex = 36;
             this.label10.Text = "(默认降序)";
             // 
-            // tb_PrimaryName
+            // tb_PrimaryDesc
             // 
-            this.tb_PrimaryName.Location = new System.Drawing.Point(599, 8);
-            this.tb_PrimaryName.Name = "tb_PrimaryName";
-            this.tb_PrimaryName.Size = new System.Drawing.Size(145, 21);
-            this.tb_PrimaryName.TabIndex = 38;
+            this.tb_PrimaryDesc.Location = new System.Drawing.Point(599, 8);
+            this.tb_PrimaryDesc.Name = "tb_PrimaryDesc";
+            this.tb_PrimaryDesc.Size = new System.Drawing.Size(145, 21);
+            this.tb_PrimaryDesc.TabIndex = 38;
             // 
             // label11
             // 
@@ -265,7 +267,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 12);
             this.label11.TabIndex = 37;
-            this.label11.Text = "主键名称:";
+            this.label11.Text = "主键描述:";
             // 
             // label12
             // 
@@ -302,16 +304,35 @@
             this.btn_InsertSql.UseVisualStyleBackColor = true;
             this.btn_InsertSql.Click += new System.EventHandler(this.btn_InsertSql_Click);
             // 
+            // tb_RoutePrefix
+            // 
+            this.tb_RoutePrefix.Location = new System.Drawing.Point(573, 142);
+            this.tb_RoutePrefix.Name = "tb_RoutePrefix";
+            this.tb_RoutePrefix.Size = new System.Drawing.Size(145, 21);
+            this.tb_RoutePrefix.TabIndex = 44;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(498, 148);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 12);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "WCF路由前缀:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 580);
+            this.Controls.Add(this.tb_RoutePrefix);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_InsertSql);
             this.Controls.Add(this.tb_Modulelogo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.tb_PrimaryName);
+            this.Controls.Add(this.tb_PrimaryDesc);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tb_OrderBy);
@@ -369,12 +390,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_OrderBy;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_PrimaryName;
+        private System.Windows.Forms.TextBox tb_PrimaryDesc;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Modulelogo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_InsertSql;
+        private System.Windows.Forms.TextBox tb_RoutePrefix;
+        private System.Windows.Forms.Label label13;
     }
 }
 

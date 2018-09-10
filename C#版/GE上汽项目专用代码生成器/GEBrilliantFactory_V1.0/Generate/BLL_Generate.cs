@@ -12,7 +12,7 @@ namespace GenerateCode_GEBrilliantFactory
     public class BLL_Generate
     {
         public static string CreateBLLText(string filePrefixName, string TableName, string entityName, string Author,
-            string ChinaComment, string PimaryKey,string PimaryKeyName,string Modulelogo,
+            string ChinaComment, string primaryKey,string primaryKeyDesc,string Modulelogo,
             List<ColumnModel> columnNameList)
         {
             var str_dal = TextHelper.ReadText(@"Templete\BLL模板.txt");
@@ -25,8 +25,8 @@ namespace GenerateCode_GEBrilliantFactory
 
             str_dal = str_dal.Replace("$FilePrefixName$", filePrefixName);//模块名
             str_dal = str_dal.Replace("$Modulelogo$", Modulelogo);//模块简写
-            str_dal = str_dal.Replace("$PrimaryKey$", PimaryKey);//主键
-            str_dal = str_dal.Replace("$PrimaryName$", PimaryKeyName);//主键名字
+            str_dal = str_dal.Replace("$PrimaryKey$", primaryKey);//主键
+            str_dal = str_dal.Replace("$PrimaryKeyDesc$", primaryKeyDesc);//描述
 
             str_dal = str_dal.Replace("$ToSingleModel$", StructStrHelper.GetToModelStr(columnNameList));//动态给实体类赋值 
             return str_dal;

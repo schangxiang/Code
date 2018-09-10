@@ -862,7 +862,7 @@ where obj.name='" + tableName + "'  ";
                         case DataTypeEnum.dt_nvarchar:
                             sb.Append("                if (!string.IsNullOrEmpty(queryModel." + columnModel.ColumnName + ")) \n");
                             sb.Append("                { \n");
-                            sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " = '\" + queryModel." + columnModel.ColumnName + " + \"', \"; \n");
+                            sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " = '\" + queryModel." + columnModel.ColumnName + " + \"',\"; \n");
                             sb.Append("                } \n");
                             break;
                         default:

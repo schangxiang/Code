@@ -5,8 +5,15 @@
         <el-form :inline="true" class="demo-form-inline" v-bind:model="serachObj">
 		  $el-form-itemForSearch$
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" @click="fetchData">查询</el-button>
-            <el-button type="success" icon="el-icon-plus" @click="addData">新增</el-button>
+            <el-button type="primary" icon="el-icon-search" @click="fetchData">查&nbsp;询</el-button>
+            <el-button type="warning" icon="el-icon-refresh" @click="reset">重&nbsp;置</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+	  <div class="han-box">
+        <el-form :inline="true" class="demo-form-inline">
+          <el-form-item>
+            <el-button type="success" icon="el-icon-plus" @click="addData">新&nbsp;增</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -15,8 +22,8 @@
 		  $el-table-column$
           <el-table-column fixed="right" label="操作" width="150">
             <template slot-scope="scope">
-              <el-button @click="handleClickForUpdate(scope.row)" type="text" size="small" icon="el-icon-edit" >修改</el-button>
-              <el-button @click="handleClickForDelete(scope.row)" type="text" size="small" icon="el-icon-delete" >删除</el-button>
+              <el-button @click="handleClickForUpdate(scope.row)" type="text" size="small" icon="el-icon-edit" >修&nbsp;改</el-button>
+              <el-button @click="handleClickForDelete(scope.row)" type="text" size="small" icon="el-icon-delete" >删&nbsp;除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -73,6 +80,11 @@ export default {
     this.fetchData()
   },
   methods: {
+    // 重置查询
+    reset(){
+      this.serachObj={}
+      this.afreshFetchData()
+    },
     // 重新加载列表
     afreshFetchData() {
       this.pageIndex = 1
@@ -85,8 +97,15 @@ export default {
       this.serachObj.pageIndex = this.pageIndex
       this.serachObj.pageSize = this.pageSize
       get$Modulelogo$List(this.serachObj).then(res => {
-        this.total = res.resData.total
-        this.$TableAlias$List = res.resData.rows
+		if (res.resCode === '00000') {
+          this.total = res.resData.total
+		  this.$TableAlias$List = res.resData.rows
+        } else {
+          this.$notify.error({
+            title: '错误',
+            message: res.resMsg
+          })
+        }
       }).catch(err => {
         console.log(err)
       })
@@ -119,7 +138,7 @@ export default {
         this.isAdd = false
         this.$TableAlias$ = {}
         var data = {
-          id: row.id
+          $PrimaryKey$: row.$PrimaryKey$
         }
         del$Modulelogo$(data).then(res => {
           if (res.resCode === '00000') {
@@ -151,7 +170,7 @@ export default {
       this.dialogTitle = '编辑'
       this.$TableAlias$ = {}
       var data = {
-        id: row.id
+        $PrimaryKey$: row.$PrimaryKey$
       }
       getSingle$Modulelogo$(data).then(res => {
         if (res.resCode === '00000') {
@@ -188,7 +207,7 @@ export default {
                 this.submitDisabled = false
                 this.$notify.error({
                   title: '错误',
-                  message: '新增失败'
+                  message: '新增失败,' + res.resMsg
                 })
               }
             }).catch(err => {
@@ -208,7 +227,7 @@ export default {
                 this.submitDisabled = false
                 this.$notify.error({
                   title: '错误',
-                  message: '更新失败'
+                   message: '更新失败,' + res.resMsg
                 })
               }
             }).catch(err => {
