@@ -81,8 +81,8 @@ export default {
   },
   methods: {
     // 重置查询
-    reset(){
-      this.serachObj={}
+    reset() {
+      this.serachObj = {}
       this.afreshFetchData()
     },
     // 重新加载列表
