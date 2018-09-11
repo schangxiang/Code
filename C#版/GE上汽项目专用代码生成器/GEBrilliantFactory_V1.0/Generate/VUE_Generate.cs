@@ -17,7 +17,7 @@ namespace GenerateCode_GEBrilliantFactory
             var str = TextHelper.ReadText(@"Templete\VUE文件模板.txt");
 
 
-            str = str.Replace("$el-table-column$", StructStrHelper.GetElTableColumnStr(columnNameList));
+            str = str.Replace("$el-table-column$", StructStrHelper.GetElTableColumnStr(columnNameList));//列表项
             str = str.Replace("$el-col$", StructStrHelper.GetElFormItemStr(columnNameList));
             str = str.Replace("$el-form-itemForSearch$", StructStrHelper.GetElFormItemForSearchStr(columnNameList));
 

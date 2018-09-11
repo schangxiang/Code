@@ -829,15 +829,15 @@ where obj.name='" + tableName + "'  ";
                     switch (enumDT)
                     {
                         case DataTypeEnum.dt_datetime:
-                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" :formatter=\"formatterDateTime\" > \n");
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" width=\"150\" align=\"center\" :formatter=\"formatterDateTime\" > \n");
                             sb.Append("          </el-table-column> \n");
                             break;
                         case DataTypeEnum.dt_bit:
-                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" :formatter=\"formatterBit\" > \n");
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" align=\"center\" :formatter=\"formatterBit\" > \n");
                             sb.Append("          </el-table-column> \n");
                             break;
                         default:
-                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" > \n");
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" align=\"center\" > \n");
                             sb.Append("          </el-table-column> \n");
                             break;
                     }
