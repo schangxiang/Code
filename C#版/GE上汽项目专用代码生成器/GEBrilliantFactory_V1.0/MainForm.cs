@@ -27,6 +27,14 @@ namespace GenerateCode_GEBrilliantFactory
             this.tb_CreatePerson.Text = "shaocx";//创建人
             this.tb_EntityName.Text = "XiangziEntity";//实体类名
             this.tb_EntityProName.Text = "xiangzi";//实体类对象名
+
+            this.cmb_DataSource.DropDownStyle = ComboBoxStyle.DropDownList;
+            List<ListItem> itemList = CommonHelper.GetDataSources();
+            foreach (var item in itemList)
+            {
+                this.cmb_DataSource.Items.Add(item);
+            }
+            this.cmb_DataSource.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -65,7 +73,13 @@ namespace GenerateCode_GEBrilliantFactory
                 string tableAlias = this.tb_EntityProName.Text.Trim();//实体类对象名/表别名
                 string orderByName = this.tb_OrderBy.Text.Trim();//排序字段名称
                 string routePrefix = this.tb_RoutePrefix.Text.Trim();//WCF路由前缀
-
+                string connStr = this.lbl_DataSource.Text.Trim();//数据库连接字符串
+                if (connStr == "")
+                {
+                    MessageBox.Show("请选择数据库源！");
+                    this.cmb_DataSource.Focus();
+                    return;
+                }
                 if (tableName == "")
                 {
                     MessageBox.Show("请输入表名！");
@@ -84,7 +98,7 @@ namespace GenerateCode_GEBrilliantFactory
                     this.tb_RoutePrefix.Focus();
                     return;
                 }
-                List<ColumnModel> columnList = StructStrHelper.GetColumnList(tableName);
+                List<ColumnModel> columnList = StructStrHelper.GetColumnList(tableName, connStr);
                 if (columnList.Count == 0)
                 {
                     MessageBox.Show("没有获取到表下面的列集合！");
@@ -101,7 +115,7 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //生成DAL文件
                 str_generate = DAL_Generate.CreateDALText(filePrefixName, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyDesc, modulelogo,tableAlias, columnList);
+                   chinaComment, primaryKey, primaryKeyDesc, modulelogo, tableAlias, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.DAL, filePrefixName, entityName, modulelogo);
 
                 //生成BLL文件
@@ -110,7 +124,7 @@ namespace GenerateCode_GEBrilliantFactory
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.BLL, filePrefixName, entityName, modulelogo);
 
                 //生成QueryModel文件
-                str_generate = QueryModel_Generate.CreateQueryModelLText(modulelogo,chinaComment,columnList);
+                str_generate = QueryModel_Generate.CreateQueryModelLText(modulelogo, chinaComment, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.QueryModel, filePrefixName, entityName, modulelogo);
 
 
@@ -189,13 +203,20 @@ namespace GenerateCode_GEBrilliantFactory
 
         private void btn_InsertSql_Click(object sender, EventArgs e)
         {
+            string connStr = this.lbl_DataSource.Text.Trim();//数据库连接字符串
+            if (connStr == "")
+            {
+                MessageBox.Show("请选择数据库源！");
+                this.cmb_DataSource.Focus();
+                return;
+            }
             var tableName = this.tb_TableName.Text.Trim();
             if (tableName == string.Empty)
             {
                 MessageBox.Show("请输入表名!");
                 return;
             }
-            List<ColumnModel> columnList = StructStrHelper.GetColumnList(tableName);
+            List<ColumnModel> columnList = StructStrHelper.GetColumnList(tableName, connStr);
             if (columnList.Count == 0)
             {
                 MessageBox.Show("没有获取到表下面的列集合！");
@@ -216,6 +237,17 @@ namespace GenerateCode_GEBrilliantFactory
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_DataSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string connStr = (this.cmb_DataSource.SelectedItem as ListItem).Value;
+            this.lbl_DataSource.Text = connStr;
         }
     }
 }

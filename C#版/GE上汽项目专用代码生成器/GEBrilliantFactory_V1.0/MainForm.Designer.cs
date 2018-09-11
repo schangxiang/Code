@@ -53,17 +53,22 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tb_PrimaryDesc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tb_Modulelogo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_InsertSql = new System.Windows.Forms.Button();
             this.tb_RoutePrefix = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_DataSource = new System.Windows.Forms.ComboBox();
+            this.lbl_DataSource = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPath
             // 
-            this.btnPath.Location = new System.Drawing.Point(382, 347);
+            this.btnPath.Location = new System.Drawing.Point(422, 519);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(97, 23);
             this.btnPath.TabIndex = 1;
@@ -74,7 +79,7 @@
             // lblds
             // 
             this.lblds.AutoSize = true;
-            this.lblds.Location = new System.Drawing.Point(52, 11);
+            this.lblds.Location = new System.Drawing.Point(30, 47);
             this.lblds.Name = "lblds";
             this.lblds.Size = new System.Drawing.Size(35, 12);
             this.lblds.TabIndex = 2;
@@ -82,7 +87,7 @@
             // 
             // tbPath
             // 
-            this.tbPath.Location = new System.Drawing.Point(50, 347);
+            this.tbPath.Location = new System.Drawing.Point(106, 521);
             this.tbPath.Name = "tbPath";
             this.tbPath.ReadOnly = true;
             this.tbPath.Size = new System.Drawing.Size(253, 21);
@@ -90,7 +95,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(573, 454);
+            this.btnExit.Location = new System.Drawing.Point(539, 567);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(171, 67);
             this.btnExit.TabIndex = 8;
@@ -100,7 +105,7 @@
             // 
             // btn_CreateFile
             // 
-            this.btn_CreateFile.Location = new System.Drawing.Point(122, 454);
+            this.btn_CreateFile.Location = new System.Drawing.Point(62, 567);
             this.btn_CreateFile.Name = "btn_CreateFile";
             this.btn_CreateFile.Size = new System.Drawing.Size(157, 67);
             this.btn_CreateFile.TabIndex = 14;
@@ -110,7 +115,7 @@
             // 
             // tb_TableName
             // 
-            this.tb_TableName.Location = new System.Drawing.Point(122, 8);
+            this.tb_TableName.Location = new System.Drawing.Point(100, 44);
             this.tb_TableName.Name = "tb_TableName";
             this.tb_TableName.Size = new System.Drawing.Size(183, 21);
             this.tb_TableName.TabIndex = 15;
@@ -118,7 +123,7 @@
             // 
             // tb_FileName
             // 
-            this.tb_FileName.Location = new System.Drawing.Point(251, 91);
+            this.tb_FileName.Location = new System.Drawing.Point(229, 127);
             this.tb_FileName.Name = "tb_FileName";
             this.tb_FileName.Size = new System.Drawing.Size(199, 21);
             this.tb_FileName.TabIndex = 17;
@@ -126,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 94);
+            this.label1.Location = new System.Drawing.Point(32, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 12);
             this.label1.TabIndex = 16;
@@ -134,7 +139,7 @@
             // 
             // tb_WCF_NameSpacePath
             // 
-            this.tb_WCF_NameSpacePath.Location = new System.Drawing.Point(249, 194);
+            this.tb_WCF_NameSpacePath.Location = new System.Drawing.Point(227, 230);
             this.tb_WCF_NameSpacePath.Name = "tb_WCF_NameSpacePath";
             this.tb_WCF_NameSpacePath.Size = new System.Drawing.Size(197, 21);
             this.tb_WCF_NameSpacePath.TabIndex = 19;
@@ -142,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 194);
+            this.label2.Location = new System.Drawing.Point(30, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 18;
@@ -150,7 +155,7 @@
             // 
             // tb_ChinaComment
             // 
-            this.tb_ChinaComment.Location = new System.Drawing.Point(249, 240);
+            this.tb_ChinaComment.Location = new System.Drawing.Point(227, 276);
             this.tb_ChinaComment.Name = "tb_ChinaComment";
             this.tb_ChinaComment.Size = new System.Drawing.Size(197, 21);
             this.tb_ChinaComment.TabIndex = 23;
@@ -158,7 +163,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 240);
+            this.label4.Location = new System.Drawing.Point(32, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 12);
             this.label4.TabIndex = 22;
@@ -166,7 +171,7 @@
             // 
             // tb_CreatePerson
             // 
-            this.tb_CreatePerson.Location = new System.Drawing.Point(249, 286);
+            this.tb_CreatePerson.Location = new System.Drawing.Point(227, 322);
             this.tb_CreatePerson.Name = "tb_CreatePerson";
             this.tb_CreatePerson.Size = new System.Drawing.Size(199, 21);
             this.tb_CreatePerson.TabIndex = 25;
@@ -174,7 +179,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 295);
+            this.label5.Location = new System.Drawing.Point(32, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 12);
             this.label5.TabIndex = 24;
@@ -182,7 +187,7 @@
             // 
             // tb_Primary
             // 
-            this.tb_Primary.Location = new System.Drawing.Point(368, 8);
+            this.tb_Primary.Location = new System.Drawing.Point(346, 44);
             this.tb_Primary.Name = "tb_Primary";
             this.tb_Primary.Size = new System.Drawing.Size(145, 21);
             this.tb_Primary.TabIndex = 27;
@@ -190,7 +195,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(327, 11);
+            this.label6.Location = new System.Drawing.Point(305, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 26;
@@ -198,7 +203,7 @@
             // 
             // tb_EntityProName
             // 
-            this.tb_EntityProName.Location = new System.Drawing.Point(521, 47);
+            this.tb_EntityProName.Location = new System.Drawing.Point(499, 83);
             this.tb_EntityProName.Name = "tb_EntityProName";
             this.tb_EntityProName.Size = new System.Drawing.Size(183, 21);
             this.tb_EntityProName.TabIndex = 31;
@@ -206,7 +211,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(394, 50);
+            this.label7.Location = new System.Drawing.Point(372, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 12);
             this.label7.TabIndex = 30;
@@ -214,7 +219,7 @@
             // 
             // tb_EntityName
             // 
-            this.tb_EntityName.Location = new System.Drawing.Point(122, 47);
+            this.tb_EntityName.Location = new System.Drawing.Point(100, 83);
             this.tb_EntityName.Name = "tb_EntityName";
             this.tb_EntityName.Size = new System.Drawing.Size(183, 21);
             this.tb_EntityName.TabIndex = 29;
@@ -222,7 +227,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 50);
+            this.label8.Location = new System.Drawing.Point(30, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 28;
@@ -231,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(498, 100);
+            this.label9.Location = new System.Drawing.Point(476, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 12);
             this.label9.TabIndex = 34;
@@ -239,7 +244,7 @@
             // 
             // tb_OrderBy
             // 
-            this.tb_OrderBy.Location = new System.Drawing.Point(539, 97);
+            this.tb_OrderBy.Location = new System.Drawing.Point(517, 133);
             this.tb_OrderBy.Name = "tb_OrderBy";
             this.tb_OrderBy.Size = new System.Drawing.Size(145, 21);
             this.tb_OrderBy.TabIndex = 35;
@@ -247,7 +252,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(703, 100);
+            this.label10.Location = new System.Drawing.Point(681, 136);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 12);
             this.label10.TabIndex = 36;
@@ -255,7 +260,7 @@
             // 
             // tb_PrimaryDesc
             // 
-            this.tb_PrimaryDesc.Location = new System.Drawing.Point(599, 8);
+            this.tb_PrimaryDesc.Location = new System.Drawing.Point(577, 44);
             this.tb_PrimaryDesc.Name = "tb_PrimaryDesc";
             this.tb_PrimaryDesc.Size = new System.Drawing.Size(145, 21);
             this.tb_PrimaryDesc.TabIndex = 38;
@@ -263,24 +268,15 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(537, 11);
+            this.label11.Location = new System.Drawing.Point(515, 47);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 12);
             this.label11.TabIndex = 37;
             this.label11.Text = "主键描述:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(781, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 12);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "(用于查询单个实体)";
-            // 
             // tb_Modulelogo
             // 
-            this.tb_Modulelogo.Location = new System.Drawing.Point(251, 142);
+            this.tb_Modulelogo.Location = new System.Drawing.Point(229, 178);
             this.tb_Modulelogo.Name = "tb_Modulelogo";
             this.tb_Modulelogo.Size = new System.Drawing.Size(199, 21);
             this.tb_Modulelogo.TabIndex = 41;
@@ -288,7 +284,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 145);
+            this.label3.Location = new System.Drawing.Point(32, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 12);
             this.label3.TabIndex = 40;
@@ -296,7 +292,7 @@
             // 
             // btn_InsertSql
             // 
-            this.btn_InsertSql.Location = new System.Drawing.Point(356, 454);
+            this.btn_InsertSql.Location = new System.Drawing.Point(295, 567);
             this.btn_InsertSql.Name = "btn_InsertSql";
             this.btn_InsertSql.Size = new System.Drawing.Size(157, 67);
             this.btn_InsertSql.TabIndex = 42;
@@ -306,7 +302,7 @@
             // 
             // tb_RoutePrefix
             // 
-            this.tb_RoutePrefix.Location = new System.Drawing.Point(573, 142);
+            this.tb_RoutePrefix.Location = new System.Drawing.Point(551, 178);
             this.tb_RoutePrefix.Name = "tb_RoutePrefix";
             this.tb_RoutePrefix.Size = new System.Drawing.Size(145, 21);
             this.tb_RoutePrefix.TabIndex = 44;
@@ -314,52 +310,96 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(498, 148);
+            this.label13.Location = new System.Drawing.Point(476, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 12);
             this.label13.TabIndex = 43;
             this.label13.Text = "WCF路由前缀:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_DataSource);
+            this.groupBox1.Controls.Add(this.cmb_DataSource);
+            this.groupBox1.Location = new System.Drawing.Point(51, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(819, 82);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "数据库配置";
+            // 
+            // cmb_DataSource
+            // 
+            this.cmb_DataSource.FormattingEnabled = true;
+            this.cmb_DataSource.Location = new System.Drawing.Point(55, 37);
+            this.cmb_DataSource.Name = "cmb_DataSource";
+            this.cmb_DataSource.Size = new System.Drawing.Size(144, 20);
+            this.cmb_DataSource.TabIndex = 0;
+            this.cmb_DataSource.SelectedIndexChanged += new System.EventHandler(this.cmb_DataSource_SelectedIndexChanged);
+            // 
+            // lbl_DataSource
+            // 
+            this.lbl_DataSource.AutoSize = true;
+            this.lbl_DataSource.Location = new System.Drawing.Point(227, 40);
+            this.lbl_DataSource.Name = "lbl_DataSource";
+            this.lbl_DataSource.Size = new System.Drawing.Size(89, 12);
+            this.lbl_DataSource.TabIndex = 1;
+            this.lbl_DataSource.Text = "我是链接字符串";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tb_FileName);
+            this.groupBox2.Controls.Add(this.lblds);
+            this.groupBox2.Controls.Add(this.tb_RoutePrefix);
+            this.groupBox2.Controls.Add(this.tb_TableName);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tb_Modulelogo);
+            this.groupBox2.Controls.Add(this.tb_WCF_NameSpacePath);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.tb_ChinaComment);
+            this.groupBox2.Controls.Add(this.tb_PrimaryDesc);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.tb_CreatePerson);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.tb_OrderBy);
+            this.groupBox2.Controls.Add(this.tb_Primary);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.tb_EntityProName);
+            this.groupBox2.Controls.Add(this.tb_EntityName);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(51, 111);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(819, 387);
+            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "自定义配置";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 580);
-            this.Controls.Add(this.tb_RoutePrefix);
-            this.Controls.Add(this.label13);
+            this.ClientSize = new System.Drawing.Size(927, 646);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_InsertSql);
-            this.Controls.Add(this.tb_Modulelogo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.tb_PrimaryDesc);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.tb_OrderBy);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.tb_EntityProName);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.tb_EntityName);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.tb_Primary);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.tb_CreatePerson);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tb_ChinaComment);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tb_WCF_NameSpacePath);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_FileName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_TableName);
             this.Controls.Add(this.btn_CreateFile);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tbPath);
-            this.Controls.Add(this.lblds);
             this.Controls.Add(this.btnPath);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "代码生成器(科致专用)V1.0";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,12 +432,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tb_PrimaryDesc;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Modulelogo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_InsertSql;
         private System.Windows.Forms.TextBox tb_RoutePrefix;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_DataSource;
+        private System.Windows.Forms.ComboBox cmb_DataSource;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

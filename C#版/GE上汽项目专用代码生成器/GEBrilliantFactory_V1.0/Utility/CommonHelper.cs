@@ -109,6 +109,28 @@ namespace GenerateCode_GEBrilliantFactory
             return new string(s);
         }
 
+        /// <summary>
+        /// 获取数据库连接字符串列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<ListItem> GetDataSources()
+        {
+            List<ListItem> list = new List<ListItem>();
+            ConnectionStringSettingsCollection conn = ConfigurationManager.ConnectionStrings;
+            foreach (ConnectionStringSettings item in conn)
+            {
+                if (item.Name == "LocalSqlServer")
+                    continue;
+                ListItem listItem = new ListItem()
+                {
+                    Text = item.Name,
+                    Value = item.ConnectionString
+                };
+                list.Add(listItem);
+            }
+            return list;
+        }
+
     }
 
     /// <summary>
@@ -175,14 +197,14 @@ namespace GenerateCode_GEBrilliantFactory
         /// <summary>
         /// InsertSQL
         /// </summary>
-        SQL_Insert=14,
+        SQL_Insert = 14,
         /// <summary>
         /// VUE方法配置
         /// </summary>
-        VUE_FunConfig=15,
+        VUE_FunConfig = 15,
         /// <summary>
         /// VUE文件
         /// </summary>
-        VUEFile=16
+        VUEFile = 16
     }
 }

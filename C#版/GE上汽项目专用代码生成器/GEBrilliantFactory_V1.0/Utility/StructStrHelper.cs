@@ -17,31 +17,8 @@ namespace GenerateCode_GEBrilliantFactory
         /// </summary>
         /// <param name="tableName"></param>
         /// <returns></returns>
-        public static List<ColumnModel> GetColumnList(string tableName)
+        public static List<ColumnModel> GetColumnList(string tableName, string connStr)
         {
-            /*
-                string strSql = @"
-   SELECT 
-Syscolumns.name AS ColumnName,
-Systypes.name AS DataType,
-isnull(g.[value],'') AS N'Description',
-Syscolumns.length AS DataLength
-FROM sys.extended_properties as Sysproperties
-RIGHT OUTER JOIN
-Sysobjects
-INNER JOIN
-Syscolumns ON Sysobjects.id = Syscolumns.id INNER JOIN
-Systypes ON Syscolumns.xtype = Systypes.xtype ON
-Sysproperties.major_id = Syscolumns.id AND
-Sysproperties.minor_id = Syscolumns.colid
-left join sys.extended_properties g 
-on Syscolumns.id=g.major_id AND Syscolumns.colid = g.minor_id 
-WHERE (Sysobjects.xtype = 'u' OR
-Sysobjects.xtype = 'v') AND (Systypes.name <> 'Sysname') AND
-(Sysobjects.name = '" + tableName + @"')
-ORDER BY Syscolumns.id  
-";
-               //*/
             string strSql = @" select
 col.name as ColumnName,
 t.name as DataType,
@@ -75,8 +52,7 @@ where obj.name='" + tableName + "'  ";
             List<ColumnModel> columnList = new List<ColumnModel>();
             try
             {
-                string strConn = ConfigurationManager.ConnectionStrings["ConnString"].ToString();
-                DataSet ds = SqlHelper.Query(strConn, strSql);
+                DataSet ds = SqlHelper.Query(connStr, strSql);
                 columnList = DataTableToList(ds.Tables[0]);
             }
             catch
