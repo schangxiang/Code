@@ -98,7 +98,7 @@ namespace $Wcf_NameSpacePath$
             try
             {
                 #region 验证
-                if (model == null)
+                if (model == null || model.id==0)
                 {
 				    exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY, exception.exceptionMsg, exception);
@@ -113,7 +113,7 @@ namespace $Wcf_NameSpacePath$
                     return retBody;
                 }
 				//验证重复
-                if ($TableAlias$BLL.Exists(model.$PrimaryKey$.ToString()))
+                if ($TableAlias$BLL.Exists(model.$PrimaryKey$.ToString(),model.id))
                 {
 				    exception.exceptionMsg = "数据已经存在";
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.FAILURE, exception.exceptionMsg, exception);

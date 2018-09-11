@@ -17,16 +17,16 @@ namespace GenerateCode_GEBrilliantFactory
         {
             var str_dal = TextHelper.ReadText(@"Templete\QueryModel模板.txt");
 
-           
             str_dal = str_dal.Replace("$ChinaComment$", ChinaComment);//中文注释
            
-
             str_dal = str_dal.Replace("$Modulelogo$", Modulelogo);//模块简写
 
             string attrString = "";
-            for (int i = 0; i < columnNameList.Count; ++i)
+
+            List<ColumnModel> newColumnNameList = StructStrHelper.GetNewColumnModelListForQueryModel(columnNameList);
+            for (int i = 0; i < newColumnNameList.Count; ++i)
             {
-                attrString += StructStrHelper.GenerateAttribute(columnNameList[i]);
+                attrString += StructStrHelper.GenerateAttributeForQueryModel(newColumnNameList[i]);
             }
             str_dal = str_dal.Replace("$Attributes$", attrString);
            

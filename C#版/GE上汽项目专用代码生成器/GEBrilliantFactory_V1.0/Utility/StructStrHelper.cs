@@ -189,6 +189,33 @@ where obj.name='" + tableName + "'  ";
         }
 
         /// <summary>
+        /// 生成属性字符串ForQueryModel
+        /// </summary>
+        /// <param name="columnModel"></param>
+        /// <returns></returns>
+        public static string GenerateAttributeForQueryModel(ColumnModel columnModel)
+        {
+            try
+            {
+                string attr = columnModel.ColumnName;
+                string str_NullFlag = " ";
+                string attrStr = "";
+                attrStr += "        /// <summary>\n";
+                attrStr += "        /// " + columnModel.Description + "\n";
+                attrStr += "        /// </summary>\n";
+                attrStr += "        [DataMember]\n";
+                attrStr += "        public string" + str_NullFlag + attr + " { get; set; }\n";
+                attrStr += "\n";//最后是加一个空格
+                return attrStr;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
         /// 获取查询列字符串
         /// </summary>
         /// <param name="columnNameList">列集合</param>
@@ -521,11 +548,40 @@ where obj.name='" + tableName + "'  ";
 
 
         /// <summary>
+        ///  获取最新的列List集合ForQueryModel
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <returns></returns>
+        public static List<ColumnModel> GetNewColumnModelListForQueryModel(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            List<ColumnModel> newList = new List<ColumnModel>();
+            ColumnModel columnModel = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {//需要去掉 创建人和创建时间
+                columnModel = columnNameList[i];
+                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
+                   || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
+                   || columnModel.ColumnName.ToUpper() == "lastModifier".ToUpper()
+                   || columnModel.ColumnName.ToUpper() == "lastModifyTime".ToUpper()
+                   || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
+                   || columnModel.ColumnName.ToUpper() == "id".ToUpper()
+                   )
+                {
+                    continue;
+                }
+                newList.Add(columnModel);
+            }
+            return newList;
+        }
+
+
+        /// <summary>
         /// 获取最新的列List集合ForUpdate(去掉 id delFlag,creator和createTime)
         /// </summary>
         /// <param name="columnNameList"></param>
         /// <returns></returns>
-        private static List<ColumnModel> GetNewColumnModelListForVUESerachOrEdit(List<ColumnModel> columnNameList)
+        private static List<ColumnModel> GetNewColumnModelListForVUEEdit(List<ColumnModel> columnNameList)
         {
             //构造新的List
             List<ColumnModel> newList = new List<ColumnModel>();
@@ -547,6 +603,35 @@ where obj.name='" + tableName + "'  ";
             }
             return newList;
         }
+
+
+        /// <summary>
+        /// 获取最新的列List集合(去掉 id delFlag,creator和createTime)
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <returns></returns>
+        private static List<ColumnModel> GetNewColumnModelListForVUETableColumn(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            List<ColumnModel> newList = new List<ColumnModel>();
+            ColumnModel columnModel = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {//需要去掉 创建人和创建时间
+                columnModel = columnNameList[i];
+                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "id".ToUpper()
+                    )
+                {
+                    continue;
+                }
+                newList.Add(columnModel);
+            }
+            return newList;
+        }
+
+
 
 
         private static string GetSqlParameterStr(ColumnModel columnModel)
@@ -737,11 +822,25 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList=GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                List<ColumnModel> newList = GetNewColumnModelListForVUETableColumn(columnModelList);
                 foreach (var columnModel in newList)
                 {
-                    sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" > \n");
-                    sb.Append("          </el-table-column> \n");
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
+                    switch (enumDT)
+                    {
+                        case DataTypeEnum.dt_datetime:
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" :formatter=\"formatterDateTime\" > \n");
+                            sb.Append("          </el-table-column> \n");
+                            break;
+                        case DataTypeEnum.dt_bit:
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" :formatter=\"formatterBit\" > \n");
+                            sb.Append("          </el-table-column> \n");
+                            break;
+                        default:
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" > \n");
+                            sb.Append("          </el-table-column> \n");
+                            break;
+                    }
                 }
                 return sb.ToString();
             }
@@ -762,14 +861,25 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("              <el-col :span=\"12\"> \n");
 
-                    sb.Append("                <el-form-item label=\"" + columnModel.Description + "\" prop=\"" + columnModel.ColumnName + "\" :rules=\"[{ required: true, message: '" + columnModel.Description + "不能为空'}]\"> \n");
-                    sb.Append("                  <el-input v-model=\"$TableAlias$." + columnModel.ColumnName + "\"></el-input> \n");
-                    sb.Append("                </el-form-item> \n");
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
+                    switch (enumDT)
+                    {
+                        case DataTypeEnum.dt_bit:
+                            sb.Append("                <el-form-item label=\"" + columnModel.Description + "\" prop=\"" + columnModel.ColumnName + "\" > \n");
+                            sb.Append("                  <el-switch v-model=\"$TableAlias$." + columnModel.ColumnName + "\"></el-switch> \n");
+                            sb.Append("                </el-form-item> \n");
+                            break;
+                        default:
+                            sb.Append("                <el-form-item label=\"" + columnModel.Description + "\" prop=\"" + columnModel.ColumnName + "\" :rules=\"[{ required: true, message: '" + columnModel.Description + "不能为空'}]\"> \n");
+                            sb.Append("                  <el-input v-model=\"$TableAlias$." + columnModel.ColumnName + "\"></el-input> \n");
+                            sb.Append("                </el-form-item> \n");
+                            break;
+                    }
 
                     sb.Append("              </el-col> \n");
                 }
@@ -792,7 +902,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUESerachOrEdit(columnModelList);
+                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("          <el-form-item label=\"" + columnModel.Description + "\"> \n");

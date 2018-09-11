@@ -59,6 +59,20 @@ namespace WIP_BLL
 
         #endregion
 
+		#region LogicDel
+
+        /// <summary>
+        /// 删除一条$ChinaComment$数据(逻辑删除)
+        /// </summary>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+        /// <returns>是否删除成功</returns>
+        public bool LogicDel(string $PrimaryKey$)
+        {
+            return dal.LogicDel($PrimaryKey$);
+        }
+
+        #endregion
+
         #region QueryList(Page)
 
         /// <summary>
@@ -118,9 +132,9 @@ namespace WIP_BLL
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns></returns>
-        public bool Exists(string $PrimaryKey$)
+        public bool Exists(string $PrimaryKey$, int? id = null)
         {
-            return dal.Exists($PrimaryKey$);
+            return dal.Exists($PrimaryKey$,id);
         }
 
         #endregion

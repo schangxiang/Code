@@ -331,7 +331,7 @@
             // cmb_DataSource
             // 
             this.cmb_DataSource.FormattingEnabled = true;
-            this.cmb_DataSource.Location = new System.Drawing.Point(55, 37);
+            this.cmb_DataSource.Location = new System.Drawing.Point(34, 37);
             this.cmb_DataSource.Name = "cmb_DataSource";
             this.cmb_DataSource.Size = new System.Drawing.Size(144, 20);
             this.cmb_DataSource.TabIndex = 0;
@@ -340,7 +340,7 @@
             // lbl_DataSource
             // 
             this.lbl_DataSource.AutoSize = true;
-            this.lbl_DataSource.Location = new System.Drawing.Point(227, 40);
+            this.lbl_DataSource.Location = new System.Drawing.Point(194, 40);
             this.lbl_DataSource.Name = "lbl_DataSource";
             this.lbl_DataSource.Size = new System.Drawing.Size(89, 12);
             this.lbl_DataSource.TabIndex = 1;

@@ -59,7 +59,7 @@
 
 <script type="text/ecmascript-6">
 import {getSingle$Modulelogo$, get$Modulelogo$List, update$Modulelogo$, insert$Modulelogo$, del$Modulelogo$} from 'api/wipmgmt'
-
+import { formatDate } from 'common/js/util'
 export default {
   data() {
     return {
@@ -80,6 +80,16 @@ export default {
     this.fetchData()
   },
   methods: {
+    // 时间格式化
+    formatterDateTime (row, column, cellValue, index) {
+      var t = cellValue.slice(6, 19) // 截取字符串
+      var NewDtime = new Date(parseInt(t))
+      return formatDate(NewDtime, 'yyyy-MM-dd hh:mm:ss')
+    },
+	// 格式化布尔字符串
+    formatterBit (row, column, cellValue, index) {
+      if (cellValue) { return '是' } else { return '否' }
+    },
     // 重置查询
     reset() {
       this.serachObj = {}

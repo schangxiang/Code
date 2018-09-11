@@ -94,6 +94,45 @@ namespace WIP_DAL
             };
             parameters[0].Value = $PrimaryKey$;
 
+            int rows = 0;
+			if (transModel != null)
+            {
+                rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
+			}
+			else
+			{
+                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+			}
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+		#region LogicDel
+
+        /// <summary>
+        /// 删除一条$ChinaComment$数据(逻辑删除)
+        /// </summary>
+        /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+		/// <param name="transModel">事务类</param>
+        /// <returns>是否删除成功</returns>
+        public bool LogicDel(string $PrimaryKey$,TransactionModel transModel = null)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+			strSql.Append("update $TableName$  set delflag='1' ");
+            strSql.Append(" where $PrimaryKey$=@$PrimaryKey$");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50)
+            };
+            parameters[0].Value = $PrimaryKey$;
 
             int rows = 0;
 			if (transModel != null)
@@ -226,12 +265,16 @@ namespace WIP_DAL
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
         /// <returns>是否存在该$ChinaComment$记录</returns>
-        public bool Exists(string $PrimaryKey$)
+        public bool Exists(string $PrimaryKey$, int? id = null)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) FROM $TableName$");
             strSql.Append(" where ");
             strSql.Append("  $PrimaryKey$ = @$PrimaryKey$  ");
+			if (id != null)
+            {
+                strSql.Append("  AND  id <> " + id.ToString());
+            }
             SqlParameter[] parameters = {
                     new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50)           };
             parameters[0].Value = $PrimaryKey$;
