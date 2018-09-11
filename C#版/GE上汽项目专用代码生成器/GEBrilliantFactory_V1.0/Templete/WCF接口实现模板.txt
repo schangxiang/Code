@@ -36,7 +36,7 @@ namespace $Wcf_NameSpacePath$
                 if (model == null)
                 {
 				    exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
-                    retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY,ResMsg.PARAMETERNOEMPTY);
+                    retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY,ResMsg.PARAMETERNOEMPTY,exception);
                     return retBody;
                 }
                 $ValidateEmpty$
