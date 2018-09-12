@@ -38,10 +38,21 @@ namespace GenerateModel
             {
                 StringBuilder sb = new StringBuilder();
                 string str_isNull = "";
+                string tabStr = "   ";//默认的tab值
+                int i = 0;
                 foreach (var item in columnList)
                 {
                     if (item.ColumnName == null)
                         continue;
+                    i++;
+                    if (i == 1)
+                    {
+                        tabStr = "";
+                    }
+                    else
+                    {
+                        tabStr = "   ";//默认的tab值
+                    }
                     if (item.ColumnName.ToUpper() == primaryKey.ToUpper())
                         continue;
                     str_isNull = " NULL ";
@@ -54,23 +65,23 @@ namespace GenerateModel
                     switch (enumDT)
                     {
                         case DataTypeEnum.dt_char:
-                            sb.Append("   " + item.ColumnName + "    CHAR(" + item.DataLength + ")  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    CHAR(" + item.DataLength + ")  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                         case DataTypeEnum.dt_varchar:
                         case DataTypeEnum.dt_nvarchar:
-                            sb.Append("   " + item.ColumnName + "    NVARCHAR(" + item.DataLength + ")  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    NVARCHAR(" + item.DataLength + ")  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                         case DataTypeEnum.dt_int:
-                            sb.Append("   " + item.ColumnName + "    INT  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    INT  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                         case DataTypeEnum.dt_datetime:
-                            sb.Append("   " + item.ColumnName + "    DATETIME  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    DATETIME  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                         case DataTypeEnum.dt_bit:
-                            sb.Append("   " + item.ColumnName + "    BIT  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    BIT  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                         case DataTypeEnum.dt_decimal:
-                            sb.Append("   " + item.ColumnName + "    DECIMAL" + item.DataLength + " " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            sb.Append(tabStr + item.ColumnName + "    DECIMAL" + item.DataLength + " " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
                     }
                 }
