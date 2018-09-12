@@ -12,7 +12,7 @@ namespace WIP_BLL
     /// </summary>
     public partial class $FilePrefixName$BLL
     {
-        private readonly $FilePrefixName$DAL dal = new $FilePrefixName$DAL();
+        private readonly $FilePrefixName$DAL $TableAlias$DAL = new $FilePrefixName$DAL();
 
         #region Add
 
@@ -25,7 +25,7 @@ namespace WIP_BLL
         {
 		    model.createTime = model.lastModifyTime = DateTime.Now;
 			model.delFlag=false;
-            return dal.Add(model);
+            return $TableAlias$DAL.Add(model);
         }
 
         #endregion
@@ -40,7 +40,7 @@ namespace WIP_BLL
         public bool Update($EntityName$ model)
         {
 		    model.lastModifyTime = DateTime.Now;
-            return dal.Update(model);
+            return $TableAlias$DAL.Update(model);
         }
 
         #endregion
@@ -54,7 +54,7 @@ namespace WIP_BLL
         /// <returns>是否删除成功</returns>
         public bool Delete(string $PrimaryKey$)
         {
-            return dal.Delete($PrimaryKey$);
+            return $TableAlias$DAL.Delete($PrimaryKey$);
         }
 
         #endregion
@@ -68,7 +68,7 @@ namespace WIP_BLL
         /// <returns>是否删除成功</returns>
         public bool LogicDel(string $PrimaryKey$)
         {
-            return dal.LogicDel($PrimaryKey$);
+            return $TableAlias$DAL.LogicDel($PrimaryKey$);
         }
 
         #endregion
@@ -84,9 +84,9 @@ namespace WIP_BLL
         /// <returns>$ChinaComment$分页数据</returns>
         public PageResultModel<$EntityName$> GetModelListForPage(string strOrderBy, string strWhere, Query$Modulelogo$Model model)
         {
-            DataSet ds = dal.GetListForPage(strOrderBy, strWhere, model);
+            DataSet ds = $TableAlias$DAL.GetListForPage(strOrderBy, strWhere, model);
             List<$EntityName$> list = DataTableToList(ds.Tables[0]);
-            int total = dal.GetRecordCount(strWhere);
+            int total = $TableAlias$DAL.GetRecordCount(strWhere);
             PageResultModel<$EntityName$> result = new PageResultModel<$EntityName$>();
             result.total = total;
             result.rows = list;
@@ -104,7 +104,7 @@ namespace WIP_BLL
         /// <returns>$ChinaComment$数据集合</returns>
         public List<$EntityName$> GetModelList(string strWhere)
         {
-            DataSet ds = dal.GetList(strWhere);
+            DataSet ds = $TableAlias$DAL.GetList(strWhere);
             return DataTableToList(ds.Tables[0]);
         }
 
@@ -120,7 +120,7 @@ namespace WIP_BLL
         public $EntityName$ GetModel(string $PrimaryKey$)
         {
 
-            return dal.GetModel($PrimaryKey$);
+            return $TableAlias$DAL.GetModel($PrimaryKey$);
         }
 
         #endregion
@@ -134,7 +134,7 @@ namespace WIP_BLL
         /// <returns></returns>
         public bool Exists(string $PrimaryKey$, int? id = null)
         {
-            return dal.Exists($PrimaryKey$,id);
+            return $TableAlias$DAL.Exists($PrimaryKey$,id);
         }
 
         #endregion

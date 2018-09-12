@@ -120,7 +120,7 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //生成BLL文件
                 str_generate = BLL_Generate.CreateBLLText(filePrefixName, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyDesc, modulelogo, columnList);
+                   chinaComment, primaryKey, primaryKeyDesc, modulelogo,tableAlias, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.BLL, filePrefixName, entityName, modulelogo);
 
                 //生成QueryModel文件
