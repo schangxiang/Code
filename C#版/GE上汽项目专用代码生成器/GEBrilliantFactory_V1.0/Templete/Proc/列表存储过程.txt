@@ -19,7 +19,7 @@ CREATE PROCEDURE $GetListProcName$
   SET @strQueryCol=' $strQueryCol$ '
  
   SET @strSql= ' SELECT '+@strQueryCol
-              +' FROM $TableName$  AS $TableAlias$ WITH(NOLOCK) WHERE 1=1 '
+              +' FROM $TableName$  AS $TableAlias$ WITH(NOLOCK) WHERE 1=1 AND $TableAlias$.delFlag = 0 '
                        
   IF(@strWhere <> '')
 	BEGIN 

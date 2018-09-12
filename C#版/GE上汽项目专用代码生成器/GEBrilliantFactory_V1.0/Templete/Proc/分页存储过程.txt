@@ -29,7 +29,7 @@ CREATE PROCEDURE $GetPageListProcName$
                        +' SELECT ROW_NUMBER() Over(order by '+@strOrderBy+' ) AS row_num,'
                        +@strQueryCol_2 
                        +' FROM $TableName$  AS $TableAlias$ WITH(NOLOCK) ' 
-                       +' WHERE 1=1 '
+                       +' WHERE 1=1 AND $TableAlias$.delFlag = 0 '
     if(@strWhere <> '')
     BEGIN 
       SET @strSql=@strSql+' AND '+@strWhere
