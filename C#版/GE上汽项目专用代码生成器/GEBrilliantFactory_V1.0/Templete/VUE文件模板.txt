@@ -283,11 +283,8 @@ export default {
   }
 
   .table-box {
-    padding-top: 20px;
-
-  .el-table {
-    border: 1px solid #ddd;
-  }
-
+    .el-table {
+      border: 1px solid #ddd;
+     }
   }
 </style>
