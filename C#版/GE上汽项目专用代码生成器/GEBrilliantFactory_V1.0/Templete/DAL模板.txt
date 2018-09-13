@@ -242,7 +242,7 @@ namespace WIP_DAL
 
             $EntityName$ model = new $EntityName$();
 
-            if (ds.Tables[0].Rows.Count > 0)
+            if (ds.Tables[0].Rows.Count == 1)
             {
                 var dataRow = ds.Tables[0].Rows[0];
 

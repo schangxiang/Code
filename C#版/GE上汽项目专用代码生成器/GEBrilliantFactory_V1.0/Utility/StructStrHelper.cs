@@ -933,7 +933,8 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                foreach (var columnModel in columnModelList)
+                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
+                foreach (var columnModel in newList)
                 {
                     string attr = columnModel.ColumnName;
                     //获取数据类型
