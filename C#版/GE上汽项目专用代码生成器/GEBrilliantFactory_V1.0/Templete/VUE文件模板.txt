@@ -93,6 +93,9 @@ export default {
     },
     // 时间格式化
     formatterDateTime (row, column, cellValue, index) {
+      if (cellValue === null || cellValue === '') {
+        return ''
+      }
       var t = cellValue.slice(6, 19) // 截取字符串
       var NewDtime = new Date(parseInt(t))
       return formatDate(NewDtime, 'yyyy-MM-dd hh:mm:ss')
