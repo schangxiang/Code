@@ -59,8 +59,8 @@
             this.tb_RoutePrefix = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmb_DataSource = new System.Windows.Forms.ComboBox();
             this.lbl_DataSource = new System.Windows.Forms.Label();
+            this.cmb_DataSource = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(539, 567);
+            this.btnExit.Location = new System.Drawing.Point(649, 567);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(171, 67);
             this.btnExit.TabIndex = 8;
@@ -105,7 +105,7 @@
             // 
             // btn_CreateFile
             // 
-            this.btn_CreateFile.Location = new System.Drawing.Point(62, 567);
+            this.btn_CreateFile.Location = new System.Drawing.Point(106, 567);
             this.btn_CreateFile.Name = "btn_CreateFile";
             this.btn_CreateFile.Size = new System.Drawing.Size(157, 67);
             this.btn_CreateFile.TabIndex = 14;
@@ -292,7 +292,7 @@
             // 
             // btn_InsertSql
             // 
-            this.btn_InsertSql.Location = new System.Drawing.Point(295, 567);
+            this.btn_InsertSql.Location = new System.Drawing.Point(385, 567);
             this.btn_InsertSql.Name = "btn_InsertSql";
             this.btn_InsertSql.Size = new System.Drawing.Size(157, 67);
             this.btn_InsertSql.TabIndex = 42;
@@ -328,15 +328,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据库配置";
             // 
-            // cmb_DataSource
-            // 
-            this.cmb_DataSource.FormattingEnabled = true;
-            this.cmb_DataSource.Location = new System.Drawing.Point(34, 37);
-            this.cmb_DataSource.Name = "cmb_DataSource";
-            this.cmb_DataSource.Size = new System.Drawing.Size(144, 20);
-            this.cmb_DataSource.TabIndex = 0;
-            this.cmb_DataSource.SelectedIndexChanged += new System.EventHandler(this.cmb_DataSource_SelectedIndexChanged);
-            // 
             // lbl_DataSource
             // 
             this.lbl_DataSource.AutoSize = true;
@@ -345,6 +336,15 @@
             this.lbl_DataSource.Size = new System.Drawing.Size(89, 12);
             this.lbl_DataSource.TabIndex = 1;
             this.lbl_DataSource.Text = "我是链接字符串";
+            // 
+            // cmb_DataSource
+            // 
+            this.cmb_DataSource.FormattingEnabled = true;
+            this.cmb_DataSource.Location = new System.Drawing.Point(34, 37);
+            this.cmb_DataSource.Name = "cmb_DataSource";
+            this.cmb_DataSource.Size = new System.Drawing.Size(144, 20);
+            this.cmb_DataSource.TabIndex = 0;
+            this.cmb_DataSource.SelectedIndexChanged += new System.EventHandler(this.cmb_DataSource_SelectedIndexChanged);
             // 
             // groupBox2
             // 
