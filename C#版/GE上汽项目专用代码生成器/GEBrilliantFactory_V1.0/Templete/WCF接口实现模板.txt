@@ -233,7 +233,7 @@ namespace $Wcf_NameSpacePath$
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public ReturnBody<bool> Del$Modulelogo$(Query$Modulelogo$Model model)
+        public ReturnBody<bool> Del$Modulelogo$($EntityName$ model)
         {
 		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("Del$Modulelogo$", model);
             try
