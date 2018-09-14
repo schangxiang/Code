@@ -10,7 +10,7 @@ namespace WIP_BLL
     /// <summary>
     /// $ChinaComment$业务处理类
     /// </summary>
-    public partial class $FilePrefixName$BLL
+    public class $FilePrefixName$BLL
     {
         private readonly $FilePrefixName$DAL $TableAlias$DAL = new $FilePrefixName$DAL();
 
@@ -19,10 +19,12 @@ namespace WIP_BLL
 		 /// <summary>
         /// 增加一条$ChinaComment$数据
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">要增加的$ChinaComment$实体</param>
+		/// <param name="creator">创建人</param>
         /// <returns>插入的最新主键值</returns>
-        public int Add($EntityName$ model)
+        public int Add($EntityName$ model,string creator)
         {
+			model.creator = model.lastModifier = creator;
 		    model.createTime = model.lastModifyTime = DateTime.Now;
 			model.delFlag=false;
             return $TableAlias$DAL.Add(model);
@@ -36,9 +38,11 @@ namespace WIP_BLL
         /// 更新一条$ChinaComment$数据
         /// </summary>
         /// <param name="model">要更新的$ChinaComment$实体</param>
-        /// <returns>是否更新成功</returns>
-        public bool Update($EntityName$ model)
+		/// <param name="lastModifier">最后修改人</param>
+        /// <returns>更新是否成功</returns>
+        public bool Update($EntityName$ model,string lastModifier)
         {
+			model.lastModifier = lastModifier;
 		    model.lastModifyTime = DateTime.Now;
             return $TableAlias$DAL.Update(model);
         }
@@ -65,10 +69,11 @@ namespace WIP_BLL
         /// 删除一条$ChinaComment$数据(逻辑删除)
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+		/// <param name="lastModifier">最后修改人</param>
         /// <returns>是否删除成功</returns>
-        public bool LogicDel(string $PrimaryKey$)
+        public bool LogicDel(string $PrimaryKey$,string lastModifier)
         {
-            return $TableAlias$DAL.LogicDel($PrimaryKey$);
+            return $TableAlias$DAL.LogicDel($PrimaryKey$,lastModifier);
         }
 
         #endregion

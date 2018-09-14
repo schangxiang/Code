@@ -9,7 +9,7 @@ namespace WIP_DAL
     /// <summary>
     /// $ChinaComment$数据访问类
     /// </summary>
-    public partial class $FilePrefixName$DAL
+    public class $FilePrefixName$DAL
     {
         #region Add
 
@@ -87,8 +87,8 @@ namespace WIP_DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from $TableName$ ");
-            strSql.Append(" where $PrimaryKey$=@$PrimaryKey$");
+            strSql.Append("DELETE FROM $TableName$ ");
+            strSql.Append(" WHERE $PrimaryKey$=@$PrimaryKey$");
             SqlParameter[] parameters = {
                     new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50)
             };
@@ -121,14 +121,16 @@ namespace WIP_DAL
         /// 删除一条$ChinaComment$数据(逻辑删除)
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+		/// <param name="lastModifier">最后修改人</param>
 		/// <param name="transModel">事务类</param>
         /// <returns>是否删除成功</returns>
-        public bool LogicDel(string $PrimaryKey$,TransactionModel transModel = null)
+        public bool LogicDel(string $PrimaryKey$,string lastModifier,TransactionModel transModel = null)
         {
 
             StringBuilder strSql = new StringBuilder();
-			strSql.Append("update $TableName$  set delflag='1' ");
-            strSql.Append(" where $PrimaryKey$=@$PrimaryKey$");
+			strSql.Append("UPDATE $TableName$  SET delflag='1' ");
+			strSql.Append(" lastModifier='"+lastModifier+"' ");
+            strSql.Append(" WHERE $PrimaryKey$=@$PrimaryKey$");
             SqlParameter[] parameters = {
                     new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50)
             };
@@ -188,7 +190,7 @@ namespace WIP_DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) FROM $TableName$ AS $TableAlias$ ");
+            strSql.Append("SELECT COUNT(1) FROM $TableName$ AS $TableAlias$ ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -268,8 +270,8 @@ namespace WIP_DAL
         public bool Exists(string $PrimaryKey$, int? id = null)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) FROM $TableName$");
-            strSql.Append(" where ");
+            strSql.Append("SELECT COUNT(1) FROM $TableName$");
+            strSql.Append(" WHERE ");
             strSql.Append("  $PrimaryKey$ = @$PrimaryKey$  ");
 			if (id != null)
             {

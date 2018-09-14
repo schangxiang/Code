@@ -25,7 +25,8 @@ namespace GenerateCode_GEBrilliantFactory
             str = str.Replace("$FilePrefixName$", filePrefixName);//模块名
             str = str.Replace("$PrimaryKey$", PrimaryKey);//主键名
 
-            str = str.Replace("$ValidateEmpty$", StructStrHelper.GetValidateEmptyStr(columnNameList));
+            str = str.Replace("$ValidateEmptyForInsert$", StructStrHelper.GetValidateEmptyStr(columnNameList));
+            str = str.Replace("$ValidateEmptyForUpdate$", StructStrHelper.GetValidateEmptyStr(columnNameList,false));
             str = str.Replace("$WhereQuery$", StructStrHelper.GetStrForWhereQuery(columnNameList));
 
             str = str.Replace("$TableAlias$", TableAlias);//表别名

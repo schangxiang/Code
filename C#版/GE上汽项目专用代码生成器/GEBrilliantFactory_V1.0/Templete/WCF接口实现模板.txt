@@ -24,7 +24,7 @@ namespace $Wcf_NameSpacePath$
         /// <summary>
         /// 插入$ChinaComment$
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">要插入的$ChinaComment$实体</param>
         /// <returns></returns>
         public ReturnBody<string> Insert$Modulelogo$($EntityName$ model)
         {
@@ -39,7 +39,7 @@ namespace $Wcf_NameSpacePath$
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY,ResMsg.PARAMETERNOEMPTY,exception);
                     return retBody;
                 }
-                $ValidateEmpty$
+                $ValidateEmptyForInsert$
                 ValidateResModel res = ValidateData.ValidateNullOrEmpty<$EntityName$>(columnsList, model);
                 if (res != null && !res.IsValidate)
                 {
@@ -56,10 +56,8 @@ namespace $Wcf_NameSpacePath$
                 }
                 #endregion
 
-                model.delFlag = false;
-                model.createTime = model.lastModifyTime = DateTime.Now;
-
-                if ($TableAlias$BLL.Add(model)>0)
+				string creator="sys";
+                if ($TableAlias$BLL.Add(model,creator)>0)
                 {
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.SUCCESS, ResMsg.SUCCESS);
                 }
@@ -89,7 +87,7 @@ namespace $Wcf_NameSpacePath$
         /// <summary>
         /// 更新$ChinaComment$
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">要更新的$ChinaComment$实体</param>
         /// <returns></returns>
         public ReturnBody<string> Update$Modulelogo$($EntityName$ model)
         {
@@ -104,7 +102,7 @@ namespace $Wcf_NameSpacePath$
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY, exception.exceptionMsg, exception);
                     return retBody;
                 }
-                $ValidateEmpty$
+                $ValidateEmptyForUpdate$
                 ValidateResModel res = ValidateData.ValidateNullOrEmpty<$EntityName$>(columnsList, model);
                 if (res != null && !res.IsValidate)
                 {
@@ -122,7 +120,8 @@ namespace $Wcf_NameSpacePath$
 
                 #endregion
 
-                bool result=$TableAlias$BLL.Update(model);
+				string lastModifier="sys";
+                bool result=$TableAlias$BLL.Update(model,lastModifier);
                 if (result)
                 {
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.SUCCESS,ResMsg.SUCCESS);
@@ -245,7 +244,9 @@ namespace $Wcf_NameSpacePath$
                     return WIPCommon.GetReturnBody<bool>(ResCode.PARAMETERNOEMPTY,exception.exceptionMsg, exception);
                 }
                 #endregion
-                var result = $TableAlias$BLL.Delete(model.$PrimaryKey$.ToString());
+
+				string lastModifier="sys";
+                var result = $TableAlias$BLL.Delete(model.$PrimaryKey$.ToString(),lastModifier);
 				return WIPCommon.GetReturnBody<bool>(ResCode.SUCCESS, ResMsg.SUCCESS, result);
             }
             catch (Exception ex)

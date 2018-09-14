@@ -376,7 +376,7 @@ where obj.name='" + tableName + "'  ";
         public static string GetInputParamColumnsStrForUpdate(List<ColumnModel> columnNameList)
         {
             //构造新的List
-            columnNameList = GetNewColumnModelListForUpdateParameter(columnNameList);
+            columnNameList = ListHelper.RemoveCreator(columnNameList);
 
             StringBuilder sql = new StringBuilder();
             ColumnModel columnModel = null;
@@ -433,7 +433,7 @@ where obj.name='" + tableName + "'  ";
         public static string GetCols_AssignmentStrForUpdate(List<ColumnModel> columnNameList)
         {
             //构造新的List
-            columnNameList = GetNewColumnModelListForUpdateParameter(columnNameList);
+            columnNameList = ListHelper.RemoveCreator(columnNameList);
 
             StringBuilder sql = new StringBuilder();
             ColumnModel columnModel = null;
@@ -503,7 +503,7 @@ where obj.name='" + tableName + "'  ";
         public static string GetParameterForUpdateDAL(List<ColumnModel> columnNameList)
         {
             //构造新的List
-            columnNameList = GetNewColumnModelListForUpdateParameter(columnNameList);
+            columnNameList = ListHelper.RemoveCreator(columnNameList);
 
 
             StringBuilder paramSql = new StringBuilder();
@@ -523,115 +523,7 @@ where obj.name='" + tableName + "'  ";
             return paramSql.ToString();
         }
 
-        /// <summary>
-        /// 获取最新的列List集合ForUpdate(去掉 creator和createTime)
-        /// </summary>
-        /// <param name="columnNameList"></param>
-        /// <returns></returns>
-        private static List<ColumnModel> GetNewColumnModelListForUpdateParameter(List<ColumnModel> columnNameList)
-        {
-            //构造新的List
-            List<ColumnModel> newList = new List<ColumnModel>();
-            ColumnModel columnModel = null;
-            for (int i = 0; i < columnNameList.Count; i++)
-            {//需要去掉 创建人和创建时间
-                columnModel = columnNameList[i];
-                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper())
-                {
-                    continue;
-                }
-                newList.Add(columnModel);
-            }
-            return newList;
-        }
-
-
-        /// <summary>
-        ///  获取最新的列List集合ForQueryModel
-        /// </summary>
-        /// <param name="columnNameList"></param>
-        /// <returns></returns>
-        public static List<ColumnModel> GetNewColumnModelListForQueryModel(List<ColumnModel> columnNameList)
-        {
-            //构造新的List
-            List<ColumnModel> newList = new List<ColumnModel>();
-            ColumnModel columnModel = null;
-            for (int i = 0; i < columnNameList.Count; i++)
-            {//需要去掉 创建人和创建时间
-                columnModel = columnNameList[i];
-                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
-                   || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
-                   || columnModel.ColumnName.ToUpper() == "lastModifier".ToUpper()
-                   || columnModel.ColumnName.ToUpper() == "lastModifyTime".ToUpper()
-                   || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
-                   || columnModel.ColumnName.ToUpper() == "id".ToUpper()
-                   )
-                {
-                    continue;
-                }
-                newList.Add(columnModel);
-            }
-            return newList;
-        }
-
-
-        /// <summary>
-        /// 获取最新的列List集合ForUpdate(去掉 id delFlag,creator和createTime)
-        /// </summary>
-        /// <param name="columnNameList"></param>
-        /// <returns></returns>
-        private static List<ColumnModel> GetNewColumnModelListForVUEEdit(List<ColumnModel> columnNameList)
-        {
-            //构造新的List
-            List<ColumnModel> newList = new List<ColumnModel>();
-            ColumnModel columnModel = null;
-            for (int i = 0; i < columnNameList.Count; i++)
-            {//需要去掉 创建人和创建时间
-                columnModel = columnNameList[i];
-                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "lastModifier".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "lastModifyTime".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "id".ToUpper()
-                    )
-                {
-                    continue;
-                }
-                newList.Add(columnModel);
-            }
-            return newList;
-        }
-
-
-        /// <summary>
-        /// 获取最新的列List集合(去掉 id delFlag,creator和createTime)
-        /// </summary>
-        /// <param name="columnNameList"></param>
-        /// <returns></returns>
-        private static List<ColumnModel> GetNewColumnModelListForVUETableColumn(List<ColumnModel> columnNameList)
-        {
-            //构造新的List
-            List<ColumnModel> newList = new List<ColumnModel>();
-            ColumnModel columnModel = null;
-            for (int i = 0; i < columnNameList.Count; i++)
-            {//需要去掉 创建人和创建时间
-                columnModel = columnNameList[i];
-                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "delFlag".ToUpper()
-                    || columnModel.ColumnName.ToUpper() == "id".ToUpper()
-                    )
-                {
-                    continue;
-                }
-                newList.Add(columnModel);
-            }
-            return newList;
-        }
-
-
+       
 
 
         private static string GetSqlParameterStr(ColumnModel columnModel)
@@ -754,20 +646,30 @@ where obj.name='" + tableName + "'  ";
 
         #region WCF层验证文本
 
-        /// <summary>
+       /// <summary>
         /// 生成需要验证不为空的字符串
-        /// </summary>
-        /// <param name="columnModelList"></param>
-        /// <returns></returns>
-        public static string GetValidateEmptyStr(List<ColumnModel> columnModelList)
+       /// </summary>
+       /// <param name="columnModelList"></param>
+       /// <param name="isInsert">是否是新增</param>
+       /// <returns></returns>
+        public static string GetValidateEmptyStr(List<ColumnModel> columnModelList, bool isInsert = true)
         {
             StringBuilder sb = new StringBuilder();
             try
             {
+                List<ColumnModel> newList = null;
+                if (isInsert)
+                {//新增
+                    newList = ListHelper.RemoveAll(columnModelList);
+                }
+                else
+                {//更新
+                    newList = ListHelper.RemoveDelFlagCreatorModifier(columnModelList);
+                }
+                
                 sb.Append("                List<ColumnsModel> columnsList = new List<ColumnsModel>() { \n");
-                foreach (var columnModel in columnModelList)
+                foreach (var columnModel in newList)
                 {
-
                     string attr = columnModel.ColumnName;
                     //获取数据类型
                     DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
@@ -822,7 +724,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUETableColumn(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveId(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
@@ -861,7 +763,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("              <el-col :span=\"12\"> \n");
@@ -902,7 +804,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("          <el-form-item label=\"" + columnModel.Description + "\"> \n");
@@ -933,7 +835,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = GetNewColumnModelListForVUEEdit(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     string attr = columnModel.ColumnName;
