@@ -868,7 +868,7 @@ where obj.name='" + tableName + "'  ";
                         default:
                             break;
                     }
-                    
+
 
                     sb.Append("          </el-form-item> \n");
                 }
@@ -894,7 +894,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveIdCreatorModifier(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     string attr = columnModel.ColumnName;
@@ -912,6 +912,15 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("                { \n");
                             sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " LIKE '%\" + queryModel." + columnModel.ColumnName + " + \"%',\"; \n");
                             sb.Append("                } \n");
+                            break;
+                        case DataTypeEnum.dt_bit:
+                            sb.Append("                if (!string.IsNullOrEmpty(queryModel." + columnModel.ColumnName + ")) \n");
+                            sb.Append("                { \n");
+                            sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " = '\" + queryModel." + columnModel.ColumnName + " + \"',\"; \n");
+                            sb.Append("                } \n");
+                            break;
+                        case DataTypeEnum.dt_int:
+                            sb.Append("                strWhere += \" $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \",\"; \n");
                             break;
                         default:
                             break;
