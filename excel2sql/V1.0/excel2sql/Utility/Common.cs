@@ -1,4 +1,5 @@
 ﻿using Excel2SQL;
+using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,8 +15,6 @@ namespace GenerateModel
     /// </summary>
     public class Common
     {
-
-
         /// <summary>
         /// 当前时间字符串
         /// </summary>
@@ -146,6 +145,29 @@ namespace GenerateModel
             return sb.ToString();
         }
 
+        /// <summary>
+        /// 获取本次导入模板的所有代码集
+        /// </summary>
+        /// <param name="codeItemList"></param>
+        /// <returns></returns>
+        public static List<udtWip_CodeSets> GetCodeSetList(List<UdtWip_CodeItems> codeItemList)
+        {
+            List<udtWip_CodeSets> list = new List<udtWip_CodeSets>();
+            List<string> codeSetList = new List<string>();
+            foreach (var item in codeItemList)
+            {
+                if (!codeSetList.Contains(item.setCode))
+                {
+                    codeSetList.Add(item.setCode);
+                    list.Add(new udtWip_CodeSets()
+                    {
+                        code = item.setCode,
+                        name = item.codeName
+                    });
+                }
+            }
+            return list;
+        }
 
     }
 

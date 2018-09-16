@@ -25,15 +25,6 @@ namespace Maticsoft.Model{
             set{ _name = value; }
         }        
 		/// <summary>
-		/// 是否可用
-        /// </summary>		
-		private bool _visible;
-        public bool visible
-        {
-            get{ return _visible; }
-            set{ _visible = value; }
-        }        
-		/// <summary>
 		/// 说明
         /// </summary>		
 		private string _note;

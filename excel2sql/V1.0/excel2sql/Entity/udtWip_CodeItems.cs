@@ -51,12 +51,6 @@ namespace Excel2SQL
         public string setCode { get; set; }
 
         /// <summary>
-        /// 是否可用
-        /// </summary>
-        //[DataMember]
-        public bool visible { get; set; }
-
-        /// <summary>
         /// 说明
         /// </summary>
         //[DataMember]

@@ -66,6 +66,12 @@
     <Compile Include="Entity\ColumnEntity.cs" />
     <Compile Include="Entity\udtWip_CodeSets.cs" />
     <Compile Include="excel2sql.cs" />
+    <Compile Include="InitCodeItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitCodeItemForm.Designer.cs">
+      <DependentUpon>InitCodeItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Common.cs" />
     <Compile Include="Utility\TextHelper.cs" />
+    <EmbeddedResource Include="InitCodeItemForm.resx">
+      <DependentUpon>InitCodeItemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +119,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Templete\码表预制SQL模板.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templete\建表模板.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

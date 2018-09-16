@@ -51,7 +51,7 @@
             this.btn_InsertSQLForCodeTable.Name = "btn_InsertSQLForCodeTable";
             this.btn_InsertSQLForCodeTable.Size = new System.Drawing.Size(194, 67);
             this.btn_InsertSQLForCodeTable.TabIndex = 0;
-            this.btn_InsertSQLForCodeTable.Text = "码表生成InsertSQL";
+            this.btn_InsertSQLForCodeTable.Text = "生成码表预制SQL";
             this.btn_InsertSQLForCodeTable.UseVisualStyleBackColor = true;
             this.btn_InsertSQLForCodeTable.Click += new System.EventHandler(this.button1_Click);
             // 

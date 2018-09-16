@@ -36,38 +36,8 @@ namespace Excel2SQL
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string filePath = this.tb_FilePath.Text;
-            if (filePath == string.Empty)
-            {
-                MessageBox.Show("请选择Excel!");
-                return;
-            }
-
-            Dictionary<string, string> cellheader = new Dictionary<string, string> {
-                    { "OrderNo", "序号" },
-                    { "setCode", "代码编码" },
-                    { "codeName", "代码名称" },
-                    { "code", "代码项编码" },
-                    { "name", "代码项名称" },
-                    { "note", "说明" },
-                };
-
-            // 1.2解析文件，存放到一个List集合里
-            StringBuilder errorMsg = new StringBuilder(); // 错误信息
-            List<UdtWip_CodeItems> enlist = ExcelHelper.ExcelToEntityList<UdtWip_CodeItems>(cellheader, filePath, out errorMsg);
-            if (!string.IsNullOrEmpty(errorMsg.ToString()))
-            {
-                MessageBox.Show("错误:" + errorMsg.ToString());
-                return;
-            }
-            string fileStr=Excel2SQL.GetInsertSQLForCodeItems(enlist);
-
-
-            string createFilePath = @"D:\\C#AutoCreateCodeFile\Excel2SQL";
-            TextHelper.CreateFile(createFilePath,"codeItems.sql", fileStr);
-            MessageBox.Show("生成文件成功！");
-            //成功之后打开文件夹
-            using (System.Diagnostics.Process.Start(createFilePath)) { }
+            InitCodeItemForm initCodeItem = new InitCodeItemForm();
+            initCodeItem.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
