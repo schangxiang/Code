@@ -115,44 +115,44 @@ namespace WIP_DAL
 
         #endregion
 
-		#region LogicDel
+		#region Enable
 
         /// <summary>
-        /// 删除一条$ChinaComment$数据(逻辑删除)
+        /// 禁启用$ChinaComment$数据
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+		/// <param name="delFlag">禁用1/启用0</param>
 		/// <param name="lastModifier">最后修改人</param>
 		/// <param name="transModel">事务类</param>
-        /// <returns>是否删除成功</returns>
-        public bool LogicDel(string $PrimaryKey$,string lastModifier,TransactionModel transModel = null)
+        /// <returns>是否禁启用成功</returns>
+        public bool Enable(string $PrimaryKey$, string delFlag, string lastModifier, TransactionModel transModel = null)
         {
-
             StringBuilder strSql = new StringBuilder();
-			strSql.Append("UPDATE $TableName$  SET delflag='1' ");
-			strSql.Append(" lastModifier='"+lastModifier+"' ");
+            strSql.Append(" UPDATE $TableName$  SET delflag=@delFlag ");
+            strSql.Append(" ,lastModifier=@lastModifier ");
+            strSql.Append(" ,lastModifyTime=@lastModifyTime ");
             strSql.Append(" WHERE $PrimaryKey$=@$PrimaryKey$");
-            SqlParameter[] parameters = {
-                    new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50)
+            SqlParameter[] parameters = { 
+                    new SqlParameter("@delFlag", SqlDbType.NVarChar,10) ,
+                    new SqlParameter("@lastModifier", SqlDbType.NVarChar,20) ,
+                    new SqlParameter("@lastModifyTime", SqlDbType.DateTime) ,
+                    new SqlParameter("@$PrimaryKey$", SqlDbType.NVarChar,50) 
             };
-            parameters[0].Value = $PrimaryKey$;
+            parameters[0].Value = delFlag;
+            parameters[1].Value = lastModifier;
+            parameters[2].Value = DateTime.Now;
+            parameters[3].Value = $PrimaryKey$;
 
             int rows = 0;
-			if (transModel != null)
+            if (transModel != null)
             {
                 rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
-			}
-			else
-			{
-                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
-			}
-            if (rows > 0)
-            {
-                return true;
             }
             else
             {
-                return false;
+                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             }
+            return rows > 0 ? true : false;
         }
 
         #endregion

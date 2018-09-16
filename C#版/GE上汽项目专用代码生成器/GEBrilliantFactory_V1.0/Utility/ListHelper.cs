@@ -86,6 +86,33 @@ namespace GenerateCode_GEBrilliantFactory
             return newList;
         }
 
+
+        /// <summary>
+        /// 获取最新的列List集合(去掉 id、creator、createTime、lastModifier、lastModifyTime)
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <returns></returns>
+        public static List<ColumnModel> RemoveIdCreatorModifier(List<ColumnModel> columnNameList)
+        {
+            List<ColumnModel> newList = new List<ColumnModel>();
+            ColumnModel columnModel = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {
+                columnModel = columnNameList[i];
+                if (columnModel.ColumnName.ToUpper() == "creator".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "createTime".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "lastModifier".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "lastModifyTime".ToUpper()
+                    || columnModel.ColumnName.ToUpper() == "id".ToUpper()
+                    )
+                {
+                    continue;
+                }
+                newList.Add(columnModel);
+            }
+            return newList;
+        }
+
         /// <summary>
         /// 获取最新的列List集合(去掉 ID)
         /// </summary>

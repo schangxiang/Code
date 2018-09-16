@@ -523,7 +523,7 @@ where obj.name='" + tableName + "'  ";
             return paramSql.ToString();
         }
 
-       
+
 
 
         private static string GetSqlParameterStr(ColumnModel columnModel)
@@ -644,14 +644,14 @@ where obj.name='" + tableName + "'  ";
         }
 
 
-        #region WCF层验证文本
+        #region WCF层
 
-       /// <summary>
+        /// <summary>
         /// 生成需要验证不为空的字符串
-       /// </summary>
-       /// <param name="columnModelList"></param>
-       /// <param name="isInsert">是否是新增</param>
-       /// <returns></returns>
+        /// </summary>
+        /// <param name="columnModelList"></param>
+        /// <param name="isInsert">是否是新增</param>
+        /// <returns></returns>
         public static string GetValidateEmptyStr(List<ColumnModel> columnModelList, bool isInsert = true)
         {
             StringBuilder sb = new StringBuilder();
@@ -666,7 +666,7 @@ where obj.name='" + tableName + "'  ";
                 {//更新
                     newList = ListHelper.RemoveDelFlagCreatorModifier(columnModelList);
                 }
-                
+
                 sb.Append("                List<ColumnsModel> columnsList = new List<ColumnsModel>() { \n");
                 foreach (var columnModel in newList)
                 {
@@ -710,6 +710,44 @@ where obj.name='" + tableName + "'  ";
             }
         }
 
+        /// <summary>
+        /// 根据主键类型获取验证主键的字符串
+        /// </summary>
+        /// <param name="columnModelList"></param>
+        /// <param name="primaryKey"></param>
+        /// <returns></returns>
+        public static string GetValidateEmptyStrForPrimaryKey(List<ColumnModel> columnModelList, string primaryKey)
+        {
+            if (primaryKey.ToUpper() == "ID".ToUpper())
+            {
+                return "  model.id == 0 ";
+            }
+            foreach (var item in columnModelList)
+            {
+                if (item.ColumnName.ToUpper() == primaryKey.ToUpper())
+                {
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + item.DataType.ToString());
+                    switch (enumDT)
+                    {
+                        case DataTypeEnum.dt_char:
+                        case DataTypeEnum.dt_varchar:
+                        case DataTypeEnum.dt_Varchar_Desc:
+                        case DataTypeEnum.dt_uniqueidentifier:
+                        case DataTypeEnum.dt_Varchar_Ext_Link:
+                        case DataTypeEnum.dt_nvarchar:
+                            return "  string.IsNullOrEmpty(model.$PrimaryKey$) ";
+                        case DataTypeEnum.dt_int:
+                            return "  model.$PrimaryKey$ == 0 ";
+                        default:
+                            break;
+                    }
+                }
+            }
+            return "";
+        }
+
+
+
         #endregion
 
         #region VUE文件
@@ -735,7 +773,7 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("          </el-table-column> \n");
                             break;
                         case DataTypeEnum.dt_bit:
-                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" align=\"center\" :formatter=\"formatterBit\" > \n");
+                            sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" align=\"center\" :formatter=\"formatterDelFlag\" > \n");
                             sb.Append("          </el-table-column> \n");
                             break;
                         default:
@@ -763,7 +801,7 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveIdCreatorModifier(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("              <el-col :span=\"12\"> \n");
@@ -804,12 +842,33 @@ where obj.name='" + tableName + "'  ";
             StringBuilder sb = new StringBuilder();
             try
             {
-                List<ColumnModel> newList = ListHelper.RemoveAll(columnModelList);
+                List<ColumnModel> newList = ListHelper.RemoveIdCreatorModifier(columnModelList);
                 foreach (var columnModel in newList)
                 {
                     sb.Append("          <el-form-item label=\"" + columnModel.Description + "\"> \n");
 
-                    sb.Append("<el-input v-model=\"serachObj." + columnModel.ColumnName + "\" placeholder=\"请输入" + columnModel.Description + "\"></el-input>\n");
+                    //获取数据类型
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
+                    switch (enumDT)
+                    {
+                        case DataTypeEnum.dt_char:
+                        case DataTypeEnum.dt_varchar:
+                        case DataTypeEnum.dt_Varchar_Desc:
+                        case DataTypeEnum.dt_uniqueidentifier:
+                        case DataTypeEnum.dt_Varchar_Ext_Link:
+                        case DataTypeEnum.dt_nvarchar:
+                            sb.Append("<el-input v-model=\"serachObj." + columnModel.ColumnName + "\" placeholder=\"请输入" + columnModel.Description + "\"></el-input> \n");
+                            break;
+                        case DataTypeEnum.dt_bit:
+                            sb.Append("<el-checkbox-group v-model=\"ck_delflag\" @change=\"ckDelFlag\">\n");
+                            sb.Append("  <el-checkbox-button label=\"启用\" name=\"ck_delflag\"></el-checkbox-button>\n");
+                            sb.Append("  <el-checkbox-button label=\"禁用\" name=\"ck_delflag\"></el-checkbox-button>\n");
+                            sb.Append("</el-checkbox-group> \n");
+                            break;
+                        default:
+                            break;
+                    }
+                    
 
                     sb.Append("          </el-form-item> \n");
                 }

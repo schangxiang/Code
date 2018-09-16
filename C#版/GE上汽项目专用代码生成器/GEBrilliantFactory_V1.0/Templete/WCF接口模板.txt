@@ -16,7 +16,7 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "insert$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string Insert$Modulelogo$0($EntityName$ model);
+        string Insert$Modulelogo$0();
 
         #endregion
 
@@ -28,7 +28,7 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "update$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string Update$Modulelogo$0($EntityName$ model);
+        string Update$Modulelogo$0();
 
         #endregion
 
@@ -52,19 +52,19 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "getSingle$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string GetSingle$Modulelogo$0(Query$Modulelogo$Model model);
+        string GetSingle$Modulelogo$0();
 
         #endregion
 
-		#region É¾³ý$ChinaComment$
+		#region ½ûÆôÓÃ$ChinaComment$
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "del$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        ReturnBody<bool> Del$Modulelogo$(Query$Modulelogo$Model model);
+        [WebInvoke(Method = "POST", UriTemplate = "enable$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Model model);
 
         [OperationContract]
-        [WebInvoke(Method = "OPTIONS", UriTemplate = "del$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string Del$Modulelogo$0(Query$Modulelogo$Model model);
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "enable$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Enable$Modulelogo$0();
 
         #endregion
     }

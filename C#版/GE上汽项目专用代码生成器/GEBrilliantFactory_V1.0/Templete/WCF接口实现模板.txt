@@ -75,7 +75,7 @@ namespace $Wcf_NameSpacePath$
                 return retBody;
             }
         }
-        public string Insert$Modulelogo$0($EntityName$ model)
+        public string Insert$Modulelogo$0()
         {
             return "OK";
         }
@@ -96,7 +96,7 @@ namespace $Wcf_NameSpacePath$
             try
             {
                 #region 验证
-                if (model == null || model.id==0)
+                if (model == null || $ValidateEmptyStrForPrimaryKey$ )
                 {
 				    exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY, exception.exceptionMsg, exception);
@@ -140,7 +140,7 @@ namespace $Wcf_NameSpacePath$
                 return retBody;
             }
         }
-        public string Update$Modulelogo$0($EntityName$ model)
+        public string Update$Modulelogo$0()
         {
             return "OK";
         }
@@ -194,7 +194,7 @@ namespace $Wcf_NameSpacePath$
             try
             {
                 #region 验证
-                if (model == null || string.IsNullOrEmpty(model.$PrimaryKey$))
+                if (model == null || $ValidateEmptyStrForPrimaryKey$ )
                 {
 					exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
                     return WIPCommon.GetReturnBody<$EntityName$>(ResCode.PARAMETERNOEMPTY,exception.exceptionMsg, exception);
@@ -216,7 +216,7 @@ namespace $Wcf_NameSpacePath$
         }
 
 
-        public string GetSingle$Modulelogo$0(Query$Modulelogo$Model model)
+        public string GetSingle$Modulelogo$0()
         {
             return "ok";
         }
@@ -224,21 +224,21 @@ namespace $Wcf_NameSpacePath$
 
         #endregion
 
-		#region 删除$ChinaComment$
+		#region 禁启用$ChinaComment$
 
 
         /// <summary>
-        /// 删除$ChinaComment$
+        /// 禁启用$ChinaComment$
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public ReturnBody<bool> Del$Modulelogo$($EntityName$ model)
+        public ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Model model)
         {
-		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("Del$Modulelogo$", model);
+		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("Enable$Modulelogo$", model);
             try
             {
                 #region 验证
-                if (model == null || string.IsNullOrEmpty(model.$PrimaryKey$))
+                if (model == null || $ValidateEmptyStrForPrimaryKey$ )
                 {
 					exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
                     return WIPCommon.GetReturnBody<bool>(ResCode.PARAMETERNOEMPTY,exception.exceptionMsg, exception);
@@ -246,7 +246,7 @@ namespace $Wcf_NameSpacePath$
                 #endregion
 
 				string lastModifier="sys";
-                var result = $TableAlias$BLL.Delete(model.$PrimaryKey$.ToString(),lastModifier);
+                var result = $TableAlias$BLL.Enable(model.$PrimaryKey$.ToString(),model.delFlag,lastModifier);
 				return WIPCommon.GetReturnBody<bool>(ResCode.SUCCESS, ResMsg.SUCCESS, result);
             }
             catch (Exception ex)
@@ -256,8 +256,7 @@ namespace $Wcf_NameSpacePath$
             }
         }
 
-
-        public string Del$Modulelogo$0(Query$Modulelogo$Model model)
+        public string Enable$Modulelogo$0()
         {
             return "ok";
         }

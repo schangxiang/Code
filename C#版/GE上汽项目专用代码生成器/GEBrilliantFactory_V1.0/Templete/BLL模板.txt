@@ -63,17 +63,19 @@ namespace WIP_BLL
 
         #endregion
 
-		#region LogicDel
+		#region Enable
 
         /// <summary>
-        /// 删除一条$ChinaComment$数据(逻辑删除)
+        /// 禁启用$ChinaComment$数据
         /// </summary>
         /// <param name="$PrimaryKey$">$PrimaryKeyDesc$</param>
+		/// <param name="delFlag">禁用1/启用0</param>
 		/// <param name="lastModifier">最后修改人</param>
-        /// <returns>是否删除成功</returns>
-        public bool LogicDel(string $PrimaryKey$,string lastModifier)
+		/// <param name="transModel">事务类</param>
+        /// <returns>是否禁启用成功</returns>
+        public bool Enable(string $PrimaryKey$, string delFlag, string lastModifier)
         {
-            return $TableAlias$DAL.LogicDel($PrimaryKey$,lastModifier);
+            return $TableAlias$DAL.Enable($PrimaryKey$,delFlag,lastModifier);
         }
 
         #endregion

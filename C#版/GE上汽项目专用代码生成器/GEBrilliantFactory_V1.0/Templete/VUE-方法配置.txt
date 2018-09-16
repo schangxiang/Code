@@ -38,13 +38,13 @@ export function insert$Modulelogo$ (data) {
     timeout: defaultTimeout
   })
 }
-// É¾³ý$ChinaComment$
-export function del$Modulelogo$ (data) {
+// ½ûÆôÓÃ$ChinaComment$
+export function enable$Modulelogo$ (data) {
   return service({
     method: 'post',
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
-    url: '/$RoutePrefix$/del$Modulelogo$',
+    url: '/$RoutePrefix$/enable$Modulelogo$',
     timeout: defaultTimeout
   })
 }
