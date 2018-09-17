@@ -25,26 +25,17 @@ namespace GenerateCode_GEBrilliantFactory
             string createPerson, string chinaComment, string entityName
             )
         {
-            string header = @"/*
- * FileName：$entityName$.cs
- * FileDesc：" + chinaComment + @"实体类
- * CreateTime：$NowTimeStr$
- * Author：$CreatePerson$
- *
- * <更新记录>
- * ver 1.0.0.0   $NowTimeStr$ 新規作成 (by $CreatePerson$)
- */ ";
-            header += "\n using System;\n"
-                        + "using System.Runtime.Serialization; \n"
-                        + "                   \n"
-                        + "namespace WIP_Models \n"
-                        + "{\n"
-                        + "    /// <summary>\n"
-                        + "    /// " + chinaComment + "实体类\n"
-                        + "    /// </summary>\n"
-                        + "    [DataContract]\n"
-                        + "    public class $entityName$ \n"
-                        + "    {\n\n";
+            string header = "using System;\n"
+                         + "using System.Runtime.Serialization; \n"
+                         + "                   \n"
+                         + "namespace WIP_Models \n"
+                         + "{\n"
+                         + "    /// <summary>\n"
+                         + "    /// " + chinaComment + "实体类\n"
+                         + "    /// </summary>\n"
+                         + "    [DataContract]\n"
+                         + "    public class $entityName$ \n"
+                         + "    {\n\n";
             int columnCount = columnNameList.Count;
             string attrString = "";
             for (int i = 0; i < columnCount; ++i)
@@ -66,7 +57,7 @@ namespace GenerateCode_GEBrilliantFactory
 
         }
 
-      
+
 
 
     }
