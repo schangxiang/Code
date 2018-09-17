@@ -30,41 +30,47 @@ namespace Excel2SQL
                 {
                     if (string.IsNullOrEmpty(item.code))
                         continue;
-                    sb.Append(" DELETE udtWip_CodeSets WHERE code='" + item.code + "'; \n");
-                    sb.Append(" DELETE udtWip_CodeItems WHERE setCode='" + item.code + "'; \n");
-                    sb.Append(" GO \n");
-                    sb.Append("  INSERT INTO udtWip_CodeSets ([code], [name],[note], [delFlag], [creator], [createTime], [lastModifier], [lastModifyTime]) ");
-                    sb.Append("	VALUES(");
-                    sb.Append("'" + item.code + "',");
-                    sb.Append("'" + item.name + "',");
-                    sb.Append("'" + item.note + "',");
-                    sb.Append("'0',");
-                    sb.Append("'sys',");
-                    sb.Append("getdate(),");
-                    sb.Append("'sys',");
-                    sb.Append("getdate()");
-                    sb.Append("	) \n");
-                    sb.Append(" GO \n");
+                    sb.Append("------------------------------------  \n");
+                    sb.Append("--用途：初始化码表["+item.name+"]  \n");
+                    sb.Append("--说明：预制码表[" + item.name + "]数据   \n");
+                    sb.Append("--作者: shaocx   \n");
+                    sb.Append("--时间："+Common.GetCurDate()+"   \n");
+                    sb.Append("------------------------------------   \n");
+                    sb.Append("DELETE udtWip_CodeSets WHERE code='" + item.code + "'; \n");
+                    sb.Append("DELETE udtWip_CodeItems WHERE setCode='" + item.code + "'; \n");
+                    sb.Append("GO \n");
+                    sb.Append("INSERT INTO udtWip_CodeSets ([code], [name],[note], [delFlag], [creator], [createTime], [lastModifier], [lastModifyTime])");
+                    sb.Append(" VALUES(");
+                    sb.Append(" N'" + item.code + "',");
+                    sb.Append(" N'" + item.name + "',");
+                    sb.Append(" N'" + item.note + "',");
+                    sb.Append(" '0',");
+                    sb.Append(" N'sys',");
+                    sb.Append(" getdate(),");
+                    sb.Append(" N'sys',");
+                    sb.Append(" getdate() ); \n");
+
+                    sb.Append("GO \n");
+                    //生成项
+                    foreach (var entity in codeItemList)
+                    {
+                        if (string.IsNullOrEmpty(entity.setCode) || entity.setCode != item.code)
+                            continue;
+                        sb.Append(@"INSERT INTO udtWip_CodeItems ([code], [name], [setCode],[note], [delFlag], [creator], [createTime], [lastModifier], [lastModifyTime])");
+                        sb.Append(" VALUES(");
+                        sb.Append(" N'" + entity.code + "',");
+                        sb.Append(" N'" + entity.name + "',");
+                        sb.Append(" N'" + entity.setCode + "',");
+                        sb.Append(" N'" + entity.note + "',");
+                        sb.Append(" '0',");
+                        sb.Append(" N'sys',");
+                        sb.Append(" getdate(),");
+                        sb.Append(" N'sys',");
+                        sb.Append(" getdate() ); \n");
+                    }
+                    sb.Append("GO \n\n\n\n");
                 }
-                sb.Append(" GO \n");
-                foreach (var entity in codeItemList)
-                {
-                    if (string.IsNullOrEmpty(entity.setCode))
-                        continue;
-                    sb.Append(@"INSERT INTO udtWip_CodeItems(setCode,code,name,note,delFlag,Creator, CreateTime, LastModifier, LastModifyTime  	)");
-                    sb.Append("	VALUES(");
-                    sb.Append("'" + entity.setCode + "',");
-                    sb.Append("'" + entity.code + "',");
-                    sb.Append("'" + entity.name + "',");
-                    sb.Append("'" + entity.note + "',");
-                    sb.Append("'0',");
-                    sb.Append("'sys',");
-                    sb.Append("getdate(),");
-                    sb.Append("'sys',");
-                    sb.Append("getdate()");
-                    sb.Append("	) \n");
-                    sb.Append(" GO \n");
-                }
+
                 var bb = sb.ToString();
                 return bb;
             }
