@@ -38,7 +38,7 @@ namespace Excel2SQL
 
             // 1.2解析文件，存放到一个List集合里
             StringBuilder errorMsg = new StringBuilder(); // 错误信息
-            List<UdtWip_CodeItems> enlist = ExcelHelper.ExcelToEntityList<UdtWip_CodeItems>(cellheader, filePath, out errorMsg);
+            List<UdtWip_CodeItems> enlist = ExcelHelper.ExcelToEntityListForInitCodeItems<UdtWip_CodeItems>(cellheader, filePath,out errorMsg);
             if (!string.IsNullOrEmpty(errorMsg.ToString()))
             {
                 MessageBox.Show("错误:" + errorMsg.ToString());

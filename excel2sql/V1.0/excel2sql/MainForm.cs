@@ -69,19 +69,15 @@ namespace Excel2SQL
                     return;
                 }
                 string author = this.tb_Author.Text;
-                string tableName = this.tb_TableName.Text;
-                string tableChinaName = this.tb_ChinaName.Text;
+                //string tableName = this.tb_TableName.Text;
+                //string tableChinaName = this.tb_ChinaName.Text;
                 string unqiueIndex = this.tb_UniqueIndex.Text;
                 string primaryKey = this.tb_PrimaryKey.Text.Trim();
                 if (primaryKey == "")
                 {
                     primaryKey = "id";
                 }
-                if (tableName == string.Empty)
-                {
-                    MessageBox.Show("请输入表名!");
-                    return;
-                }
+                
 
                 Dictionary<string, string> cellheader = new Dictionary<string, string> {
                     { "OrderNo", "序号" },
@@ -94,7 +90,8 @@ namespace Excel2SQL
 
                 // 1.2解析文件，存放到一个List集合里
                 StringBuilder errorMsg = new StringBuilder(); // 错误信息
-                List<ColumnEntity> enlist = ExcelHelper.ExcelToEntityList<ColumnEntity>(cellheader, filePath, out errorMsg);
+                string tableDesc = "", tableName = "";
+                List<ColumnEntity> enlist = ExcelHelper.ExcelToEntityListForCreateTable<ColumnEntity>(cellheader, filePath,out tableDesc,out tableName, out errorMsg);
                 if (!string.IsNullOrEmpty(errorMsg.ToString()))
                 {
                     MessageBox.Show("错误:" + errorMsg.ToString());
@@ -104,7 +101,7 @@ namespace Excel2SQL
                 {
                     string text = TextHelper.ReadText(@"Templete\建表模板.txt");
                     text = text.Replace("$TableName$", tableName);
-                    text = text.Replace("$TableChinaDesc$", tableChinaName);
+                    text = text.Replace("$TableChinaDesc$", tableDesc);
                     text = text.Replace("$Author$", author);
                     text = text.Replace("$CreateTime$", Common.GetCurDate());
                     text = text.Replace("$PrimaryKey$", primaryKey);

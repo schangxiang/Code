@@ -32,10 +32,6 @@
             this.btn_CreateTable = new System.Windows.Forms.Button();
             this.btn_SelectFile = new System.Windows.Forms.Button();
             this.tb_FilePath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tb_TableName = new System.Windows.Forms.TextBox();
-            this.tb_ChinaName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tb_Author = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_UniqueIndex = new System.Windows.Forms.TextBox();
@@ -47,9 +43,9 @@
             // 
             // btn_InsertSQLForCodeTable
             // 
-            this.btn_InsertSQLForCodeTable.Location = new System.Drawing.Point(368, 144);
+            this.btn_InsertSQLForCodeTable.Location = new System.Drawing.Point(307, 299);
             this.btn_InsertSQLForCodeTable.Name = "btn_InsertSQLForCodeTable";
-            this.btn_InsertSQLForCodeTable.Size = new System.Drawing.Size(194, 67);
+            this.btn_InsertSQLForCodeTable.Size = new System.Drawing.Size(239, 67);
             this.btn_InsertSQLForCodeTable.TabIndex = 0;
             this.btn_InsertSQLForCodeTable.Text = "生成码表预制SQL";
             this.btn_InsertSQLForCodeTable.UseVisualStyleBackColor = true;
@@ -57,7 +53,7 @@
             // 
             // btn_CreateTable
             // 
-            this.btn_CreateTable.Location = new System.Drawing.Point(21, 378);
+            this.btn_CreateTable.Location = new System.Drawing.Point(42, 299);
             this.btn_CreateTable.Name = "btn_CreateTable";
             this.btn_CreateTable.Size = new System.Drawing.Size(219, 67);
             this.btn_CreateTable.TabIndex = 1;
@@ -83,41 +79,9 @@
             this.tb_FilePath.Size = new System.Drawing.Size(568, 21);
             this.tb_FilePath.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "表名：";
-            // 
-            // tb_TableName
-            // 
-            this.tb_TableName.Location = new System.Drawing.Point(138, 141);
-            this.tb_TableName.Name = "tb_TableName";
-            this.tb_TableName.Size = new System.Drawing.Size(176, 21);
-            this.tb_TableName.TabIndex = 5;
-            // 
-            // tb_ChinaName
-            // 
-            this.tb_ChinaName.Location = new System.Drawing.Point(138, 184);
-            this.tb_ChinaName.Name = "tb_ChinaName";
-            this.tb_ChinaName.Size = new System.Drawing.Size(176, 21);
-            this.tb_ChinaName.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "表中文名：";
-            // 
             // tb_Author
             // 
-            this.tb_Author.Location = new System.Drawing.Point(138, 320);
+            this.tb_Author.Location = new System.Drawing.Point(136, 238);
             this.tb_Author.Name = "tb_Author";
             this.tb_Author.Size = new System.Drawing.Size(176, 21);
             this.tb_Author.TabIndex = 9;
@@ -125,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 323);
+            this.label3.Location = new System.Drawing.Point(62, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 8;
@@ -133,7 +97,7 @@
             // 
             // tb_UniqueIndex
             // 
-            this.tb_UniqueIndex.Location = new System.Drawing.Point(138, 269);
+            this.tb_UniqueIndex.Location = new System.Drawing.Point(136, 187);
             this.tb_UniqueIndex.Name = "tb_UniqueIndex";
             this.tb_UniqueIndex.Size = new System.Drawing.Size(176, 21);
             this.tb_UniqueIndex.TabIndex = 11;
@@ -141,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 272);
+            this.label4.Location = new System.Drawing.Point(62, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 10;
@@ -149,7 +113,7 @@
             // 
             // tb_PrimaryKey
             // 
-            this.tb_PrimaryKey.Location = new System.Drawing.Point(138, 224);
+            this.tb_PrimaryKey.Location = new System.Drawing.Point(136, 142);
             this.tb_PrimaryKey.Name = "tb_PrimaryKey";
             this.tb_PrimaryKey.Size = new System.Drawing.Size(176, 21);
             this.tb_PrimaryKey.TabIndex = 13;
@@ -157,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 227);
+            this.label5.Location = new System.Drawing.Point(62, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 12;
@@ -165,7 +129,7 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(308, 378);
+            this.btn_Exit.Location = new System.Drawing.Point(174, 398);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(219, 67);
             this.btn_Exit.TabIndex = 14;
@@ -185,10 +149,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_Author);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tb_ChinaName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_TableName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_FilePath);
             this.Controls.Add(this.btn_SelectFile);
             this.Controls.Add(this.btn_CreateTable);
@@ -207,10 +167,6 @@
         private System.Windows.Forms.Button btn_CreateTable;
         private System.Windows.Forms.Button btn_SelectFile;
         private System.Windows.Forms.TextBox tb_FilePath;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_TableName;
-        private System.Windows.Forms.TextBox tb_ChinaName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_Author;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_UniqueIndex;
