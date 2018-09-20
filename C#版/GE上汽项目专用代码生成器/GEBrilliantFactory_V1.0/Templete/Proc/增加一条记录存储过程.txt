@@ -18,5 +18,5 @@ $insert_cols_params$
 	$insert_cols_values$
 	)
 	SET @id = @@IDENTITY
-
+	RETURN @id
 GO

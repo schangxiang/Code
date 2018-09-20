@@ -462,167 +462,182 @@
         </member>
         <member name="T:WIP_Models.UdtEcm_HeatTreamentTimeData">
             <summary>
-            热处理工艺过程表实体类
-            </summary>
-        </member>
-        <member name="T:WIP_Models.AttachProcParam">
-            <summary>
-            索引数据参数
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.line">
-            <summary>
-            生产线号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.loadNumber">
-            <summary>
-            ECM生产炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.eventCode">
-            <summary>
-            事件代码
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.year">
-            <summary>
-            年份
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.month">
-            <summary>
-            月份
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.partNumber">
-            <summary>
-            零件号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.recipeNumber">
-            <summary>
-            工艺指令号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.heatingEntryDate">
-            <summary>
-            heatingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.heatingExitDate">
-            <summary>
-            heatingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.heatingNumber">
-            <summary>
-            heatingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.iCBPEntryDate">
-            <summary>
-            iCBPEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.iCBPExitDate">
-            <summary>
-            iCBPExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.iCBPNumber">
-            <summary>
-            iCBPNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.lineEntryDate">
-            <summary>
-            lineEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.lineExitDate">
-            <summary>
-            lineExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.preHeatingEntryDate">
-            <summary>
-            preHeatingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.preHeatingExitDate">
-            <summary>
-            preHeatingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.preHeatingNumber">
-            <summary>
-            preHeatingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.quenchingEntryDate">
-            <summary>
-            quenchingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.quenchingExitDate">
-            <summary>
-            quenchingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.quenchingNumber">
-            <summary>
-            quenchingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.temperingNumber">
-            <summary>
-            temperingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.temperingEntryDate">
-            <summary>
-            temperingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.temperingExitDate">
-            <summary>
-            temperingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.washingEntryDate">
-            <summary>
-            washingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.washingExitDate">
-            <summary>
-            washingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.washingNumber">
-            <summary>
-            washingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.coollingEntryDate">
-            <summary>
-            coollingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.coollingExitDate">
-            <summary>
-            coollingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.AttachProcParam.coollingNumber">
-            <summary>
-            coollingNumber
+            热处理工艺过程实体类
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.id">
             <summary>
             主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.line">
+            <summary>
+            生产线号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.loadNumber">
+            <summary>
+            ECM生产炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.eventCode">
+            <summary>
+            事件代码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.partNumber">
+            <summary>
+            零件号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.recipeNumber">
+            <summary>
+            工艺指令号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingEntryDate">
+            <summary>
+            heatingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingRouteStartDate">
+            <summary>
+            heatingRouteStartDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingRouteEndDate">
+            <summary>
+            heatingRouteEndDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingExitDate">
+            <summary>
+            heatingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingNumber">
+            <summary>
+            heatingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPEntryDate">
+            <summary>
+            iCBPEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPExitDate">
+            <summary>
+            iCBPExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPNumber">
+            <summary>
+            iCBPNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.lineEntryDate">
+            <summary>
+            lineEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.lineExitDate">
+            <summary>
+            lineExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingEntryDate">
+            <summary>
+            preHeatingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingExitDate">
+            <summary>
+            preHeatingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingRouteStartDate">
+            <summary>
+            preHeatingRouteStartDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingRouteEndDate">
+            <summary>
+            preHeatingRouteEndDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingNumber">
+            <summary>
+            preHeatingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingEntryDate">
+            <summary>
+            quenchingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingExitDate">
+            <summary>
+            quenchingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingNumber">
+            <summary>
+            quenchingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingNumber">
+            <summary>
+            temperingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingEntryDate">
+            <summary>
+            temperingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingExitDate">
+            <summary>
+            temperingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingEntryDate">
+            <summary>
+            washingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingExitDate">
+            <summary>
+            washingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingNumber">
+            <summary>
+            washingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingEntryDate">
+            <summary>
+            coollingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingExitDate">
+            <summary>
+            coollingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingNumber">
+            <summary>
+            coollingNumber
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.delFlag">
@@ -662,37 +677,32 @@
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.headId">
             <summary>
-            工艺参数卡主键
+            自增标识/Record ID
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.totaltime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Heat_totaltime">
             <summary>
-            渗碳总时间/Carburising total datetime
+            加热总时间/Heating total datetime
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.SequenceNO">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Heat_SequenceNO">
             <summary>
-            渗碳顺序号/Carburising sequence number
+            加热顺序号/Heating sequence number
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Carburising_Time">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Heat_Temperature">
             <summary>
-            渗碳时间/Carburising datetime
+            加热温度/Heating Temperature
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.C2H2_Flow">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Heat_Duration">
             <summary>
-            乙炔流量/C2H2 Flow
+            持续时间/Duration
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Carb_Ni_Flow">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Heat_pressure">
             <summary>
-            渗碳室吹扫氮气流量NL/h
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Diffusion_Time">
-            <summary>
-            扩散时间/Diffusion datetime
+            压力/Pressure
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.delFlag">
@@ -962,7 +972,7 @@
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.totaltime">
             <summary>
-            淬火总时间/Quenching total datetime 【接收的是分钟，最终保存的是秒】
+            淬火总时间/Quenching total datetime
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.SequenceNO">
@@ -1022,7 +1032,7 @@
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.totaltime">
             <summary>
-            淬火总时间/Quenching total datetime 【接收的是分钟，最终保存的是秒】
+            淬火总时间/Quenching total datetime
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.SequenceNO">
@@ -2143,7 +2153,7 @@
         </member>
         <member name="P:WIP_Models.UdtWip_IssueTaskFlag.isAllowIssue">
             <summary>
-            是否允许下发 (0 不允许 1允许)
+            是否允许下发(这个标记貌似没用)
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_IssueTaskFlag.delFlag">
@@ -2924,126 +2934,6 @@
         <member name="P:WIP_Models.UdtWip_ScheduleTask.lastModifyTime">
             <summary>
             修改时间
-            </summary>
-        </member>
-        <member name="T:WIP_Models.UdtWip_SteelInfo">
-            <summary>
-            钢原材料数据实体类
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.id">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.typeOfSteels">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.steelsHeatNo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.size">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.hardenability">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.C">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Mn">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.P">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.S">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Si">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.AI">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Cr">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Cu">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Mo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Ni">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.V">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.Ti">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.B">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.delFlag">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.creator">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.createTime">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.lastModifier">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtWip_SteelInfo.lastModifyTime">
-            <summary>
-            
             </summary>
         </member>
         <member name="T:WIP_Models.UdtWip_StorageTableExchange">
@@ -3881,6 +3771,11 @@
             加热入口
             </summary>
         </member>
+        <member name="F:WIP_Models.EventCodeEnum.PreheatingRouteStart">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WIP_Models.MaterialStatus">
             <summary>
             物料状态枚举
@@ -3951,44 +3846,24 @@
             基础数据同步参数类
             </summary>
         </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.materialCode">
-            <summary>
-            物料编码（进热MES物料号）
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.heatingInCode">
-            <summary>
-            物料编码（进热MES物料号）
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.heatingOutCode">
-            <summary>
-            出热MES物料号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.materailName">
-            <summary>
-            物料名称
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.materialDesc">
-            <summary>
-            物料描述
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.source">
-            <summary>
-            物料来源
-            </summary>
-        </member>
         <member name="P:WIP_Models.BaseDataSynParamModel.partNumber">
             <summary>
-            零件图号
+            零件号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.partName">
+            <summary>
+            零件名称
             </summary>
         </member>
         <member name="P:WIP_Models.BaseDataSynParamModel.material">
             <summary>
             材料
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.Line">
+            <summary>
+            生产线
             </summary>
         </member>
         <member name="P:WIP_Models.BaseDataSynParamModel.gearModulus">
@@ -4031,44 +3906,9 @@
             装夹方式
             </summary>
         </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE1">
+        <member name="P:WIP_Models.BaseDataSynParamModel.loadQuantity">
             <summary>
-            1号线装炉数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE2">
-            <summary>
-            2号线装炉数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE3">
-            <summary>
-            3号线装炉数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE4">
-            <summary>
-            4号线装炉数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE5">
-            <summary>
-            5号线装炉数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.classification">
-            <summary>
-            DCT250或者GFX
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.direction">
-            <summary>
-            物料出热后方向(下道)
-            </summary>
-        </member>
-        <member name="P:WIP_Models.BaseDataSynParamModel.directionHeating">
-            <summary>
-            物料出ECM后的去向(缓存区去向：B 热后立库去向：W)
+            装炉数量
             </summary>
         </member>
         <member name="T:WIP_Models.GetAllCodeItemsByCodeSetParam">
@@ -4155,6 +3995,11 @@
             <summary>
             渗碳数据 实体类
             </summary>
+        </member>
+        <member name="T:WIP_Models.QueryHeatTreamentTimeDataModel">
+            <summary> 
+            查询热处理工艺过程表类 
+            </summary> 
         </member>
         <member name="T:WIP_Models.GetAGVParamForPreheating">
             <summary>
@@ -4429,81 +4274,6 @@
         <member name="P:WIP_Models.TaskModel.lastModifyTime">
             <summary>
             修改时间
-            </summary>
-        </member>
-        <member name="T:WIP_Models.ProcessCardInfoForHeatAfter">
-            <summary>
-            流转卡信息实体类(热处理完毕后)
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.processCardNumber">
-            <summary>
-            流转卡号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.partNumber">
-            <summary>
-            零件图号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.partName">
-            <summary>
-            零件名称
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.endProductNumber">
-            <summary>
-            成品零件编号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.quantity">
-            <summary>
-            数量
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.furnaceNumber">
-            <summary>
-            正火炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.materialFurnaceNumber">
-            <summary>
-            材料炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.batchNumber">
-            <summary>
-            批次号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.shipDate">
-            <summary>
-            发货日期
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.loadNumber">
-            <summary>
-            热处理炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.heatingNumber">
-            <summary>
-            加热炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.line">
-            <summary>
-            线体号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.packageNumber">
-            <summary>
-            包装卡号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.pilotNo">
-            <summary>
-            试生产号
             </summary>
         </member>
         <member name="T:WIP_Models.QueryCodeItemsModel">

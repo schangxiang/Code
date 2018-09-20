@@ -119,9 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\Newtonsoft.Json.dll" />
+    <Content Include="EntityDLL\WIP_Models.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityDLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
