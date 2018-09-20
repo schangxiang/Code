@@ -34,6 +34,11 @@
             最后修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.ColumnsModel">
+            <summary>
+            实体类Model
+            </summary>
+        </member>
         <member name="P:WIP_Models.ColumnsModel.ChinaName">
             <summary>
             中文名
@@ -47,6 +52,21 @@
         <member name="P:WIP_Models.ColumnsModel.DataType">
             <summary>
             数据类型 
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ColumnsModel.IsNullable">
+            <summary>
+            是否可为null
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PrintStruct">
+            <summary>
+            打印常量
+            </summary>
+        </member>
+        <member name="F:WIP_Models.PrintStruct.QRCODE">
+            <summary>
+            二维码标记
             </summary>
         </member>
         <member name="T:WIP_Models.ExceptionParam`1">
@@ -77,6 +97,51 @@
         <member name="P:WIP_Models.ExceptionParam`1.extend2">
             <summary>
             扩展参数2
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PropertyUpdateParam">
+            <summary>
+            更新类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PropertyUpdateParam.ProperParamList">
+            <summary>
+            更新条件参数类集合
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PropertyUpdateParam.TableName">
+            <summary>
+            要更新的表名
+            </summary>
+        </member>
+        <member name="T:WIP_Models.StateLibrary">
+            <summary>
+            立库信息
+            </summary>
+        </member>
+        <member name="F:WIP_Models.StateLibrary.PreHeat">
+            <summary>
+            热前立库
+            </summary>
+        </member>
+        <member name="F:WIP_Models.StateLibrary.PostHeat">
+            <summary>
+            热后立库
+            </summary>
+        </member>
+        <member name="T:WIP_Models.StateLibraryText">
+            <summary>
+            立库信息文本
+            </summary>
+        </member>
+        <member name="F:WIP_Models.StateLibraryText.PreHeat">
+            <summary>
+            热前立库
+            </summary>
+        </member>
+        <member name="F:WIP_Models.StateLibraryText.PostHeat">
+            <summary>
+            热后立库
             </summary>
         </member>
         <member name="T:WIP_Models.ResultModel`1">
@@ -119,22 +184,22 @@
             数量
             </summary>
         </member>
-        <member name="T:WIP_Models.Models.GetBatchNumberResultModel">
+        <member name="T:WIP_Models.GetBatchNumberResultModel">
             <summary>
             生成批次号结果类
             </summary>
         </member>
-        <member name="P:WIP_Models.Models.GetBatchNumberResultModel.processCardNumber">
+        <member name="P:WIP_Models.GetBatchNumberResultModel.processCardNumber">
             <summary>
             流转卡号
             </summary>
         </member>
-        <member name="P:WIP_Models.Models.GetBatchNumberResultModel.partNumber">
+        <member name="P:WIP_Models.GetBatchNumberResultModel.partNumber">
             <summary>
             零件图号
             </summary>
         </member>
-        <member name="P:WIP_Models.Models.GetBatchNumberResultModel.quantity">
+        <member name="P:WIP_Models.GetBatchNumberResultModel.quantity">
             <summary>
             数量
             </summary>
@@ -167,6 +232,16 @@
         <member name="P:WIP_Models.PageResultModel`1.rows">
             <summary>
             数据列表
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PropertyParam">
+            <summary>
+            更新条件参数类
+            </summary>
+        </member>
+        <member name="M:WIP_Models.PropertyParam.#ctor">
+            <summary>
+            更新条件参数类无参构造函数
             </summary>
         </member>
         <member name="P:WIP_Models.PropertyParam.IsWhereFilter">
@@ -315,254 +390,239 @@
             验证提示结果
             </summary>
         </member>
-        <member name="T:WIP_Models.UdtECM_EquipmentWarn">
+        <member name="T:WIP_Models.UdtEcm_EquipmentWarn">
             <summary>
             ECM设备警告信息流水表实体类
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.id">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.line">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.line">
             <summary>
             生产线号
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.equipId">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.equipId">
             <summary>
             设备id
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.eventCode">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.eventCode">
             <summary>
             事件代码
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.Code">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.Code">
             <summary>
             警告代码
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.Message">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.Message">
             <summary>
             警告异常信息
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.Downtime">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.Downtime">
             <summary>
             是否停机
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.timestamp">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.timestamp">
             <summary>
             时间戳
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.delFlag">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.delFlag">
             <summary>
             删除标记
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.creator">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.creator">
             <summary>
             创建人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.createTime">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.createTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.lastModifier">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.lastModifier">
             <summary>
             修改人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_EquipmentWarn.lastModifyTime">
+        <member name="P:WIP_Models.UdtEcm_EquipmentWarn.lastModifyTime">
             <summary>
             修改时间
             </summary>
         </member>
         <member name="T:WIP_Models.UdtEcm_HeatTreamentTimeData">
             <summary>
-            热处理工艺过程实体类
+            热处理工艺过程表实体类
+            </summary>
+        </member>
+        <member name="T:WIP_Models.AttachProcParam">
+            <summary>
+            索引数据参数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.line">
+            <summary>
+            生产线号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.loadNumber">
+            <summary>
+            ECM生产炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.eventCode">
+            <summary>
+            事件代码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.partNumber">
+            <summary>
+            零件号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.recipeNumber">
+            <summary>
+            工艺指令号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.heatingEntryDate">
+            <summary>
+            heatingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.heatingExitDate">
+            <summary>
+            heatingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.heatingNumber">
+            <summary>
+            heatingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.iCBPEntryDate">
+            <summary>
+            iCBPEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.iCBPExitDate">
+            <summary>
+            iCBPExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.iCBPNumber">
+            <summary>
+            iCBPNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.lineEntryDate">
+            <summary>
+            lineEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.lineExitDate">
+            <summary>
+            lineExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.preHeatingEntryDate">
+            <summary>
+            preHeatingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.preHeatingExitDate">
+            <summary>
+            preHeatingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.preHeatingNumber">
+            <summary>
+            preHeatingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.quenchingEntryDate">
+            <summary>
+            quenchingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.quenchingExitDate">
+            <summary>
+            quenchingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.quenchingNumber">
+            <summary>
+            quenchingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.temperingNumber">
+            <summary>
+            temperingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.temperingEntryDate">
+            <summary>
+            temperingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.temperingExitDate">
+            <summary>
+            temperingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.washingEntryDate">
+            <summary>
+            washingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.washingExitDate">
+            <summary>
+            washingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.washingNumber">
+            <summary>
+            washingNumber
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.coollingEntryDate">
+            <summary>
+            coollingEntryDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.coollingExitDate">
+            <summary>
+            coollingExitDate
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AttachProcParam.coollingNumber">
+            <summary>
+            coollingNumber
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.id">
             <summary>
             主键
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.line">
-            <summary>
-            生产线号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.loadNumber">
-            <summary>
-            ECM生产炉号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.eventCode">
-            <summary>
-            事件代码
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.year">
-            <summary>
-            年份
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.month">
-            <summary>
-            月份
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.partNumber">
-            <summary>
-            零件号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.recipeNumber">
-            <summary>
-            工艺指令号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingEntryDate">
-            <summary>
-            heatingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingRouteStartDate">
-            <summary>
-            heatingRouteStartDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingRouteEndDate">
-            <summary>
-            heatingRouteEndDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingExitDate">
-            <summary>
-            heatingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.heatingNumber">
-            <summary>
-            heatingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPEntryDate">
-            <summary>
-            iCBPEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPExitDate">
-            <summary>
-            iCBPExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.iCBPNumber">
-            <summary>
-            iCBPNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.lineEntryDate">
-            <summary>
-            lineEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.lineExitDate">
-            <summary>
-            lineExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingEntryDate">
-            <summary>
-            preHeatingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingExitDate">
-            <summary>
-            preHeatingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingRouteStartDate">
-            <summary>
-            preHeatingRouteStartDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingRouteEndDate">
-            <summary>
-            preHeatingRouteEndDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.preHeatingNumber">
-            <summary>
-            preHeatingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingEntryDate">
-            <summary>
-            quenchingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingExitDate">
-            <summary>
-            quenchingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.quenchingNumber">
-            <summary>
-            quenchingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingNumber">
-            <summary>
-            temperingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingEntryDate">
-            <summary>
-            temperingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.temperingExitDate">
-            <summary>
-            temperingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingEntryDate">
-            <summary>
-            washingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingExitDate">
-            <summary>
-            washingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.washingNumber">
-            <summary>
-            washingNumber
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingEntryDate">
-            <summary>
-            coollingEntryDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingExitDate">
-            <summary>
-            coollingExitDate
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.coollingNumber">
-            <summary>
-            coollingNumber
             </summary>
         </member>
         <member name="P:WIP_Models.UdtEcm_HeatTreamentTimeData.delFlag">
@@ -590,74 +650,204 @@
             修改时间
             </summary>
         </member>
-        <member name="T:WIP_Models.UdtECM_Recipe_Carburising_Details">
+        <member name="T:WIP_Models.UdtEcm_Recipe_Carburising_Details">
             <summary>
             工艺参数卡渗碳详情表实体类
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.c_Detailed_ID">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.head_ID">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.headId">
             <summary>
-            自增标识/Record ID
+            工艺参数卡主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.carb_totaltime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.totaltime">
             <summary>
-            渗碳总时间/Carburising total time
+            渗碳总时间/Carburising total datetime
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.sequenceNO">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.SequenceNO">
             <summary>
             渗碳顺序号/Carburising sequence number
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.time">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Carburising_Time">
             <summary>
-            渗碳时间/Carburising Time
+            渗碳时间/Carburising datetime
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.c2H2_Flow">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.C2H2_Flow">
             <summary>
             乙炔流量/C2H2 Flow
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.diffusion_Time">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Carb_Ni_Flow">
             <summary>
-            扩散时间/Diffusion Time
+            渗碳室吹扫氮气流量NL/h
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.delFlag">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.Diffusion_Time">
+            <summary>
+            扩散时间/Diffusion datetime
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.delFlag">
             <summary>
             删除标记
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.creator">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.creator">
             <summary>
             创建人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.createTime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.createTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.lastModifier">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.lastModifier">
             <summary>
             修改人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Carburising_Details.lastModifyTime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_Carburising_Details.lastModifyTime">
             <summary>
             修改时间
             </summary>
         </member>
-        <member name="T:WIP_Models.UdtECM_Recipe_Head">
+        <member name="T:WIP_Models.UdtEcm_Recipe_Head">
             <summary>
             工艺参数卡主表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.line">
+            <summary>
+            生产线/Line number
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.recipeNumber">
+            <summary>
+            工艺指令号/Recipe Number
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.recipeType">
+            <summary>
+            工艺图纸类型/Recipe Type
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Head.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtEcm_Recipe_Heat_Details">
+            <summary>
+            工艺参数卡加热详情表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.headId">
+            <summary>
+            自增标识/Record ID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.Heat_totaltime">
+            <summary>
+            加热总时间/Heating total datetime
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.Heat_SequenceNO">
+            <summary>
+            加热顺序号/Heating sequence number
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.Heat_Temperature">
+            <summary>
+            加热温度/Heating Temperature
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.Heat_Duration">
+            <summary>
+            持续时间/Duration
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.Heat_pressure">
+            <summary>
+            压力/Pressure
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_Heat_Details.lastModifyTime">
+            <summary>
+            修改时间
             </summary>
         </member>
         <member name="T:WIP_Models.UdtECM_Recipe_Other_Details">
@@ -665,79 +855,69 @@
             工艺参数卡其他详情表实体类
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.head_ID">
-            <summary>
-            Head主键
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.o_Detailed_ID">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.temp_UP">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.headId">
+            <summary>
+            工艺参数卡主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Temp_UP">
             <summary>
             温度向上公差,℃/ Temperature Tolerance up
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.temp_LOW">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Temp_LOW">
             <summary>
             温度向下公差,℃/Temperature Tolerance low
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.c2H2_Flow">
-            <summary>
-            乙炔流量NL/h/C2H2 flow 
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.c2H2_UP">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.C2H2_UP">
             <summary>
             乙炔流量及公差,NL/h/C2H2 flow tolerance up
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.c2H2_DOWN">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.C2H2_DOWN">
             <summary>
             乙炔流量及公差,NL/h/C2H2 flow tolerance low
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.ni_Flow">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Ni_Flow">
             <summary>
             氮气流量NL/h/Nitrogen flow
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.ni_UP">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Ni_UP">
             <summary>
             氮气流量及公差,NL/h/Nitrogen tolerance up
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.ni_DOWN">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Ni_DOWN">
             <summary>
             氮气流量及公差,NL/h/Nitrogen tolerance down
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.carb_Ni_Flow">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Carb_Ni_UP">
             <summary>
-            渗碳室吹扫氮气流量NL/h
+            渗碳室吹扫氮气流量及公差
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.carb_Ni_UP">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Carb_Ni_DOWN">
             <summary>
-            渗碳室吹扫氮气流量及公差,NL/h
+            渗碳室吹扫氮气流量及公差
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.carb_Ni_DOWN">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Quen_Ni_Pre_UP">
             <summary>
-            渗碳室吹扫氮气流量及公差,NL/h
+            淬火室氮气压力公差，
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.quen_Ni_Pre_UP">
+        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.Quen_Ni_Pre_DOWN">
             <summary>
-            淬火室氮气压力公差，mabr
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.quen_Ni_Pre_DOWN">
-            <summary>
-            淬火室氮气压力公差，mabr
+            淬火室氮气压力公差
             </summary>
         </member>
         <member name="P:WIP_Models.UdtECM_Recipe_Other_Details.delFlag">
@@ -765,212 +945,122 @@
             修改时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.CCFChannelParameters">
+        <member name="T:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details">
             <summary>
-            渗碳通道参数
+            工艺参数卡淬火压力详情表实体类
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.QuenchParameters">
-            <summary>
-            淬火参数
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.HeatDetails">
-            <summary>
-            加热通道
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.line">
-            <summary>
-            生产线/Line number
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.recipeNumber">
-            <summary>
-            工艺指令号/Recipe Number
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.recipeVersion">
-            <summary>
-            指令版本/Recipe version control
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.partNumber">
-            <summary>
-            零件图号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.partName">
-            <summary>
-            零件名称
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.craftEquipmentCode">
-            <summary>
-            工装编号
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.ccfTemperature">
-            <summary>
-            渗碳温度,℃/Carbursiing Temperature
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.carbonConcentration_Value">
-            <summary>
-            最终表面碳浓度模拟值Carbon Concentration Value
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.recipeType">
-            <summary>
-            工艺图纸类型/Recipe Type
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.created_Time">
-            <summary>
-            创建时间/Created date/time
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.modified_Time">
-            <summary>
-            修改时间/Modified date/time
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.enabled_flag">
-            <summary>
-            默认启用/Enabled/Valid flag
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Head.timestamp">
-            <summary>
-            时间戳
-            </summary>
-        </member>
-        <member name="T:WIP_Models.UdtECM_Recipe_Heat_Details">
-            <summary>
-            工艺参数卡加热详情表实体类
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.h_Detailed_ID">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.head_ID">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.headId">
             <summary>
-            自增标识/Record ID
+            工艺参数卡主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.heat_totaltime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.totaltime">
             <summary>
-            加热总时间/Heating total time
+            淬火总时间/Quenching total datetime 【接收的是分钟，最终保存的是秒】
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.heat_SequenceNO">
-            <summary>
-            加热顺序号/Heating sequence number
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.heat_Temperature">
-            <summary>
-            加热温度/Heating Temperature
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.heat_Duration">
-            <summary>
-            持续时间/Duration
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.heat_Pressure">
-            <summary>
-            压力/Pressure
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.delFlag">
-            <summary>
-            删除标记
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.creator">
-            <summary>
-            创建人
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.createTime">
-            <summary>
-            创建时间
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.lastModifier">
-            <summary>
-            修改人
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Heat_Details.lastModifyTime">
-            <summary>
-            修改时间
-            </summary>
-        </member>
-        <member name="T:WIP_Models.UdtECM_Recipe_Quench_Details">
-            <summary>
-            工艺参数卡淬火详情表实体类
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.q_Detailed_ID">
-            <summary>
-            主键
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.head_ID">
-            <summary>
-            自增标识/Record ID
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.totaltime">
-            <summary>
-            淬火总时间/Quenching total time
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.sequenceNO">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.SequenceNO">
             <summary>
             淬火顺序号/Quenching sequence number
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.time">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.Time">
             <summary>
-            淬火时间/Quenching Time
+            淬火时间/Quenching datetime
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.speed">
-            <summary>
-            淬火速度/Speed
-            </summary>
-        </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.pressure_mbar">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.Pressure">
             <summary>
             压力/Pressure by mbar
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.delFlag">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.delFlag">
             <summary>
             删除标记
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.creator">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.creator">
             <summary>
             创建人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.createTime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.createTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.lastModifier">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.lastModifier">
             <summary>
             修改人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtECM_Recipe_Quench_Details.lastModifyTime">
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchPressure_Details.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details">
+            <summary>
+            工艺参数卡淬火速度详情表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.headId">
+            <summary>
+            工艺参数卡主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.totaltime">
+            <summary>
+            淬火总时间/Quenching total datetime 【接收的是分钟，最终保存的是秒】
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.SequenceNO">
+            <summary>
+            淬火顺序号/Quenching sequence number
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.Time">
+            <summary>
+            淬火时间/Quenching datetime
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.Speed">
+            <summary>
+            淬火速度/Speed
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtEcm_Recipe_QuenchSpeed_Details.lastModifyTime">
             <summary>
             修改时间
             </summary>
@@ -987,7 +1077,7 @@
         </member>
         <member name="P:WIP_Models.UdtWIP_AGVBindingRecord.agvCode">
             <summary>
-            AGV台车编码
+            RFID
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWIP_AGVBindingRecord.partNumber">
@@ -1060,6 +1150,51 @@
             修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.UdtWip_AgvMap">
+            <summary>
+            agv台车映射实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.agvCode">
+            <summary>
+            RFID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.agvNumber">
+            <summary>
+            AGV台车编号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_AgvMap.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
         <member name="T:WIP_Models.UdtWIP_AGVRealTimeStatus">
             <summary>
             小车实时状态实体类
@@ -1072,7 +1207,7 @@
         </member>
         <member name="P:WIP_Models.UdtWIP_AGVRealTimeStatus.agvCode">
             <summary>
-            AGV台车编码
+            RFID
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWIP_AGVRealTimeStatus.processCardNumber">
@@ -1185,6 +1320,11 @@
             数量
             </summary>
         </member>
+        <member name="P:WIP_Models.UdtWip_BusinessExceptionMgr.host">
+            <summary>
+            错误发生所在的host
+            </summary>
+        </member>
         <member name="P:WIP_Models.UdtWip_BusinessExceptionMgr.delFlag">
             <summary>
             删除标记
@@ -1206,6 +1346,116 @@
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_BusinessExceptionMgr.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_CodeItems">
+            <summary>
+            代码项表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.code">
+            <summary>
+            代码项编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.name">
+            <summary>
+            代码项名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.setCode">
+            <summary>
+            代码编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.setCodeName">
+            <summary>
+            代码名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.note">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeItems.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_CodeSets">
+            <summary>
+            代码项实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.code">
+            <summary>
+            代码编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.name">
+            <summary>
+            代码名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.note">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_CodeSets.lastModifyTime">
             <summary>
             修改时间
             </summary>
@@ -1311,6 +1561,56 @@
             修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.UdtWip_EquipmentMap">
+            <summary>
+            设备映射表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.eqId">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.eqMapValue">
+            <summary>
+            映射值
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.eqMapType">
+            <summary>
+            映射类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_EquipmentMap.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
         <member name="T:WIP_Models.UdtWip_EquipmentStatus">
             <summary>
             设备状态数据实体类
@@ -1376,72 +1676,77 @@
             
             </summary>
         </member>
-        <member name="T:WIP_Models.UdtWip_EquipmentWarn">
+        <member name="T:WIP_Models.udtWip_EquipmentWarnSummary">
             <summary>
             ECM设备警告信息汇总表实体类
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.id">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.line">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.line">
             <summary>
             生产线号
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.equipId">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.equipId">
             <summary>
             设备id
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.Code">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.eventCode">
+            <summary>
+            事件代码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.Code">
             <summary>
             警告代码
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.Message">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.Message">
             <summary>
             警告异常信息
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.Downtime">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.Downtime">
             <summary>
             是否停机
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.timestamp_start">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.timestamp_start">
             <summary>
             开始时间戳
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.timestamp_end">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.timestamp_end">
             <summary>
             结束时间戳
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.delFlag">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.delFlag">
             <summary>
             删除标记
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.creator">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.creator">
             <summary>
             创建人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.createTime">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.createTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.lastModifier">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.lastModifier">
             <summary>
             修改人
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_EquipmentWarn.lastModifyTime">
+        <member name="P:WIP_Models.udtWip_EquipmentWarnSummary.lastModifyTime">
             <summary>
             修改时间
             </summary>
@@ -1499,6 +1804,11 @@
         <member name="P:WIP_Models.UdtWip_ExceptionInfo.taskType">
             <summary>
             任务类型（udtWip_Task表）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ExceptionInfo.host">
+            <summary>
+            错误发生所在的host
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_ExceptionInfo.creator">
@@ -1573,12 +1883,12 @@
         </member>
         <member name="T:WIP_Models.UdtWip_Inventory">
             <summary>
-            库存信息
+            库存信息实体类
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.id">
             <summary>
-            
+            主键
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.batchNumber">
@@ -1596,7 +1906,7 @@
             设施名称
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_Inventory.pordName">
+        <member name="P:WIP_Models.UdtWip_Inventory.prodName">
             <summary>
             产品名称
             </summary>
@@ -1636,34 +1946,34 @@
             流转卡号
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_Inventory.QAStatus">
+        <member name="P:WIP_Models.UdtWip_Inventory.qaStatus">
             <summary>
             质检状态
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.delFlag">
             <summary>
-            
+            删除标记
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.creator">
             <summary>
-            
+            创建人
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.createTime">
             <summary>
-            
+            创建时间
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.lastModifier">
             <summary>
-            
+            修改人
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Inventory.lastModifyTime">
             <summary>
-            
+            修改时间
             </summary>
         </member>
         <member name="T:WIP_Models.UdtWip_IssueTask">
@@ -1734,6 +2044,11 @@
         <member name="P:WIP_Models.UdtWip_IssueTask.curIssueTask">
             <summary>
             当前下发任务
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_IssueTask.isSuccess">
+            <summary>
+            下发任务是否成功
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_IssueTask.delFlag">
@@ -1828,7 +2143,7 @@
         </member>
         <member name="P:WIP_Models.UdtWip_IssueTaskFlag.isAllowIssue">
             <summary>
-            是否允许下发(这个标记貌似没用)
+            是否允许下发 (0 不允许 1允许)
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_IssueTaskFlag.delFlag">
@@ -1856,6 +2171,296 @@
             修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.UdtWip_PoductionProcess">
+            <summary>
+            生产工序表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.orderNo">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.procedureName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.procedureDesc">
+            <summary>
+            工序描述
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PoductionProcess.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_PostHeatStorageOutMgr">
+            <summary>
+            热后出库管理实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.materialCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.batchNumber">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.agvCode">
+            <summary>
+            RFID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.startEqCode">
+            <summary>
+            起点设施编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.endEqCode">
+            <summary>
+            终点设施编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.quantity">
+            <summary>
+            来料数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.startTime">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.endTime">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.taskFlag">
+            <summary>
+            任务状态标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PostHeatStorageOutMgr.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_PreHeatStorageMgr">
+            <summary>
+            热前入库管理实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.materialCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.batchNumber">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.agvCode">
+            <summary>
+            RFID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.quantity">
+            <summary>
+            来料数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.startTime">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.endTime">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.taskFlag">
+            <summary>
+            任务状态标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PreHeatStorageMgr.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_PrintConfig">
+            <summary>
+            打印配置表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.printType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.printerName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.printTypeName">
+            <summary>
+            打印类型描述
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintConfig.printTemplete">
+            <summary>
+            打印模板编码
+            </summary>
+        </member>
         <member name="T:WIP_Models.UdtWip_PrintInfo">
             <summary>
             打印实体类
@@ -1866,24 +2471,34 @@
             
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_PrintInfo.temname">
+        <member name="P:WIP_Models.UdtWip_PrintInfo.tempName">
             <summary>
             模板名称
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_PrintInfo.printjson">
+        <member name="P:WIP_Models.UdtWip_PrintInfo.printDevKey">
+            <summary>
+            打印设备
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintInfo.printJson">
             <summary>
             打印字符串
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_PrintInfo.printtime">
+        <member name="P:WIP_Models.UdtWip_PrintInfo.printTime">
             <summary>
             打印时间
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_PrintInfo.printflag">
+        <member name="P:WIP_Models.UdtWip_PrintInfo.printFlag">
             <summary>
             打印标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_PrintInfo.printType">
+            <summary>
+            打印类型
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_PrintInfo.note">
@@ -1912,6 +2527,136 @@
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_PrintInfo.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.UdtWip_ProcessCardInfo">
+            <summary>
+            流转卡信息实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.poductProcessList">
+            <summary>
+            生产工序列表
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.materialCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.endProductNumber">
+            <summary>
+            成品零件号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.quantity">
+            <summary>
+            加工数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.furnaceNumber">
+            <summary>
+            正火炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.materialFurnaceNumber">
+            <summary>
+            材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.batchNumber">
+            <summary>
+            来料批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.shipDate">
+            <summary>
+            发货日期
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.loadNumber">
+            <summary>
+            热处理炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.heatingNumber">
+            <summary>
+            流转卡中填入的热处理炉号，用于流转卡打印时的展示
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.line">
+            <summary>
+            生产线
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.packageNumber">
+            <summary>
+            包装卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.pilotNo">
+            <summary>
+            试生产号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.typeOfSteels">
+            <summary>
+            原材料牌号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.steelsHeatNo">
+            <summary>
+            原材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.steelsSize">
+            <summary>
+            原材料规格
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_ProcessCardInfo.lastModifyTime">
             <summary>
             修改时间
             </summary>
@@ -2181,6 +2926,126 @@
             修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.UdtWip_SteelInfo">
+            <summary>
+            钢原材料数据实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.typeOfSteels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.steelsHeatNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.hardenability">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.C">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Mn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.P">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.S">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Si">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.AI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Cr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Cu">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Mo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Ni">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.V">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.Ti">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.B">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.delFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.creator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.createTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.lastModifier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_SteelInfo.lastModifyTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WIP_Models.UdtWip_StorageTableExchange">
             <summary>
             备料台交互信息实体类
@@ -2406,14 +3271,14 @@
             热处理炉号
             </summary>
         </member>
-        <member name="P:WIP_Models.UdtWip_Task.taskLock">
-            <summary>
-            任务锁
-            </summary>
-        </member>
         <member name="P:WIP_Models.UdtWip_Task.materialStatus">
             <summary>
             物料状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.UdtWip_Task.taskLock">
+            <summary>
+            任务锁
             </summary>
         </member>
         <member name="P:WIP_Models.UdtWip_Task.isCurExecTask">
@@ -2616,6 +3481,16 @@
             打印错误
             </summary>
         </member>
+        <member name="T:WIP_Models.PrintType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="F:WIP_Models.PrintType.ProcessCardForPostHeatStorageOut">
+            <summary>
+            热后出库打印流转卡
+            </summary>
+        </member>
         <member name="T:WIP_Models.ScheduleStatus">
             <summary>
             排产状态
@@ -2706,6 +3581,21 @@
             ECM上料口占用
             </summary>
         </member>
+        <member name="T:WIP_Models.TaskFlag">
+            <summary>
+            热前入库和热后出库任务状态枚举
+            </summary>
+        </member>
+        <member name="F:WIP_Models.TaskFlag.Init">
+            <summary>
+            任务开始
+            </summary>
+        </member>
+        <member name="F:WIP_Models.TaskFlag.End">
+            <summary>
+            任务结束
+            </summary>
+        </member>
         <member name="T:WIP_Models.SysCode">
             <summary>
             系统编码枚举类
@@ -2751,6 +3641,11 @@
             任务类型枚举类
             </summary>
         </member>
+        <member name="F:WIP_Models.TaskType.PreHeatStorage">
+            <summary>
+            热前入库
+            </summary>
+        </member>
         <member name="F:WIP_Models.TaskType.Preheating">
             <summary>
             热前出库
@@ -2792,22 +3687,17 @@
             </summary>
         </member>
         <member name="F:WIP_Models.TaskType.ArtificialQualityInspection">
-             /// <summary>
+            <summary>
             人工抽样
             </summary>
         </member>
         <member name="F:WIP_Models.TaskType.PostHeatStorage">
-             /// <summary>
+            <summary>
             热后入库
             </summary>
         </member>
-        <member name="F:WIP_Models.TaskType.PreHeatStorage">
-             /// <summary>
-            热前入库
-            </summary>
-        </member>
         <member name="F:WIP_Models.TaskType.PostHeatStorageOut">
-             /// <summary>
+            <summary>
             热后出库
             </summary>
         </member>
@@ -2991,11 +3881,6 @@
             加热入口
             </summary>
         </member>
-        <member name="F:WIP_Models.EventCodeEnum.PreheatingRouteStart">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:WIP_Models.MaterialStatus">
             <summary>
             物料状态枚举
@@ -3066,9 +3951,139 @@
             基础数据同步参数类
             </summary>
         </member>
-        <member name="T:WIP_Models.AddInCARParam">
+        <member name="P:WIP_Models.BaseDataSynParamModel.materialCode">
             <summary>
-            真空炉内部小车数据 实体类
+            物料编码（进热MES物料号）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.heatingInCode">
+            <summary>
+            物料编码（进热MES物料号）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.heatingOutCode">
+            <summary>
+            出热MES物料号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.materailName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.materialDesc">
+            <summary>
+            物料描述
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.source">
+            <summary>
+            物料来源
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.material">
+            <summary>
+            材料
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.gearModulus">
+            <summary>
+            齿轮模数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.weight">
+            <summary>
+            重量（Kg）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.surfaceArea">
+            <summary>
+            表面积(mm2)
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.volume">
+            <summary>
+            体积(mm3)
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.innerringdiameter">
+            <summary>
+            内圈直径
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.outerringdiameter">
+            <summary>
+            外圈直径
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.clamping">
+            <summary>
+            装夹方式
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE1">
+            <summary>
+            1号线装炉数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE2">
+            <summary>
+            2号线装炉数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE3">
+            <summary>
+            3号线装炉数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE4">
+            <summary>
+            4号线装炉数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.ECM_LINE5">
+            <summary>
+            5号线装炉数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.classification">
+            <summary>
+            DCT250或者GFX
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.direction">
+            <summary>
+            物料出热后方向(下道)
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseDataSynParamModel.directionHeating">
+            <summary>
+            物料出ECM后的去向(缓存区去向：B 热后立库去向：W)
+            </summary>
+        </member>
+        <member name="T:WIP_Models.GetAllCodeItemsByCodeSetParam">
+            <summary>
+            获取指定代码集的代码项表列表
+            </summary>
+        </member>
+        <member name="P:WIP_Models.GetAllCodeItemsByCodeSetParam.codeSet">
+            <summary>
+            代码项
+            </summary>
+        </member>
+        <member name="T:WIP_Models.AddLineStatusDataParam">
+            <summary>
+            线体状态数据 实体类
             </summary>
         </member>
         <member name="T:WIP_Models.ECMBaseParam">
@@ -3076,9 +4091,29 @@
             ECM通用基础 实体类
             </summary>
         </member>
+        <member name="P:WIP_Models.ECMBaseParam.line">
+            <summary>
+            线体号
+            </summary>
+        </member>
         <member name="P:WIP_Models.ECMBaseParam.equipId">
             <summary>
             设备id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ECMBaseParam.timestamp">
+            <summary>
+            unix时间戳
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AddLineStatusDataParam.status">
+            <summary>
+            线体状态
+            </summary>
+        </member>
+        <member name="T:WIP_Models.AddInCARParam">
+            <summary>
+            真空炉内部小车数据 实体类
             </summary>
         </member>
         <member name="T:WIP_Models.AddExCARParam">
@@ -3120,11 +4155,6 @@
             <summary>
             渗碳数据 实体类
             </summary>
-        </member>
-        <member name="T:WIP_Models.QueryHeatTreamentTimeDataModel">
-            <summary> 
-            查询热处理工艺过程表类 
-            </summary> 
         </member>
         <member name="T:WIP_Models.GetAGVParamForPreheating">
             <summary>
@@ -3204,6 +4234,41 @@
         <member name="P:WIP_Models.CommonInitTaskParam.CurSysCode">
             <summary>
             当前的系统编码
+            </summary>
+        </member>
+        <member name="T:WIP_Models.MaterialOutPutInventoryParam">
+            <summary>
+            物料出入库实体参数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.batchNo">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.MaterialOutPutInventoryParam.taskType">
+            <summary>
+            出入库标记(取值是 TaskType枚举)
             </summary>
         </member>
         <member name="T:WIP_Models.ProCardPrintQueueParam">
@@ -3366,6 +4431,251 @@
             修改时间
             </summary>
         </member>
+        <member name="T:WIP_Models.ProcessCardInfoForHeatAfter">
+            <summary>
+            流转卡信息实体类(热处理完毕后)
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.endProductNumber">
+            <summary>
+            成品零件编号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.furnaceNumber">
+            <summary>
+            正火炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.materialFurnaceNumber">
+            <summary>
+            材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.batchNumber">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.shipDate">
+            <summary>
+            发货日期
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.loadNumber">
+            <summary>
+            热处理炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.heatingNumber">
+            <summary>
+            加热炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.line">
+            <summary>
+            线体号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.packageNumber">
+            <summary>
+            包装卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoForHeatAfter.pilotNo">
+            <summary>
+            试生产号
+            </summary>
+        </member>
+        <member name="T:WIP_Models.QueryCodeItemsModel">
+            <summary> 
+            查询代码项表类 
+            </summary> 
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.code">
+            <summary>
+            代码项编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.name">
+            <summary>
+            代码项名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.setCode">
+            <summary>
+            代码编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.note">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeItemsModel.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.QueryCodeSetsModel">
+            <summary> 
+            查询代码项类 
+            </summary> 
+        </member>
+        <member name="P:WIP_Models.QueryCodeSetsModel.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeSetsModel.code">
+            <summary>
+            代码编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeSetsModel.name">
+            <summary>
+            代码名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryCodeSetsModel.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="T:WIP_Models.QueryEquipmentMapModel">
+            <summary> 
+            查询设备映射表类 
+            </summary> 
+        </member>
+        <member name="P:WIP_Models.QueryEquipmentMapModel.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryEquipmentMapModel.eqId">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryEquipmentMapModel.eqMapValue">
+            <summary>
+            映射值
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryEquipmentMapModel.eqMapType">
+            <summary>
+            映射类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryEquipmentMapModel.delFlag">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:WIP_Models.QueryPrintConfigModel">
+            <summary> 
+            查询打印配置表类 
+            </summary> 
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.printType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.printerName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.printTypeName">
+            <summary>
+            打印类型描述
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.printTemplete">
+            <summary>
+            打印模板编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryPrintConfigModel.delFlag">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:WIP_Models.QueryAgvMapModel">
+            <summary> 
+            查询agv台车映射类 
+            </summary> 
+        </member>
+        <member name="P:WIP_Models.QueryAgvMapModel.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryAgvMapModel.agvCode">
+            <summary>
+            RFID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryAgvMapModel.agvNumber">
+            <summary>
+            AGV台车编号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryAgvMapModel.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
         <member name="T:WIP_Models.GreenLightParam">
             <summary>
             放行参数类
@@ -3381,6 +4691,71 @@
             放行数量
             </summary>
         </member>
+        <member name="T:WIP_Models.HeatStorOutBindRFIDParam">
+            <summary>
+            热后出库绑定RFID实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.HeatStorOutBindRFIDParam.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.HeatStorOutBindRFIDParam.agvCode">
+            <summary>
+            agv编码
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PreHeatStorageFinishParam">
+            <summary>
+            热前入库结束实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PreHeatStorageFinishParam.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PreHeatStorageFinishParam.timestamp">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PostHeatStorageOutInitParam">
+            <summary>
+            热后出库初始实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PostHeatStorageOutInitParam.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PostHeatStorageOutInitParam.timestamp">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PreHeatStorageInitParam">
+            <summary>
+            热前入库初始实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PreHeatStorageInitParam.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PreHeatStorageInitParam.timestamp">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PreHeatStorageInitParam.agvCode">
+            <summary>
+            AGV编码
+            </summary>
+        </member>
         <member name="T:WIP_Models.QueryTaskModel">
             <summary> 
             查询任务管理类 
@@ -3389,6 +4764,166 @@
         <member name="P:WIP_Models.QueryTaskModel.taskNo">
             <summary>
             任务ID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.QAStatus">
+            <summary>
+            质量预测
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.processCardNumber">
+            <summary>
+            流转卡
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.startPlanProdDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.endPlanProdDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.materialStatus">
+            <summary>
+            物料状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.QueryTaskModel.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="T:WIP_Models.BaseInfoForAgvBind">
+            <summary>
+            AGV绑定类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.taskNo">
+            <summary>
+            任务id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.taskType">
+            <summary>
+            任务类型编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.batchNumber">
+            <summary>
+            批次号（唯一）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.materialCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.agvCode">
+            <summary>
+            AVG编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.BaseInfoForAgvBind.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="T:WIP_Models.EcmRecipeHead">
+            <summary>
+            工艺参数卡信息
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.CCFChannelParameters">
+            <summary>
+            渗碳通道参数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.QuenchSpeedParameters">
+            <summary>
+            淬火速度参数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.QuenchPressureParameters">
+            <summary>
+            淬火压力参数
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.HeatDetails">
+            <summary>
+            加热通道
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Temp_UP">
+            <summary>
+            温度向上公差,℃/ Temperature Tolerance up
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Temp_LOW">
+            <summary>
+            温度向下公差,℃/Temperature Tolerance low
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.C2H2_UP">
+            <summary>
+            乙炔流量及公差,NL/h/C2H2 flow tolerance up
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.C2H2_DOWN">
+            <summary>
+            乙炔流量及公差,NL/h/C2H2 flow tolerance low
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Ni_Flow">
+            <summary>
+            氮气流量NL/h/Nitrogen flow
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Ni_UP">
+            <summary>
+            氮气流量及公差,NL/h/Nitrogen tolerance up
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Ni_DOWN">
+            <summary>
+            氮气流量及公差,NL/h/Nitrogen tolerance down
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Carb_Ni_UP">
+            <summary>
+            渗碳室吹扫氮气流量及公差
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Carb_Ni_DOWN">
+            <summary>
+            渗碳室吹扫氮气流量及公差
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Quen_Ni_Pre_UP">
+            <summary>
+            淬火室氮气压力公差，
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EcmRecipeHead.Quen_Ni_Pre_DOWN">
+            <summary>
+            淬火室氮气压力公差
             </summary>
         </member>
         <member name="T:WIP_Models.UpdateTaskStatusParamModel">
@@ -3731,6 +5266,16 @@
             终点设施编码
             </summary>
         </member>
+        <member name="T:WIP_Models.CardNumberParam">
+            <summary>
+            （外协料 ）获取流转卡信息参数类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CardNumberParam.cardNumber">
+            <summary>
+            流转卡号或包装卡号
+            </summary>
+        </member>
         <member name="T:WIP_Models.PostGreenLightResult">
             <summary>
             通知WCS 人工抽样放行的返回参数
@@ -3881,6 +5426,26 @@
             试生产号
             </summary>
         </member>
+        <member name="P:WIP_Models.ProcessCardInfoModel.size">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoModel.typeOfSteels">
+            <summary>
+            原材料牌号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoModel.steelsHeatNo">
+            <summary>
+            原材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoModel.steelsSize">
+            <summary>
+            原材料规格
+            </summary>
+        </member>
         <member name="T:WIP_Models.QueryProcessCardModel">
             <summary>
             查询流转卡列表类
@@ -3901,10 +5466,75 @@
             任务ID
             </summary>
         </member>
-        <member name="T:WIP_Models.AGVBindingResult">
+        <member name="T:WIP_Models.AGVBindingObject">
             <summary>
-            AGV编码返回结果
+            绑定、解绑 AGV小车的对象
             </summary>
+        </member>
+        <member name="P:WIP_Models.AGVBindingObject.InsertBindRecord">
+            <summary>
+            要插入的UdtWIP_AGVBindingRecord对象
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AGVBindingObject.InsertRealTimeStatus">
+            <summary>
+            要插入的UdtWIP_AGVRealTimeStatus对象
+            </summary>
+        </member>
+        <member name="P:WIP_Models.AGVBindingObject.PropertyUpdateParam">
+            <summary>
+            更新类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.processCardNumber">
+            <summary>
+            运行状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.running_status">
+            <summary>
+            运行状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.partNumber">
+            <summary>
+            零件编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.startPlanProdDate">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.endPlanProdDate">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.taskStatus">
+             <summary>
+            任务状态
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.materialStatus">
+             <summary>
+            物料状态
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.taskStartDate">
+             <summary>
+            开始时间
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.AGVselectlist.taskEndDate">
+             <summary>
+            结束时间
+             </summary>
         </member>
         <member name="T:WIP_Models.BaseDataSynResultModel">
             <summary>
@@ -3964,6 +5594,41 @@
         <member name="P:WIP_Models.BaseTask.taskNo">
             <summary>
             任务ID
+            </summary>
+        </member>
+        <member name="T:WIP_Models.ViewModel.EcmLoadTableInterlist">
+            <summary>
+            ECM任务队列查询类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.rowId">
+            <summary>
+            排序id
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.line">
+            <summary>
+            生产线
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.EcmLoadTableInterlist.quantity">
+            <summary>
+            数量
             </summary>
         </member>
         <member name="T:WIP_Models.GetTaskStatusForPlanView">
@@ -4029,6 +5694,96 @@
         <member name="P:WIP_Models.MaterialView.directionHeating">
             <summary>
             物料出ECM后去向,缓存区:B热后立库:W
+            </summary>
+        </member>
+        <member name="T:WIP_Models.ProcessCardInfoView">
+            <summary>
+            流转卡信息实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.processCardNumber">
+            <summary>
+            流转卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.materialCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.partNumber">
+            <summary>
+            零件图号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.endProductNumber">
+            <summary>
+            成品零件编号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.furnaceNumber">
+            <summary>
+            正火炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.materialFurnaceNumber">
+            <summary>
+            材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.batchNumber">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.shipDate">
+            <summary>
+            发货日期
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.loadNumber">
+            <summary>
+            热处理炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.line">
+            <summary>
+            线体号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.packageNumber">
+            <summary>
+            包装卡号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.pilotNo">
+            <summary>
+            试生产号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.typeOfSteels">
+            <summary>
+            原材料牌号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.steelsHeatNo">
+            <summary>
+            原材料炉号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ProcessCardInfoView.steelsSize">
+            <summary>
+            原材料规格
             </summary>
         </member>
         <member name="T:WIP_Models.ProdDetailViewModel">
@@ -4111,7 +5866,7 @@
             物料状态
             </summary>
         </member>
-        <member name="P:WIP_Models.ProdDetailViewModel.QAStatus">
+        <member name="P:WIP_Models.ProdDetailViewModel.qaStatus">
             <summary>
             质检状态
             </summary>
@@ -4231,14 +5986,49 @@
             当前正在运行的任务实体
             </summary>
         </member>
-        <member name="P:WIP_Models.CurExecTaskView.id">
+        <member name="P:WIP_Models.CurExecTaskView.recipeNumber">
             <summary>
-            
+            ECM工艺号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.planProdDate">
+            <summary>
+            计划生产时间
             </summary>
         </member>
         <member name="P:WIP_Models.CurExecTaskView.taskNo">
             <summary>
-            任务id
+            任务ID
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.QAStatus">
+            <summary>
+            质量预测
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.processCardNumber">
+            <summary>
+            流转卡
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.startPlanProdDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.endPlanProdDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.materialStatus">
+            <summary>
+            物料状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CurExecTaskView.id">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:WIP_Models.CurExecTaskView.taskType">
@@ -4264,11 +6054,6 @@
         <member name="P:WIP_Models.CurExecTaskView.line">
             <summary>
             生产线
-            </summary>
-        </member>
-        <member name="P:WIP_Models.CurExecTaskView.planProdDate">
-            <summary>
-            计划生产时间
             </summary>
         </member>
         <member name="P:WIP_Models.CurExecTaskView.planOfflineDate">
@@ -4316,11 +6101,6 @@
             流转卡号ID
             </summary>
         </member>
-        <member name="P:WIP_Models.CurExecTaskView.processCardNumber">
-            <summary>
-            流转卡号
-            </summary>
-        </member>
         <member name="P:WIP_Models.CurExecTaskView.loadNumber">
             <summary>
             热处理炉号
@@ -4329,11 +6109,6 @@
         <member name="P:WIP_Models.CurExecTaskView.taskLock">
             <summary>
             任务锁
-            </summary>
-        </member>
-        <member name="P:WIP_Models.CurExecTaskView.materialStatus">
-            <summary>
-            物料状态
             </summary>
         </member>
         <member name="P:WIP_Models.CurExecTaskView.isCurExecTask">
@@ -4515,6 +6290,226 @@
             <summary>
             修改时间
             </summary>
+        </member>
+        <member name="T:WIP_Models.PrintInfoView">
+            <summary>
+            打印实体类展示
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.index">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.printerName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.tempName">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.printTime">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.lastModifyTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.printFlagStr">
+            <summary>
+            打印标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.printTypeStr">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfoView.note">
+            <summary>
+            错误说明
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PrintInfo">
+            <summary>
+            需要的打印实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfo.printerName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfo.tempName">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfo.printDevKey">
+            <summary>
+            打印设备
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfo.printJson">
+            <summary>
+            打印字符串
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintInfo.printType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PoductionProcessView">
+            <summary>
+            生产工序表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PoductionProcessView.procedureName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PoductionProcessView.procedureDesc">
+            <summary>
+            工序描述
+            </summary>
+        </member>
+        <member name="T:WIP_Models.CodeSetsView">
+            <summary>
+            代码项实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CodeSetsView.code">
+            <summary>
+            代码编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.CodeSetsView.name">
+            <summary>
+            代码名称
+            </summary>
+        </member>
+        <member name="T:WIP_Models.PrintConfigView">
+            <summary>
+            打印配置展示类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.printType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.printerName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.delFlag">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.lastModifier">
+            <summary>
+            修改人
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.lastModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.printTypeName">
+            <summary>
+            打印类型描述
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.printTemplete">
+            <summary>
+            打印模板编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.PrintConfigView.printTempleteName">
+            <summary>
+            打印模板编码名称
+            </summary>
+        </member>
+        <member name="T:WIP_Models.EquipmentMapView">
+            <summary>
+            设备映射表实体类
+            </summary>
+        </member>
+        <member name="P:WIP_Models.EquipmentMapView.eqMapTypeName">
+            <summary>
+            映射类型名称（展示用）
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.running_status">
+            <summary>
+            运行状态
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.partNumber">
+            <summary>
+            零件编码
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.partName">
+            <summary>
+            零件名称
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.startPlanProdDate">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.endPlanProdDate">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.taskStatus">
+             <summary>
+            任务状态
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.materialStatus">
+             <summary>
+            物料状态
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.taskStartDate">
+             <summary>
+            开始时间
+             </summary>
+        </member>
+        <member name="P:WIP_Models.ViewModel.uspWip_GetAGV.taskEndDate">
+             <summary>
+            结束时间
+             </summary>
         </member>
     </members>
 </doc>
