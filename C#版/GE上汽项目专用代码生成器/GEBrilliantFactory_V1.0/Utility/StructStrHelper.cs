@@ -174,6 +174,10 @@ where obj.name='" + tableName + "'  ";
                         if (columnModel.IsNullable) { str_NullFlag = "? "; }
                         attrStr += "        public decimal" + str_NullFlag + attr + " { get; set; }\n";
                         break;
+                    case DataTypeEnum.dt_float:
+                        if (columnModel.IsNullable) { str_NullFlag = "? "; }
+                        attrStr += "        public float" + str_NullFlag + attr + " { get; set; }\n";
+                        break;
                     case DataTypeEnum.dt_bit:
                         if (columnModel.IsNullable) { str_NullFlag = "? "; }
                         attrStr += "        public bool" + str_NullFlag + attr + " { get; set; }\n";
@@ -292,6 +296,7 @@ where obj.name='" + tableName + "'  ";
                         defaultValue = "0";
                         break;
                     case DataTypeEnum.dt_decimal:
+                    case DataTypeEnum.dt_float:
                         defaultValue = "0.00";
                         break;
                     case DataTypeEnum.dt_datetime:
@@ -359,6 +364,7 @@ where obj.name='" + tableName + "'  ";
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
                         break;
                     case DataTypeEnum.dt_decimal:
+                    case DataTypeEnum.dt_float:
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType
                             + "(" + columnModel.Precision.ToString() + "," + columnModel.Scale.ToString() + ")  " + fuhao + "\n");
                         break;
@@ -418,6 +424,7 @@ where obj.name='" + tableName + "'  ";
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
                         break;
                     case DataTypeEnum.dt_decimal:
+                    case DataTypeEnum.dt_float:
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType
                             + "(" + columnModel.Precision.ToString() + "," + columnModel.Scale.ToString() + ")  " + fuhao + "\n");
                         break;
@@ -565,6 +572,9 @@ where obj.name='" + tableName + "'  ";
                     case DataTypeEnum.dt_decimal:
                         str += "SqlDbType.Decimal," + columnModel.DataLength.ToString();
                         break;
+                    case DataTypeEnum.dt_float:
+                        str += "SqlDbType.Float," + columnModel.DataLength.ToString();
+                        break;
                     case DataTypeEnum.dt_bit:
                         str += "SqlDbType.Bit," + columnModel.DataLength.ToString();
                         break;
@@ -621,6 +631,12 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
                             sb.Append("{ \n");
                             sb.Append("   model." + columnModel.ColumnName.ToString() + " = decimal.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
+                            sb.Append("} \n");
+                            break;
+                        case DataTypeEnum.dt_float:
+                            sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
+                            sb.Append("{ \n");
+                            sb.Append("   model." + columnModel.ColumnName.ToString() + " = float.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
                             sb.Append("} \n");
                             break;
                         case DataTypeEnum.dt_bit:
