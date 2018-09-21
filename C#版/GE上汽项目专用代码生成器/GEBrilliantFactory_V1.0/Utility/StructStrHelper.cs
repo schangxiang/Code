@@ -158,6 +158,7 @@ where obj.name='" + tableName + "'  ";
                         attrStr += "        public string" + str_NullFlag + attr + " { get; set; }\n";
                         break;
                     case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
                         if (columnModel.IsNullable) { str_NullFlag = "? "; }
                         attrStr += "        public DateTime" + str_NullFlag + attr + " { get; set; }\n";
                         break;
@@ -294,6 +295,7 @@ where obj.name='" + tableName + "'  ";
                         defaultValue = "0.00";
                         break;
                     case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
                         defaultValue = "getdate()";
                         break;
                     case DataTypeEnum.dt_bit:
@@ -352,6 +354,7 @@ where obj.name='" + tableName + "'  ";
                     case DataTypeEnum.dt_bigint:
                     case DataTypeEnum.dt_int:
                     case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
                     case DataTypeEnum.dt_bit:
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
                         break;
@@ -410,6 +413,7 @@ where obj.name='" + tableName + "'  ";
                     case DataTypeEnum.dt_bigint:
                     case DataTypeEnum.dt_int:
                     case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
                     case DataTypeEnum.dt_bit:
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
                         break;
@@ -549,6 +553,7 @@ where obj.name='" + tableName + "'  ";
                         str += "SqlDbType.NVarChar," + columnModel.DataLength.ToString();
                         break;
                     case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
                         str += "SqlDbType.DateTime";
                         break;
                     case DataTypeEnum.dt_int:
@@ -599,6 +604,7 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("model." + columnModel.ColumnName.ToString() + "=dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString();\n");
                             break;
                         case DataTypeEnum.dt_datetime:
+                        case DataTypeEnum.dt_datetime2:
                             sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
                             sb.Append("{ \n");
                             sb.Append("   model." + columnModel.ColumnName.ToString() + " = DateTime.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
@@ -687,6 +693,7 @@ where obj.name='" + tableName + "'  ";
                             }
                             break;
                         case DataTypeEnum.dt_datetime:
+                        case DataTypeEnum.dt_datetime2:
                             if (!columnModel.IsNullable)
                             {//日期必输
                                 sb.Append("                     new ColumnsModel(){ ChinaName=\"" + columnModel.Description + "\",PropertyName=\"" + columnModel.ColumnName + "\",DataType=typeof(DateTime) },\n");
@@ -769,6 +776,7 @@ where obj.name='" + tableName + "'  ";
                     switch (enumDT)
                     {
                         case DataTypeEnum.dt_datetime:
+                        case DataTypeEnum.dt_datetime2:
                             sb.Append("          <el-table-column prop=\"" + columnModel.ColumnName + "\" label=\"" + columnModel.Description + "\" width=\"150\" align=\"center\" :formatter=\"formatterDateTime\" > \n");
                             sb.Append("          </el-table-column> \n");
                             break;
