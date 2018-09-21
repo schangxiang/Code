@@ -1,5 +1,5 @@
-if exists (select * from dbo.sysobjects where id = object_id(N'[$GetSingleProcName$]') and OBJECTPROPERTY(id, N'IsProcedure') = 1) 
-  drop procedure [$GetSingleProcName$] 
+IF EXISTS ( SELECT 1 FROM dbo.sysobjects WHERE id = object_id(N'[$GetSingleProcName$]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1) 
+  DROP PROCEDURE [$GetSingleProcName$] 
 GO 
 ------------------------------------ 
 --用途：得到一个$ChinaComment$实体
@@ -8,8 +8,8 @@ GO
 --时间：$CurDate$ 
 ------------------------------------ 
 CREATE PROCEDURE $GetSingleProcName$ 
-@$Primary$ $DataType$	
- AS  
+	@$Primary$ $DataType$	
+AS  
   SET nocount ON; 
   
   SELECT $strQueryCol$

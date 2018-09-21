@@ -1,5 +1,5 @@
-if exists (select * from dbo.sysobjects where id = object_id(N'[$GetPageListProcName$]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-  drop procedure [$GetPageListProcName$]
+IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE id = object_id(N'[$GetPageListProcName$]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+  DROP PROCEDURE [$GetPageListProcName$]
 GO
 ------------------------------------
 --用途：获得$ChinaComment$数据列表(分页)
@@ -8,11 +8,11 @@ GO
 --时间：$CurDate$
 ------------------------------------
 CREATE PROCEDURE $GetPageListProcName$
-@strOrderBy nvarchar(50),-- 排序字段
-@strWhere nvarchar(500),-- 查询条件
-@pageIndex  int,
-@pageSize int 
- AS 
+	@strOrderBy nvarchar(50),-- 排序字段
+	@strWhere nvarchar(500),-- 查询条件
+	@pageIndex  int,
+	@pageSize int 
+AS 
   DECLARE @startRow int, @endRow int,
           @strQueryCol_1 nvarchar(max),
           @strQueryCol_2 nvarchar(max),

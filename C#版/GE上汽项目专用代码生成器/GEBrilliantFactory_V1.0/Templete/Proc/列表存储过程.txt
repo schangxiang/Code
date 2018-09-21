@@ -1,5 +1,5 @@
-if exists (select * from dbo.sysobjects where id = object_id(N'[$GetListProcName$]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-  drop procedure [$GetListProcName$]
+IF EXISTS ( SELECT 1 FROM dbo.sysobjects WHERE id = object_id(N'[$GetListProcName$]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+  DROP PROCEDURE [$GetListProcName$]
 GO
 ------------------------------------
 --用途：获得$ChinaComment$数据列表
@@ -8,8 +8,8 @@ GO
 --时间：$CurDate$
 ------------------------------------
 CREATE PROCEDURE $GetListProcName$
-@strWhere nvarchar(500) -- 查询条件
- AS 
+	@strWhere nvarchar(500) -- 查询条件
+AS 
   DECLARE @strQueryCol nvarchar(max),
           @strSql nvarchar(max)
          
