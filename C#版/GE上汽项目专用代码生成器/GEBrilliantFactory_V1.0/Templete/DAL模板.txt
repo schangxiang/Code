@@ -182,30 +182,6 @@ namespace WIP_DAL
             return DbHelperSQL.RunProcedure("$GetPageListProcName$", parameters, "pagetable");
         }
 
-        /// <summary>
-        /// 获取$ChinaComment$记录总数
-        /// </summary>
-        /// <param name="strWhere">查询条件</param>
-        /// <returns>$ChinaComment$记录总数</returns>
-        public int GetRecordCount(string strWhere)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT COUNT(1) FROM $TableName$ AS $TableAlias$ ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            object obj = DbHelperSQL.GetSingle(strSql.ToString());
-            if (obj == null)
-            {
-                return 0;
-            }
-            else
-            {
-                return Convert.ToInt32(obj);
-            }
-        }
-
         #endregion
 
 		#region QueryList

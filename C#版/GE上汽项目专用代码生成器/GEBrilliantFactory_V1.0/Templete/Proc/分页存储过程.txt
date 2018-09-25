@@ -16,28 +16,35 @@ AS
   DECLARE @startRow int, @endRow int,
           @strQueryCol_1 nvarchar(max),
           @strQueryCol_2 nvarchar(max),
-          @strSql nvarchar(max)
+          @strSql nvarchar(max), -- 查询分页的SQL
+		  @strCountSql nvarchar(max), -- 查询条数的SQL
+		  @strCommonSql nvarchar(max) -- 公共查询SQL
 
   SET nocount ON;
 
   SET @startRow = (@pageIndex - 1) * @pageSize +1
   SET @endRow = @startRow + @pageSize -1
+  SET @strCommonSql=' FROM $TableName$ AS $TableAlias$ WITH(NOLOCK)  '  
+                       +' WHERE 1=1 ' 
+  IF(@strWhere <> '') 
+    BEGIN  
+      SET @strCommonSql=@strCommonSql+@strWhere 
+    END 
+
   SET @strQueryCol_1=' $strQueryCol_1$ '
   SET @strQueryCol_2=' $strQueryCol_2$ '
 	SET @strSql= ' SELECT '+@strQueryCol_1
               +' FROM ( '
                        +' SELECT ROW_NUMBER() Over(order by '+@strOrderBy+' ) AS row_num,'
                        +@strQueryCol_2 
-                       +' FROM $TableName$  AS $TableAlias$ WITH(NOLOCK) ' 
-                       +' WHERE 1=1  '
-    if(@strWhere <> '')
-    BEGIN 
-      SET @strSql=@strSql+' AND '+@strWhere
-    END
+                       +@strCommonSql
 	SET @strSql=@strSql +' ) AS tabledata'
     SET @strSql=@strSql +' WHERE row_num  BETWEEN '+cast(@startRow as nvarchar(20))+' AND '+cast(@endRow as nvarchar(20))
   
   EXEC SP_EXECUTESQL @strSql
+
+  SET @strCountSql=' SELECT COUNT(1) AS COUNT '+@strCommonSql
+  EXEC SP_EXECUTESQL @strCountSql
    
   SET nocount OFF;
 GO

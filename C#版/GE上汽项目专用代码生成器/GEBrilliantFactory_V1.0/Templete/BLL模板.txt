@@ -93,7 +93,7 @@ namespace WIP_BLL
         {
             DataSet ds = $TableAlias$DAL.GetListForPage(strOrderBy, strWhere, model);
             List<$EntityName$> list = DataTableToList(ds.Tables[0]);
-            int total = $TableAlias$DAL.GetRecordCount(strWhere);
+            int total = Convert.ToInt32(ds.Tables[1].Rows[0]["COUNT"]);
             PageResultModel<$EntityName$> result = new PageResultModel<$EntityName$>();
             result.total = total;
             result.rows = list;
