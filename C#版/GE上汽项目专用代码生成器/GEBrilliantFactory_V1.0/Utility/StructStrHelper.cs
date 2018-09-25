@@ -934,24 +934,22 @@ where obj.name='" + tableName + "'  ";
                         case DataTypeEnum.dt_nvarchar:
                             sb.Append("                if (!string.IsNullOrEmpty(queryModel." + columnModel.ColumnName + ")) \n");
                             sb.Append("                { \n");
-                            sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " LIKE '%\" + queryModel." + columnModel.ColumnName + " + \"%',\"; \n");
+                            sb.Append("                    strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " LIKE '%\" + queryModel." + columnModel.ColumnName + " + \"%'\"; \n");
                             sb.Append("                } \n");
                             break;
                         case DataTypeEnum.dt_bit:
                             sb.Append("                if (!string.IsNullOrEmpty(queryModel." + columnModel.ColumnName + ")) \n");
                             sb.Append("                { \n");
-                            sb.Append("                    strWhere += \" $TableAlias$." + columnModel.ColumnName + " = '\" + queryModel." + columnModel.ColumnName + " + \"',\"; \n");
+                            sb.Append("                    strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " = '\" + queryModel." + columnModel.ColumnName + " + \"'\"; \n");
                             sb.Append("                } \n");
                             break;
                         case DataTypeEnum.dt_int:
-                            sb.Append("                strWhere += \" $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \",\"; \n");
+                            sb.Append("                strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \"\"; \n");
                             break;
                         default:
                             break;
                     }
                 }
-                sb.Append("if (!string.IsNullOrEmpty(strWhere)) \n");
-                sb.Append("                    strWhere = strWhere.Substring(0, strWhere.Length - 1); \n");
                 return sb.ToString();
             }
             catch (Exception ex)
