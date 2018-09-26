@@ -23,7 +23,7 @@ namespace GenerateCode_GEBrilliantFactory
 
             string attrString = "";
 
-            List<ColumnModel> newColumnNameList = ListHelper.RemoveDelFlagCreatorModifier(columnNameList);
+            List<ColumnModel> newColumnNameList = ListHelper.RemoveIdCreatorModifier(columnNameList);
             for (int i = 0; i < newColumnNameList.Count; ++i)
             {
                 attrString += StructStrHelper.GenerateAttributeForQueryModel(newColumnNameList[i]);
