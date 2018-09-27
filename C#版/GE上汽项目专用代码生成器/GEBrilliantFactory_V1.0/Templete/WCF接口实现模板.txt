@@ -24,23 +24,23 @@ namespace $Wcf_NameSpacePath$
         /// <summary>
         /// 插入$ChinaComment$
         /// </summary>
-        /// <param name="model">要插入的$ChinaComment$实体</param>
+        /// <param name="param">要插入的$ChinaComment$参数类</param>
         /// <returns></returns>
-        public ReturnBody<string> Insert$Modulelogo$($EntityName$ model)
+        public ReturnBody<string> Insert$Modulelogo$($AddEntityParam$ param)
         {
             ReturnBody<string> retBody = null;
-			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$EntityName$>("Insert$Modulelogo$", model);
+			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$AddEntityParam$>("Insert$Modulelogo$", param);
             try
             {
                 #region 验证
-                if (model == null)
+                if (param == null)
                 {
 				    exception.exceptionMsg = ResMsg.PARAMETERNOEMPTY;
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.PARAMETERNOEMPTY,ResMsg.PARAMETERNOEMPTY,exception);
                     return retBody;
                 }
                 $ValidateEmptyForInsert$
-                ValidateResModel res = ValidateData.ValidateNullOrEmpty<$EntityName$>(columnsList, model);
+                ValidateResModel res = ValidateData.ValidateNullOrEmpty<$AddEntityParam$>(columnsList, param);
                 if (res != null && !res.IsValidate)
                 {
 				    exception.exceptionMsg =  res.ValidateMsg;
@@ -48,7 +48,7 @@ namespace $Wcf_NameSpacePath$
                     return retBody;
                 }
                 //验证重复
-                if ($TableAlias$BLL.Exists(model.$PrimaryKey$.ToString()))
+                if ($TableAlias$BLL.Exists(param.$PrimaryKey$.ToString()))
                 {
 				    exception.exceptionMsg = "数据已经存在";
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.FAILURE, exception.exceptionMsg, exception);
@@ -57,7 +57,7 @@ namespace $Wcf_NameSpacePath$
                 #endregion
 
 				string creator="sys";
-                if ($TableAlias$BLL.Add(model,creator)>0)
+                if ($TableAlias$BLL.Add(param,creator)>0)
                 {
                     retBody = WIPCommon.GetReturnBody<string>(ResCode.SUCCESS, ResMsg.SUCCESS);
                 }

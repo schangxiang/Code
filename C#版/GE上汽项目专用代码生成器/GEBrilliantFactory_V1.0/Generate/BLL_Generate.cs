@@ -13,6 +13,7 @@ namespace GenerateCode_GEBrilliantFactory
     {
         public static string CreateBLLText(string filePrefixName, string TableName, string entityName, string Author,
             string ChinaComment, string primaryKey,string primaryKeyDesc,string Modulelogo,string tableAlias,
+            string addEntityParam,
             List<ColumnModel> columnNameList)
         {
             var str_bll = TextHelper.ReadText(@"Templete\BLL模板.txt");
@@ -28,6 +29,8 @@ namespace GenerateCode_GEBrilliantFactory
             str_bll = str_bll.Replace("$PrimaryKey$", primaryKey);//主键
             str_bll = str_bll.Replace("$PrimaryKeyDesc$", primaryKeyDesc);//描述
             str_bll = str_bll.Replace("$TableAlias$", tableAlias);//表别名
+
+            str_bll = str_bll.Replace("$AddEntityParam$", addEntityParam);
 
             str_bll = str_bll.Replace("$ToSingleModel$", StructStrHelper.GetToModelStr(columnNameList));//动态给实体类赋值 
             return str_bll;

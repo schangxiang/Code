@@ -205,6 +205,10 @@ namespace GenerateCode_GEBrilliantFactory
         /// <summary>
         /// VUE文件
         /// </summary>
-        VUEFile = 16
+        VUEFile = 16,
+        /// <summary>
+        /// 新增实体参数类
+        /// </summary>
+        AddModelParam=17
     }
 }

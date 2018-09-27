@@ -55,7 +55,10 @@ namespace GenerateCode_GEBrilliantFactory
                 case FileType.Model:
                     fileTypeName = ".cs";
                     break;
-
+                case FileType.AddModelParam:
+                    entityName = "Add" + modulelogo + "Param";
+                    fileTypeName = ".cs";
+                    break;
                 case FileType.IBLL:
                     entityName = "I" + filePrefixName + "BLL";
                     fileTypeName = ".cs";
@@ -109,7 +112,7 @@ namespace GenerateCode_GEBrilliantFactory
                     fileTypeName = ".txt";
                     break;
                 case FileType.VUE_FunConfig:
-                    entityName = _tableName + "-VUE方法配置";
+                    entityName = _tableName + "VUE方法配置";
                     fileTypeName = ".txt";
                     break;
                 case FileType.VUEFile:
@@ -121,10 +124,8 @@ namespace GenerateCode_GEBrilliantFactory
             {
                 Directory.CreateDirectory(_strPath + "\\" + _tableName);
             }
-            string txtName = _strPath + "\\" + _tableName + "\\" + entityName + fileTypeName;
-
-
-            using (StreamWriter outfile = new StreamWriter(txtName, false, Encoding.GetEncoding("UTF-8")))
+            string filePath = _strPath + "\\" + _tableName + "\\" + entityName + fileTypeName;
+            using (StreamWriter outfile = new StreamWriter(filePath, false, Encoding.GetEncoding("UTF-8")))
             {
                 outfile.Write(_code);
             }

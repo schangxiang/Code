@@ -19,11 +19,13 @@ namespace WIP_BLL
 		 /// <summary>
         /// 增加一条$ChinaComment$数据
         /// </summary>
-        /// <param name="model">要增加的$ChinaComment$实体</param>
+        /// <param name="param">要增加的$ChinaComment$参数类</param>
 		/// <param name="creator">创建人</param>
         /// <returns>插入的最新主键值</returns>
-        public int Add($EntityName$ model,string creator)
+        public int Add($AddEntityParam$ param,string creator)
         {
+			$EntityName$ model = null;
+			model = WIPCommon.T1ToT2<$AddEntityParam$, $EntityName$>(param);
 			model.creator = model.lastModifier = creator;
 		    model.createTime = model.lastModifyTime = DateTime.Now;
 			model.delFlag=false;

@@ -14,7 +14,7 @@ namespace GenerateCode_GEBrilliantFactory
     {
         public static string CreateText(string TableAlias, string modulelogo,string primaryKey, List<ColumnModel> columnNameList)
         {
-            var str = TextHelper.ReadText(@"Templete\VUE文件模板.txt");
+            var str = TextHelper.ReadText(@"Templete\VUE\VUE文件模板.txt");
 
 
             str = str.Replace("$el-table-column$", StructStrHelper.GetElTableColumnStr(columnNameList));//列表项

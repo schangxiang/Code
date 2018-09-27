@@ -105,6 +105,8 @@ namespace GenerateCode_GEBrilliantFactory
                     return;
                 }
 
+                string addEntityParam = "Add" + modulelogo + "Param";//新增参数类名
+
                 //生成Model
                 CreateModelFile(columnList, tableName, filePrefixName, wcf_NameSpacePath, createPerson, chinaComment, entityName, modulelogo);
 
@@ -120,22 +122,26 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //生成BLL文件
                 str_generate = BLL_Generate.CreateBLLText(filePrefixName, tableName, entityName, createPerson,
-                   chinaComment, primaryKey, primaryKeyDesc, modulelogo,tableAlias, columnList);
+                   chinaComment, primaryKey, primaryKeyDesc, modulelogo, tableAlias, addEntityParam, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.BLL, filePrefixName, entityName, modulelogo);
 
                 //生成QueryModel文件
                 str_generate = QueryModel_Generate.CreateQueryModelLText(modulelogo, chinaComment, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.QueryModel, filePrefixName, entityName, modulelogo);
 
+                //生成AddModel文件
+                str_generate = AddModel_Generate.CreateAddModelLText(addEntityParam, chinaComment, columnList);
+                tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.AddModelParam, filePrefixName, entityName, modulelogo);
+
 
                 //生成WCF接口文件
-                str_generate = WCF_Interface_Generate.CreateText(wcf_NameSpacePath, modulelogo, entityName, chinaComment);
+                str_generate = WCF_Interface_Generate.CreateText(wcf_NameSpacePath, modulelogo, entityName, chinaComment, addEntityParam);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.WCF_InterFace, filePrefixName, entityName, modulelogo);
 
 
                 //生成WCF接口实现文件
                 str_generate = WCF_InterfaceRealize_Generate.CreateText(wcf_NameSpacePath, modulelogo,
-                    entityName, chinaComment, filePrefixName, primaryKey, tableAlias, columnList);
+                    entityName, chinaComment, filePrefixName, primaryKey, tableAlias, addEntityParam, columnList);
                 tf = TextHelper.Export2File(tbPath.Text, tableName, str_generate, FileType.WCF_InterFaceRealize, filePrefixName, entityName, modulelogo);
 
 

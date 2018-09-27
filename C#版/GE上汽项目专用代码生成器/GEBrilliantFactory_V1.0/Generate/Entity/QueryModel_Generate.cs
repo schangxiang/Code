@@ -15,7 +15,7 @@ namespace GenerateCode_GEBrilliantFactory
         public static string CreateQueryModelLText(string Modulelogo,
             string ChinaComment,List<ColumnModel> columnNameList)
         {
-            var str_dal = TextHelper.ReadText(@"Templete\QueryModel模板.txt");
+            var str_dal = TextHelper.ReadText(@"Templete\Entity\QueryModel模板.txt");
 
             str_dal = str_dal.Replace("$ChinaComment$", ChinaComment);//中文注释
            

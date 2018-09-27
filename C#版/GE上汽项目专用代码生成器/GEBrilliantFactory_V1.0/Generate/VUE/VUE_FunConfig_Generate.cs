@@ -21,7 +21,7 @@ namespace GenerateCode_GEBrilliantFactory
         public static string CreateText(string Modulelogo,
             string ChinaComment, string routePrefix)
         {
-            var str = TextHelper.ReadText(@"Templete\VUE-方法配置.txt");
+            var str = TextHelper.ReadText(@"Templete\VUE\VUE方法配置.txt");
 
             str = str.Replace("$ChinaComment$", ChinaComment);//中文注释
             str = str.Replace("$Modulelogo$", Modulelogo);//模块简写
