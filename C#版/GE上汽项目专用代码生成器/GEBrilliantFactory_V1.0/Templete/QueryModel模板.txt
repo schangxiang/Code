@@ -9,6 +9,6 @@ namespace WIP_Models
 	[DataContract]
     public class Query$Modulelogo$Model : PageModel
     {
-        $Attributes$
+        $QueryAttributes$
     }
 }

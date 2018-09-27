@@ -209,8 +209,20 @@ where obj.name='" + tableName + "'  ";
                 attrStr += "        /// " + columnModel.Description + "\n";
                 attrStr += "        /// </summary>\n";
                 attrStr += "        [DataMember]\n";
-                attrStr += "        public string" + str_NullFlag + attr + " { get; set; }\n";
-                attrStr += "\n";//最后是加一个空格
+
+                DataTypeEnum myDataType = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType);
+                switch (myDataType)
+                {
+                    case DataTypeEnum.dt_bigint:
+                    case DataTypeEnum.dt_int:
+                        attrStr += "        public int" + str_NullFlag + attr + " { get; set; }\n";
+                        attrStr += "\n";//最后是加一个空格
+                        break;
+                    default:
+                        attrStr += "        public string" + str_NullFlag + attr + " { get; set; }\n";
+                        attrStr += "\n";//最后是加一个空格
+                        break;
+                }
                 return attrStr;
             }
             catch (Exception ex)
@@ -944,7 +956,10 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("                } \n");
                             break;
                         case DataTypeEnum.dt_int:
-                            sb.Append("                strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \"\"; \n");
+                            sb.Append("                if (queryModel." + columnModel.ColumnName + " !=0) \n");
+                            sb.Append("                { \n");
+                            sb.Append("                    strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \"\"; \n");
+                            sb.Append("                } \n");
                             break;
                         default:
                             break;
