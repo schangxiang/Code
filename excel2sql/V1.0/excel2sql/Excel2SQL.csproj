@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\SYS11_PrintInfoEntity.cs" />
     <Compile Include="Entity\udtWip_CodeItems.cs" />
     <Compile Include="Entity\ColumnEntity.cs" />
     <Compile Include="Entity\udtWip_CodeSets.cs" />

@@ -46,10 +46,11 @@ namespace Excel2SQL
         dt_nvarchar = 0,
         dt_datetime = 1,
         dt_int = 2,
-        dt_decimal = 3,
-        dt_bit = 4,
-        dt_varchar = 5,
-        dt_char = 6
+        dt_bigint = 3,
+        dt_decimal = 4,
+        dt_bit = 5,
+        dt_varchar = 6,
+        dt_char = 7
     }
 }
 

@@ -73,6 +73,9 @@ namespace GenerateModel
                         case DataTypeEnum.dt_int:
                             sb.Append(tabStr + item.ColumnName + "    INT  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
+                        case DataTypeEnum.dt_bigint:
+                            sb.Append(tabStr + item.ColumnName + "    BIGINT  " + str_isNull + ", -- " + item.ChinaName + "\n");
+                            break;
                         case DataTypeEnum.dt_datetime:
                             sb.Append(tabStr + item.ColumnName + "    DATETIME  " + str_isNull + ", -- " + item.ChinaName + "\n");
                             break;
