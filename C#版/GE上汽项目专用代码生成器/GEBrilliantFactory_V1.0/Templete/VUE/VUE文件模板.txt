@@ -68,8 +68,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import {getSingle$Modulelogo$, get$Modulelogo$List, update$Modulelogo$, insert$Modulelogo$, enable$Modulelogo$} from 'api/wipmgmt'
-import { formatDate } from 'common/js/util'
+import { formatterDateTime, getSingle$Modulelogo$, get$Modulelogo$List, update$Modulelogo$, insert$Modulelogo$, enable$Modulelogo$} from 'api/wipmgmt'
 export default {
   data() {
     return {
@@ -108,12 +107,7 @@ export default {
     },
     // 时间格式化
     formatterDateTime (row, column, cellValue, index) {
-      if (cellValue === null || cellValue === '') {
-        return ''
-      }
-      var t = cellValue.slice(6, 19) // 截取字符串
-      var NewDtime = new Date(parseInt(t))
-      return formatDate(NewDtime, 'yyyy-MM-dd hh:mm:ss')
+      return formatterDateTime(cellValue)
     },
 	// 格式化是否禁用字符串
     formatterDelFlag (row, column, cellValue, index) {
