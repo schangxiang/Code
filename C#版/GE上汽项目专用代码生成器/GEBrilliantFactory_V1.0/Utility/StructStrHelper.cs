@@ -91,6 +91,15 @@ where obj.name='" + tableName + "'  ";
                         model.ColumnName = dt.Rows[n]["ColumnName"].ToString();
                         model.DataLength = dt.Rows[n]["DataLength"].ToString();
                         model.DataType = dt.Rows[n]["DataType"].ToString();
+
+                        if (model.DataType.ToUpper() == "nvarchar".ToUpper())
+                        {
+                            if (model.DataLength != "-1")
+                            {
+                                model.DataLength = ((int)Convert.ToInt32(model.DataLength) / 2).ToString();
+                            }
+                        }
+
                         model.Description = dt.Rows[n]["Description"].ToString();
                         if (dt.Rows[n]["IsNullable"].ToString() != "")
                         {
