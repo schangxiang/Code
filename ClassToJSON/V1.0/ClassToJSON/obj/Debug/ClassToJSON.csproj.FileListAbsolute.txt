@@ -27,11 +27,9 @@ F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成�
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\bin\Debug\NPOI.xml
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\bin\Debug\WIP_Models.pdb
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\bin\Debug\WIP_Models.xml
-F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.csprojResolveAssemblyReference.cache
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.MainForm.resources
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.Properties.Resources.resources
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.TaskForm.resources
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.csproj.GenerateResource.Cache
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.exe
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\obj\Debug\ClassToJSON.pdb
-F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\ClassToJSON\V1.0\ClassToJSON\bin\Debug\EntityDLL\WIP_Models.dll

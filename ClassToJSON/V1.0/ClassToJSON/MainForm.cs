@@ -43,7 +43,8 @@ namespace ClassToJSON
                 MessageBox.Show("请输入参数类名！");
                 return;
             }
-            Assembly ass = Assembly.LoadFrom(@"EntityDLL\WIP_Models.dll");
+            //Assembly ass = Assembly.LoadFrom(@"EntityDLL\WIP_Models.dll");
+            Assembly ass = Assembly.LoadFrom(@"E:\CompanyProject\科致软件\src\wip\GEBrilliantFactory\WIP_Models\bin\Debug\WIP_Models.dll");
             Type[] mytypes = ass.GetTypes();
             Type classType = null;
             foreach (Type t in mytypes)
