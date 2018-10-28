@@ -47,12 +47,12 @@ namespace ClassToJSON
                             defaultVal = "null";
                             sb.Append(defaultVal.ToString());
                         }
-                        else if (propertyType == typeof(Int32) || propertyType == typeof(decimal))
+                        else if (propertyType == typeof(Int32) || propertyType == typeof(decimal) || propertyType == typeof(long))
                         {
                             defaultVal = 0;
                             sb.Append(defaultVal.ToString());
                         }
-                        else if (propertyType == typeof(Int32?) || propertyType == typeof(decimal?))
+                        else if (propertyType == typeof(Int32?) || propertyType == typeof(decimal?) || propertyType == typeof(long?))
                         {
                             defaultVal = "null";
                             sb.Append(defaultVal.ToString());
@@ -133,11 +133,11 @@ namespace ClassToJSON
                             {
                                 sb.Append(defaultVal.ToString());
                             }
-                            else if (propertyType == typeof(Int32) || propertyType == typeof(decimal))
+                            else if (propertyType == typeof(Int32) || propertyType == typeof(decimal) || propertyType == typeof(long))
                             {
                                 sb.Append(defaultVal.ToString());
                             }
-                            else if (propertyType == typeof(Int32?) || propertyType == typeof(decimal?))
+                            else if (propertyType == typeof(Int32?) || propertyType == typeof(decimal?) || propertyType == typeof(long?))
                             {
                                 sb.Append(defaultVal.ToString());
                             }
