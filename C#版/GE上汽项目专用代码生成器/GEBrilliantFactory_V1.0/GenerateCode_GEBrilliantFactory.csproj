@@ -76,6 +76,7 @@
     <Compile Include="Generate\BLL_Generate.cs" />
     <Compile Include="Generate\DAL_Generate.cs" />
     <Compile Include="Generate\Procedure_Generate.cs" />
+    <Compile Include="Model\Enum\DataTypeEnum.cs" />
     <Compile Include="Model\ListItem.cs" />
     <Compile Include="Model\Proc.cs" />
     <Compile Include="Utility\CommonHelper.cs" />

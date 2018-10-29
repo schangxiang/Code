@@ -223,6 +223,9 @@ where obj.name='" + tableName + "'  ";
                 switch (myDataType)
                 {
                     case DataTypeEnum.dt_bigint:
+                         attrStr += "        public long" + str_NullFlag + attr + " { get; set; }\n";
+                        attrStr += "\n";//最后是加一个空格
+                        break;
                     case DataTypeEnum.dt_int:
                         attrStr += "        public int" + str_NullFlag + attr + " { get; set; }\n";
                         attrStr += "\n";//最后是加一个空格
@@ -781,6 +784,7 @@ where obj.name='" + tableName + "'  ";
                         case DataTypeEnum.dt_nvarchar:
                             return "  string.IsNullOrEmpty(model.$PrimaryKey$) ";
                         case DataTypeEnum.dt_int:
+                        case DataTypeEnum.dt_bigint:
                             return "  model.$PrimaryKey$ == 0 ";
                         default:
                             break;
@@ -965,6 +969,7 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("                } \n");
                             break;
                         case DataTypeEnum.dt_int:
+                        case DataTypeEnum.dt_bigint:
                             sb.Append("                if (queryModel." + columnModel.ColumnName + " !=0) \n");
                             sb.Append("                { \n");
                             sb.Append("                    strWhere += \" AND $TableAlias$." + columnModel.ColumnName + " = \" + queryModel." + columnModel.ColumnName + " + \"\"; \n");
