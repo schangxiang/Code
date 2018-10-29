@@ -645,10 +645,15 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("} \n");
                             break;
                         case DataTypeEnum.dt_int:
+                             sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
+                            sb.Append("{ \n");
+                            sb.Append("   model." + columnModel.ColumnName.ToString() + " = int.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
+                            sb.Append("} \n");
+                            break;
                         case DataTypeEnum.dt_bigint:
                             sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
                             sb.Append("{ \n");
-                            sb.Append("   model." + columnModel.ColumnName.ToString() + " = int.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
+                            sb.Append("   model." + columnModel.ColumnName.ToString() + " = long.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
                             sb.Append("} \n");
                             break;
                         case DataTypeEnum.dt_decimal:
