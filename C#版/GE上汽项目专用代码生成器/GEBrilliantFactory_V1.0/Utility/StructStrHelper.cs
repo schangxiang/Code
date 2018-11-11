@@ -530,20 +530,20 @@ where obj.name='" + tableName + "'  ";
                         case DataTypeEnum.dt_uniqueidentifier:
                         case DataTypeEnum.dt_Varchar_Ext_Link:
                         case DataTypeEnum.dt_nvarchar:
-                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " when '' then "
+                            updateSql = "  " + attrColumnName + "= case @" + attrColumnName + " when NULL then " + attrColumnName + " when '' then "
                                 + attrColumnName + " else @" + attrColumnName + " end  ";
                             break;
                         case DataTypeEnum.dt_bigint:
                         case DataTypeEnum.dt_int:
                         case DataTypeEnum.dt_decimal:
                         case DataTypeEnum.dt_float:
-                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " when 0 then "
+                            updateSql = "  " + attrColumnName + "= case @" + attrColumnName + " when NULL then " + attrColumnName + " when 0 then "
                                 + attrColumnName + " else @" + attrColumnName + " end  ";
                             break;
                         case DataTypeEnum.dt_datetime:
                         case DataTypeEnum.dt_datetime2:
                         case DataTypeEnum.dt_bit:
-                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " else @" + attrColumnName + " end  ";
+                            updateSql = "  " + attrColumnName + "= case @" + attrColumnName + " when NULL then " + attrColumnName + " else @" + attrColumnName + " end  ";
                             break;
                         default:
                             updateSql = "  " + attrColumnName + "=@" + attrColumnName + "  ";
