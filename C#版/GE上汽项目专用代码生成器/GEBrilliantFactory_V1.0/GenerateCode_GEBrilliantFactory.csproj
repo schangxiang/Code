@@ -140,6 +140,9 @@
     <Content Include="Templete\Entity\AddModel模板.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Templete\Proc\修改一条记录存储过程2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templete\Proc\修改一条记录存储过程.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -58,6 +58,10 @@ namespace GenerateCode_GEBrilliantFactory
                 sbText.Append(GetUpdateProcStr(TableName, TableAlias, Author, ChinaComment, PimaryKey, filePrefixName, columnNameList));
                 sbText.Append("\n\n");
 
+                //5、更新一条记录存储过程2
+                sbText.Append(GetUpdateProcStr2(TableName, TableAlias, Author, ChinaComment, PimaryKey, filePrefixName, columnNameList));
+                sbText.Append("\n\n");
+
 
                 //存储过程名
                 ProcName procName = CommonHelper.GetProcName(Modulelogo);
@@ -220,7 +224,7 @@ namespace GenerateCode_GEBrilliantFactory
         /// <param name="columnNameList"></param>
         /// <returns></returns>
         private static string GetUpdateProcStr(string TableName, string TableAlias, string Author, string ChinaComment,
-    string PimaryKey, string filePrefixName, List<ColumnModel> columnNameList)
+      string PimaryKey, string filePrefixName, List<ColumnModel> columnNameList)
         {
             var str_proc = TextHelper.ReadText(@"Templete\proc\修改一条记录存储过程.txt");
 
@@ -235,6 +239,26 @@ namespace GenerateCode_GEBrilliantFactory
 
             str_proc = str_proc.Replace("$update_cols_params$", StructStrHelper.GetInputParamColumnsStrForUpdate(columnNameList));
             str_proc = str_proc.Replace("$update_cols_assignment$", StructStrHelper.GetCols_AssignmentStrForUpdate(columnNameList));
+
+            return str_proc;
+        }
+
+        private static string GetUpdateProcStr2(string TableName, string TableAlias, string Author, string ChinaComment,
+    string PimaryKey, string filePrefixName, List<ColumnModel> columnNameList)
+        {
+            var str_proc = TextHelper.ReadText(@"Templete\proc\修改一条记录存储过程2.txt");
+
+            str_proc = str_proc.Replace("$ProcName$", filePrefixName + "_Update");//存储过程名
+            str_proc = str_proc.Replace("$TableName$", TableName);//表名
+            str_proc = str_proc.Replace("$TableAlias$", TableAlias);//别名
+            str_proc = str_proc.Replace("$Author$", Author);//作者
+            str_proc = str_proc.Replace("$ChinaComment$", ChinaComment);//中文注释
+            str_proc = str_proc.Replace("$CurDate$", CommonHelper.GetCurDate());//当前时间
+
+            str_proc = str_proc.Replace("$Primary$", PimaryKey);
+
+            str_proc = str_proc.Replace("$update_cols_params$", StructStrHelper.GetInputParamColumnsStrForUpdate(columnNameList));
+            str_proc = str_proc.Replace("$update_cols_assignment2$", StructStrHelper.GetCols_AssignmentStrForUpdate2(columnNameList));
 
             return str_proc;
         }

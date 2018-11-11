@@ -223,7 +223,7 @@ where obj.name='" + tableName + "'  ";
                 switch (myDataType)
                 {
                     case DataTypeEnum.dt_bigint:
-                         attrStr += "        public long" + str_NullFlag + attr + " { get; set; }\n";
+                        attrStr += "        public long" + str_NullFlag + attr + " { get; set; }\n";
                         attrStr += "\n";//最后是加一个空格
                         break;
                     case DataTypeEnum.dt_int:
@@ -494,6 +494,71 @@ where obj.name='" + tableName + "'  ";
         }
 
         /// <summary>
+        /// 生成赋值sql字符串，用于修改
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <param name="primaryKey"></param>
+        /// <returns></returns>
+        public static string GetCols_AssignmentStrForUpdate2(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            columnNameList = ListHelper.RemoveCreator(columnNameList);
+
+            StringBuilder sql = new StringBuilder();
+            ColumnModel columnModel = null;
+            string attrColumnName = null;
+            var updateSql = "";
+            for (int i = 0; i < columnNameList.Count; i++)
+            {
+                columnModel = columnNameList[i];
+                attrColumnName = columnModel.ColumnName;
+                if (columnModel.IsPrimaryKey)
+                    continue;
+
+                if (attrColumnName.ToUpper() == "lastModifier".ToUpper() || attrColumnName.ToUpper() == "lastModifyTime".ToUpper())
+                {
+                    updateSql = "  " + attrColumnName + "=@" + attrColumnName + "  ";
+                }
+                else
+                {
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
+                    switch (enumDT)
+                    {
+                        case DataTypeEnum.dt_char:
+                        case DataTypeEnum.dt_varchar:
+                        case DataTypeEnum.dt_Varchar_Desc:
+                        case DataTypeEnum.dt_uniqueidentifier:
+                        case DataTypeEnum.dt_Varchar_Ext_Link:
+                        case DataTypeEnum.dt_nvarchar:
+                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " when '' then "
+                                + attrColumnName + " else @" + attrColumnName + " end  ";
+                            break;
+                        case DataTypeEnum.dt_bigint:
+                        case DataTypeEnum.dt_int:
+                        case DataTypeEnum.dt_decimal:
+                        case DataTypeEnum.dt_float:
+                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " when 0 then "
+                                + attrColumnName + " else @" + attrColumnName + " end  ";
+                            break;
+                        case DataTypeEnum.dt_datetime:
+                        case DataTypeEnum.dt_datetime2:
+                        case DataTypeEnum.dt_bit:
+                            updateSql = "  " + attrColumnName + "= case " + attrColumnName + " when NULL then " + attrColumnName + " else @" + attrColumnName + " end  ";
+                            break;
+                        default:
+                            updateSql = "  " + attrColumnName + "=@" + attrColumnName + "  ";
+                            break;
+                    }
+                }
+
+                sql.Append(updateSql + ",\n");
+            }
+            //截取掉最后一个 ,\n
+            var strSql = sql.ToString().Substring(0, sql.ToString().Length - 2);
+            return strSql;
+        }
+
+        /// <summary>
         /// 构造新增SQL的参数ForDAL文件
         /// </summary>
         /// <param name="columnNameList"></param>
@@ -645,7 +710,7 @@ where obj.name='" + tableName + "'  ";
                             sb.Append("} \n");
                             break;
                         case DataTypeEnum.dt_int:
-                             sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
+                            sb.Append("if (dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString() != \"\") \n");
                             sb.Append("{ \n");
                             sb.Append("   model." + columnModel.ColumnName.ToString() + " = int.Parse(dataRow[\"" + columnModel.ColumnName.ToString() + "\"].ToString()); \n");
                             sb.Append("} \n");
