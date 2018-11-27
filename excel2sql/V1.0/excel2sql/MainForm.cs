@@ -127,5 +127,16 @@ namespace Excel2SQL
         {
             Application.Exit();
         }
+
+        /// <summary>
+        /// 测试用例汇总
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_CeShiYongLi_Click(object sender, EventArgs e)
+        {
+            CSYLHZForm frm = new CSYLHZForm();
+            frm.ShowDialog();
+        }
     }
 }

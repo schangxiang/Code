@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WIP_Models;
 
 namespace Excel2SQL
 {
@@ -30,10 +31,10 @@ namespace Excel2SQL
                     if (string.IsNullOrEmpty(item.code))
                         continue;
                     sb.Append("------------------------------------  \n");
-                    sb.Append("--用途：初始化码表["+item.name+"]  \n");
+                    sb.Append("--用途：初始化码表[" + item.name + "]  \n");
                     sb.Append("--说明：预制码表[" + item.name + "]数据   \n");
                     sb.Append("--作者: shaocx   \n");
-                    sb.Append("--时间："+Common.GetCurDate()+"   \n");
+                    sb.Append("--时间：" + Common.GetCurDate() + "   \n");
                     sb.Append("------------------------------------   \n");
                     sb.Append("DELETE udtWip_CodeSets WHERE code='" + item.code + "'; \n");
                     sb.Append("DELETE udtWip_CodeItems WHERE setCode='" + item.code + "'; \n");
@@ -69,6 +70,45 @@ namespace Excel2SQL
                     }
                     sb.Append("GO \n\n\n\n");
                 }
+
+                var bb = sb.ToString();
+                return bb;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        public static string GetInsertSQLForCSYLHZ(List<UdtWip_UnitTest> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                sb.Append("  TRUNCATE table udtWip_UnitTest;  \n");
+                sb.Append(" GO \n ");
+                foreach (var item in list)
+                {
+                    if (string.IsNullOrEmpty(item.ceshijiaoben))
+                        continue;
+
+                    sb.Append(@"INSERT INTO udtWip_UnitTest ([ceshijiaoben], [sysCode], [fenlei],[type], [shuru], [guocheng], [shuchu], [jieguo])");
+                    sb.Append(" VALUES(");
+                    sb.Append(" N'" + item.ceshijiaoben + "',");
+                    sb.Append(" N'" + item.sysCode + "',");
+                    sb.Append(" N'" + item.fenlei + "',");
+                    sb.Append(" N'" + item.type + "',");
+                    sb.Append(" N'" + item.shuru + "',");
+                    sb.Append(" N'" + item.guocheng + "',");
+                    sb.Append(" N'" + item.shuchu + "',");
+                    if (string.IsNullOrEmpty(item.jieguo))
+                        item.jieguo = "保留";
+                    sb.Append(" N'" + item.jieguo + "'");
+                    sb.Append("); \n");
+                }
+                sb.Append("GO \n\n\n\n");
+                sb.Append(" PRINT '执行完成' \n\n");
 
                 var bb = sb.ToString();
                 return bb;

@@ -39,6 +39,7 @@
             this.tb_PrimaryKey = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_CeShiYongLi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_InsertSQLForCodeTable
@@ -129,19 +130,30 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(174, 398);
+            this.btn_Exit.Location = new System.Drawing.Point(307, 397);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(219, 67);
+            this.btn_Exit.Size = new System.Drawing.Size(239, 67);
             this.btn_Exit.TabIndex = 14;
             this.btn_Exit.Text = "退出";
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // btn_CeShiYongLi
+            // 
+            this.btn_CeShiYongLi.Location = new System.Drawing.Point(42, 397);
+            this.btn_CeShiYongLi.Name = "btn_CeShiYongLi";
+            this.btn_CeShiYongLi.Size = new System.Drawing.Size(219, 67);
+            this.btn_CeShiYongLi.TabIndex = 15;
+            this.btn_CeShiYongLi.Text = "测试用例汇总数据";
+            this.btn_CeShiYongLi.UseVisualStyleBackColor = true;
+            this.btn_CeShiYongLi.Click += new System.EventHandler(this.btn_CeShiYongLi_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 490);
+            this.Controls.Add(this.btn_CeShiYongLi);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.tb_PrimaryKey);
             this.Controls.Add(this.label5);
@@ -174,6 +186,7 @@
         private System.Windows.Forms.TextBox tb_PrimaryKey;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Button btn_CeShiYongLi;
     }
 }
 

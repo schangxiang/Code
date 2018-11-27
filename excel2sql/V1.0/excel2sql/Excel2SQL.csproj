@@ -64,7 +64,14 @@
     <Compile Include="Entity\udtWip_CodeItems.cs" />
     <Compile Include="Entity\ColumnEntity.cs" />
     <Compile Include="Entity\udtWip_CodeSets.cs" />
+    <Compile Include="Entity\UdtWip_UnitTest.cs" />
     <Compile Include="excel2sql.cs" />
+    <Compile Include="CSYLHZForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSYLHZForm.Designer.cs">
+      <DependentUpon>CSYLHZForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitCodeItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Common.cs" />
     <Compile Include="Utility\TextHelper.cs" />
+    <EmbeddedResource Include="CSYLHZForm.resx">
+      <DependentUpon>CSYLHZForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitCodeItemForm.resx">
       <DependentUpon>InitCodeItemForm.cs</DependentUpon>
     </EmbeddedResource>
