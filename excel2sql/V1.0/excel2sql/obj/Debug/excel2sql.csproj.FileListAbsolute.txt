@@ -46,3 +46,4 @@ F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成�
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\excel2sql\V1.0\excel2sql\obj\Debug\Excel2SQL.exe
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\excel2sql\V1.0\excel2sql\obj\Debug\Excel2SQL.pdb
 F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\excel2sql\V1.0\excel2sql\obj\Debug\Excel2SQL.CSYLHZForm.resources
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\代码自动生成器\excel2sql\V1.0\excel2sql\obj\Debug\Excel2SQL.csprojResolveAssemblyReference.cache

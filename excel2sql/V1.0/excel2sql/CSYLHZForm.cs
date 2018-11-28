@@ -73,6 +73,7 @@ namespace Excel2SQL
             fileDialog.Filter = "所有文件(*xls*)|*.xls*"; //设置要选择的文件的类型
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
+                this.tb_CreateCodeItemFile.Text = "";
                 for (int fi = 0; fi < fileDialog.FileNames.Length; fi++)
                 {
                     if (fi == 0)
@@ -84,8 +85,6 @@ namespace Excel2SQL
                         this.tb_CreateCodeItemFile.Text += "," + fileDialog.FileNames[fi].ToString();
                     }
                 }
-                //string file = fileDialog.FileName;//返回文件的完整路径    
-                //this.tb_CreateCodeItemFile.Text = file;
             }
         }
 
