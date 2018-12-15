@@ -282,7 +282,7 @@ where obj.name='" + tableName + "'  ";
             for (int i = 0; i < columnNameList.Count; i++)
             {
                 columnModel = columnNameList[i];
-                description = "   --    " + columnModel.Description;
+                description = "   --    " + columnModel.ColumnName + "  " + columnModel.Description;
                 string attrColumnName = columnModel.ColumnName;
                 if (attrColumnName.ToUpper() == "ID")
                     continue;
@@ -308,7 +308,7 @@ where obj.name='" + tableName + "'  ";
             for (int i = 0; i < columnNameList.Count; i++)
             {
                 columnModel = columnNameList[i];
-                description = "   --    " + columnModel.Description;
+                description = "   --    " + columnModel.ColumnName +"  "+ columnModel.Description;
                 string attrColumnName = columnModel.ColumnName;
                 if (attrColumnName.ToUpper() == "ID")
                     continue;
