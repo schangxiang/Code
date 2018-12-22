@@ -36,7 +36,7 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "get$Modulelogo$List", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        ReturnBody<PageResultModel<$EntityName$>> Get$Modulelogo$List(Query$Modulelogo$Model queryModel);
+        ReturnBody<PageResultModel<$EntityName$>> Get$Modulelogo$List(Query$Modulelogo$Param pageParam);
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "get$Modulelogo$List", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
@@ -48,7 +48,7 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "getSingle$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        ReturnBody<$EntityName$> GetSingle$Modulelogo$(Query$Modulelogo$Model model);
+        ReturnBody<$EntityName$> GetSingle$Modulelogo$(Query$Modulelogo$Param model);
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "getSingle$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
@@ -60,7 +60,7 @@ namespace $Wcf_NameSpacePath$
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "enable$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Model model);
+        ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Param model);
 
         [OperationContract]
         [WebInvoke(Method = "OPTIONS", UriTemplate = "enable$Modulelogo$", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]

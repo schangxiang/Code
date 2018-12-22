@@ -308,7 +308,7 @@ where obj.name='" + tableName + "'  ";
             for (int i = 0; i < columnNameList.Count; i++)
             {
                 columnModel = columnNameList[i];
-                description = "   --    " + columnModel.ColumnName +"  "+ columnModel.Description;
+                description = "   --    " + columnModel.ColumnName + "  " + columnModel.Description;
                 string attrColumnName = columnModel.ColumnName;
                 if (attrColumnName.ToUpper() == "ID")
                     continue;
@@ -460,6 +460,65 @@ where obj.name='" + tableName + "'  ";
         }
 
         /// <summary>
+        /// 获取查询分页使用的存储过程参数列字符串
+        /// </summary>
+        /// <param name="columnNameList">列集合</param>
+        /// <returns>字符串，@processCardNumber nvarchar(50),@partNumber nvarchar(50),
+        ///</returns>
+        public static string GetInputParamColumnsStrForQueryPage(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            columnNameList = ListHelper.RemoveAll(columnNameList);
+
+            StringBuilder sql = new StringBuilder();
+            ColumnModel columnModel = null;
+            string attrColumnName = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {
+                columnModel = columnNameList[i];
+                attrColumnName = columnModel.ColumnName;
+
+                var fuhao = ",";
+                if (i == columnNameList.Count - 1)
+                {
+                    fuhao = "";
+                }
+                DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
+                switch (enumDT)
+                {
+                    case DataTypeEnum.dt_char:
+                    case DataTypeEnum.dt_varchar:
+                    case DataTypeEnum.dt_Varchar_Desc:
+                    case DataTypeEnum.dt_uniqueidentifier:
+                    case DataTypeEnum.dt_Varchar_Ext_Link:
+                    case DataTypeEnum.dt_nvarchar:
+                        var dataLength = columnModel.DataLength;
+                        if (dataLength == "-1")
+                        {
+                            dataLength = "max";
+                        }
+                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + "(" + dataLength + ") " + fuhao + "\n");
+                        break;
+                    case DataTypeEnum.dt_bigint:
+                    case DataTypeEnum.dt_int:
+                    case DataTypeEnum.dt_datetime:
+                    case DataTypeEnum.dt_datetime2:
+                    case DataTypeEnum.dt_bit:
+                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
+                        break;
+                    case DataTypeEnum.dt_decimal:
+                    case DataTypeEnum.dt_float:
+                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType
+                            + "(" + columnModel.Precision.ToString() + "," + columnModel.Scale.ToString() + ")  " + fuhao + "\n");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return sql.ToString();
+        }
+
+        /// <summary>
         /// 生成赋值sql字符串，用于修改
         /// </summary>
         /// <param name="columnNameList"></param>
@@ -488,6 +547,32 @@ where obj.name='" + tableName + "'  ";
                 {
                     sql.Append(attrColumnName + "=@" + attrColumnName + ",\n");
                 }
+
+            }
+            return sql.ToString();
+        }
+
+        /// <summary>
+        /// 生成赋值sql字符串，用于查询分页
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <param name="primaryKey"></param>
+        /// <returns></returns>
+        public static string GetCols_AssignmentStrForWherePage(string TableAlias, List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            columnNameList = ListHelper.RemoveAll(columnNameList);
+
+            StringBuilder sql = new StringBuilder();
+            ColumnModel columnModel = null;
+            string attrColumnName = null;
+            sql.Append(" 1=1  \n");
+            for (int i = 0; i < columnNameList.Count; i++)
+            {
+                columnModel = columnNameList[i];
+                attrColumnName = columnModel.ColumnName;
+                sql.Append(" AND ( @" + attrColumnName + " IS NULL OR @" + attrColumnName + "='' OR " + TableAlias + "." + attrColumnName + "=@" + attrColumnName + " ) \n");
+
 
             }
             return sql.ToString();
@@ -619,6 +704,44 @@ where obj.name='" + tableName + "'  ";
             paramSql.Append(firstParam);
             paramSql.Append("            };\n");
             paramSql.Append(secondParam);
+
+            return paramSql.ToString();
+        }
+
+
+        /// <summary>
+        /// 构造查询分页SQL的参数ForDAL文件
+        /// </summary>
+        /// <param name="columnNameList"></param>
+        /// <returns></returns>
+        public static string GetParameterForQueryPageDAL(List<ColumnModel> columnNameList)
+        {
+            //构造新的List
+            columnNameList = ListHelper.RemoveAll(columnNameList);
+
+
+            StringBuilder paramSql = new StringBuilder();
+            paramSql.Append("SqlParameter[] parameters = { " + "\n");
+            string firstParam = "", secondParam = "";
+            ColumnModel columnModel = null;
+            for (int i = 0; i < columnNameList.Count; i++)
+            {
+                columnModel = columnNameList[i];
+                firstParam += GetSqlParameterStr(columnModel);
+                secondParam += "            parameters[" + i.ToString() + "].Value = pageParam." + columnModel.ColumnName + ";\n";
+                if (i == (columnNameList.Count - 1))
+                { //增加分页参数
+                    firstParam += "              new SqlParameter(\"@pageIndex\", SqlDbType.Int) , \n";
+                    firstParam += "              new SqlParameter(\"@pageSize\", SqlDbType.Int)  \n";
+                    secondParam += "            parameters[" + (i + 1).ToString() + "].Value = pageParam.pageIndex;\n";
+                    secondParam += "            parameters[" + (i + 2).ToString() + "].Value = pageParam.pageSize;\n";
+                }
+            }
+            paramSql.Append(firstParam);
+            paramSql.Append("            };\n");
+            paramSql.Append(secondParam);
+
+
 
             return paramSql.ToString();
         }

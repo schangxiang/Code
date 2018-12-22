@@ -7,7 +7,7 @@ namespace WIP_Models
     /// ≤È—Ø$ChinaComment$¿‡
     /// </summary>
 	[DataContract]
-    public class Query$Modulelogo$Model : PageModel
+    public class Query$Modulelogo$Param : PageModel
     {
         $QueryAttributes$
     }

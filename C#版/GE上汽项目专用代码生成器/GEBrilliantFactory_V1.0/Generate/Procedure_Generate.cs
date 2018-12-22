@@ -38,7 +38,7 @@ namespace GenerateCode_GEBrilliantFactory
 
                 //1、分页存储过程
 
-                sbText.Append(GetPageProcStr(TableName, TableAlias, Author, ChinaComment, str_query_1, str_query_2, filePrefixName));
+                sbText.Append(GetPageProcStr(columnNameList,TableName, TableAlias, Author, ChinaComment, str_query_1, str_query_2, filePrefixName));
                 sbText.Append("\n\n");
 
                 //2、列表存储过程
@@ -89,7 +89,7 @@ namespace GenerateCode_GEBrilliantFactory
         /// <param name="str_query_1"></param>
         /// <param name="str_query_2"></param>
         /// <returns></returns>
-        private static string GetPageProcStr(string TableName, string TableAlias, string Author, string ChinaComment,
+        private static string GetPageProcStr(List<ColumnModel> columnNameList,string TableName, string TableAlias, string Author, string ChinaComment,
             string str_query_1, string str_query_2, string filePrefixName)
         {
             var str_page_proc = TextHelper.ReadText(@"Templete\proc\分页存储过程.txt");
@@ -101,8 +101,12 @@ namespace GenerateCode_GEBrilliantFactory
             str_page_proc = str_page_proc.Replace("$ChinaComment$", ChinaComment);//中文注释
             str_page_proc = str_page_proc.Replace("$CurDate$", CommonHelper.GetCurDate());//当前时间
 
-            str_page_proc = str_page_proc.Replace("$strQueryCol_1$", str_query_1);
-            str_page_proc = str_page_proc.Replace("$strQueryCol_2$", str_query_2);
+
+            str_page_proc = str_page_proc.Replace("$page_cols_params$", StructStrHelper.GetInputParamColumnsStrForQueryPage(columnNameList));
+            str_page_proc = str_page_proc.Replace("$where_cols_params$", StructStrHelper.GetCols_AssignmentStrForWherePage(TableAlias, columnNameList));
+
+            //str_page_proc = str_page_proc.Replace("$strQueryCol_1$", str_query_1);
+            //str_page_proc = str_page_proc.Replace("$strQueryCol_2$", str_query_2);
             return str_page_proc;
         }
 

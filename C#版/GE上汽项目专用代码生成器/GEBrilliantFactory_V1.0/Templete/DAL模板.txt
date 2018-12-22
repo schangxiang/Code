@@ -162,23 +162,12 @@ namespace WIP_DAL
         /// <summary>
         /// 获得$ChinaComment$数据列表(分页)
         /// </summary>
-        /// <param name="strOrderBy">排序字段</param>
-        /// <param name="strWhere">查询条件</param>
-        /// <param name="model">分页实体数据</param>
+        /// <param name="pageParam">分页实体数据</param>
         /// <returns>$ChinaComment$列表DataSet</returns>
-        public DataSet GetListForPage(string strOrderBy, string strWhere, Query$Modulelogo$Model model)
+        public DataSet GetModelListForPage(Query$Modulelogo$Param pageParam)
         {
-            SqlParameter[] parameters = {
-                        new SqlParameter("@strOrderBy", SqlDbType.NVarChar,50) ,
-                        new SqlParameter("@strWhere", SqlDbType.NVarChar,500) ,
-                        new SqlParameter("@pageIndex", SqlDbType.Int) ,
-                        new SqlParameter("@pageSize", SqlDbType.Int) ,
-            };
+            $QueryPageSqlParameter$
 
-            parameters[0].Value = strOrderBy;
-            parameters[1].Value = strWhere;
-            parameters[2].Value = model.pageIndex;
-            parameters[3].Value = model.pageSize;
             return DbHelperSQL.RunProcedure("$GetPageListProcName$", parameters, "pagetable");
         }
 

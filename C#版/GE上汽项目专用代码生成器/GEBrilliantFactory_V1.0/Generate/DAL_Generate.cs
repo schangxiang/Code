@@ -46,6 +46,7 @@ namespace GenerateCode_GEBrilliantFactory
             str_dal = str_dal.Replace("$ToSingleModel$", StructStrHelper.GetToModelStr(columnNameList));//动态给实体类赋值 
             str_dal = str_dal.Replace("$AddSqlParameter$", StructStrHelper.GetParameterForAddDAL(columnNameList));
             str_dal = str_dal.Replace("$UpdateSqlParameter$", StructStrHelper.GetParameterForUpdateDAL(columnNameList));
+            str_dal = str_dal.Replace("$QueryPageSqlParameter$", StructStrHelper.GetParameterForQueryPageDAL(columnNameList));
             return str_dal;
         }
     }

@@ -29,7 +29,7 @@ namespace $Wcf_NameSpacePath$
         public ReturnBody<string> Insert$Modulelogo$($AddEntityParam$ param)
         {
             ReturnBody<string> retBody = null;
-			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$AddEntityParam$>("Insert$Modulelogo$", param);
+			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$AddEntityParam$>(namespaceName,"Insert$Modulelogo$", param);
             try
             {
                 #region 验证
@@ -92,7 +92,7 @@ namespace $Wcf_NameSpacePath$
         public ReturnBody<string> Update$Modulelogo$($EntityName$ model)
         {
             ReturnBody<string> retBody = null;
-			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$EntityName$>("Update$Modulelogo$", model);
+			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<$EntityName$>(namespaceName,"Update$Modulelogo$", model);
             try
             {
                 #region 验证
@@ -153,18 +153,12 @@ namespace $Wcf_NameSpacePath$
         /// 获取$ChinaComment$列表（分页）
         /// </summary>
         /// <returns></returns>
-        public ReturnBody<PageResultModel<$EntityName$>> Get$Modulelogo$List(Query$Modulelogo$Model queryModel)
+        public ReturnBody<PageResultModel<$EntityName$>> Get$Modulelogo$List(Query$Modulelogo$Param pageParam)
         {
-            var strOrderBy = " $TableAlias$.lastModifyTime DESC";
-            var strWhere = "";
-			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("Get$Modulelogo$List", queryModel); 
+			UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Param>(namespaceName,"Get$Modulelogo$List", pageParam); 
 			try
             {
-                if (queryModel != null)
-				{
-					$WhereQuery$
-				}
-                PageResultModel<$EntityName$> list = $TableAlias$BLL.GetModelListForPage(strOrderBy, strWhere, queryModel);
+                PageResultModel<$EntityName$> list = $TableAlias$BLL.GetModelListForPage(pageParam);
                 return WIPCommon.GetReturnBody<PageResultModel<$EntityName$>>(ResCode.SUCCESS, ResMsg.SUCCESS, list);
             }
             catch (Exception ex)
@@ -188,9 +182,9 @@ namespace $Wcf_NameSpacePath$
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public ReturnBody<$EntityName$> GetSingle$Modulelogo$(Query$Modulelogo$Model model)
+        public ReturnBody<$EntityName$> GetSingle$Modulelogo$(Query$Modulelogo$Param model)
         {
-		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("GetSingle$Modulelogo$", model);
+		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Param>(namespaceName,"GetSingle$Modulelogo$", model);
             try
             {
                 #region 验证
@@ -232,9 +226,9 @@ namespace $Wcf_NameSpacePath$
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Model model)
+        public ReturnBody<bool> Enable$Modulelogo$(Query$Modulelogo$Param model)
         {
-		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Model>("Enable$Modulelogo$", model);
+		    UdtWip_ExceptionInfo exception = LogHelper.GetNewExceptionInfo<Query$Modulelogo$Param>(namespaceName,"Enable$Modulelogo$", model);
             try
             {
                 #region 验证

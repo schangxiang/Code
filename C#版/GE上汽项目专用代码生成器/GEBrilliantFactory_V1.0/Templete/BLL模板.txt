@@ -87,13 +87,11 @@ namespace WIP_BLL
         /// <summary>
         /// 获得$ChinaComment$数据列表(分页)
         /// </summary>
-        /// <param name="strOrderBy">排序字段</param>
-        /// <param name="strWhere">查询条件</param>
-        /// <param name="model">分页数据</param>
+        /// <param name="pageParam">查询参数</param>
         /// <returns>$ChinaComment$分页数据</returns>
-        public PageResultModel<$EntityName$> GetModelListForPage(string strOrderBy, string strWhere, Query$Modulelogo$Model model)
+        public PageResultModel<$EntityName$> GetModelListForPage(Query$Modulelogo$Param pageParam)
         {
-            DataSet ds = $TableAlias$DAL.GetListForPage(strOrderBy, strWhere, model);
+            DataSet ds = $TableAlias$DAL.GetModelListForPage(pageParam);
             List<$EntityName$> list = DataTableToList(ds.Tables[0]);
             int total = Convert.ToInt32(ds.Tables[1].Rows[0]["COUNT"]);
             PageResultModel<$EntityName$> result = new PageResultModel<$EntityName$>();

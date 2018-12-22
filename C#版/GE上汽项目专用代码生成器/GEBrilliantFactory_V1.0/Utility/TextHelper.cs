@@ -97,7 +97,7 @@ namespace GenerateCode_GEBrilliantFactory
                     break;
                 case FileType.QueryModel:
                     entityName = "Query" + modulelogo;
-                    fileTypeName = "Model.cs";
+                    fileTypeName = "Param.cs";
                     break;
                 case FileType.WCF_InterFace:
                     entityName = "I" + modulelogo + "Service";
