@@ -478,10 +478,10 @@ where obj.name='" + tableName + "'  ";
                 columnModel = columnNameList[i];
                 attrColumnName = columnModel.ColumnName;
 
-                var fuhao = ",";
+                var fuhao = "," + "\n";
                 if (i == columnNameList.Count - 1)
                 {
-                    fuhao = "";
+                    fuhao = ",";
                 }
                 DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + columnModel.DataType.ToString());
                 switch (enumDT)
@@ -497,19 +497,19 @@ where obj.name='" + tableName + "'  ";
                         {
                             dataLength = "max";
                         }
-                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + "(" + dataLength + ") " + fuhao + "\n");
+                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + "(" + dataLength + ") " + fuhao );
                         break;
                     case DataTypeEnum.dt_bigint:
                     case DataTypeEnum.dt_int:
                     case DataTypeEnum.dt_datetime:
                     case DataTypeEnum.dt_datetime2:
                     case DataTypeEnum.dt_bit:
-                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao + "\n");
+                        sql.Append("@" + attrColumnName + "  " + columnModel.DataType + " " + fuhao);
                         break;
                     case DataTypeEnum.dt_decimal:
                     case DataTypeEnum.dt_float:
                         sql.Append("@" + attrColumnName + "  " + columnModel.DataType
-                            + "(" + columnModel.Precision.ToString() + "," + columnModel.Scale.ToString() + ")  " + fuhao + "\n");
+                            + "(" + columnModel.Precision.ToString() + "," + columnModel.Scale.ToString() + ")  " + fuhao );
                         break;
                     default:
                         break;

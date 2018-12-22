@@ -23,7 +23,7 @@ AS
   SELECT $strQueryCol_1$
   FROM 
   (
-     SELECT ROW_NUMBER() Over(order by '+@strOrderBy+' ) AS row_num,
+     SELECT ROW_NUMBER() Over(order by id desc ) AS row_num,
 			$strQueryCol_2$
 			FROM $TableName$ AS $TableAlias$ WITH(NOLOCK) 
 			WHERE $where_cols_params$

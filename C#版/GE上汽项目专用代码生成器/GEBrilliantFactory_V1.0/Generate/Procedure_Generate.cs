@@ -105,8 +105,8 @@ namespace GenerateCode_GEBrilliantFactory
             str_page_proc = str_page_proc.Replace("$page_cols_params$", StructStrHelper.GetInputParamColumnsStrForQueryPage(columnNameList));
             str_page_proc = str_page_proc.Replace("$where_cols_params$", StructStrHelper.GetCols_AssignmentStrForWherePage(TableAlias, columnNameList));
 
-            //str_page_proc = str_page_proc.Replace("$strQueryCol_1$", str_query_1);
-            //str_page_proc = str_page_proc.Replace("$strQueryCol_2$", str_query_2);
+            str_page_proc = str_page_proc.Replace("$strQueryCol_1$", str_query_1);
+            str_page_proc = str_page_proc.Replace("$strQueryCol_2$", str_query_2);
             return str_page_proc;
         }
 
