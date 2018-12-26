@@ -5,6 +5,7 @@ export function get$Modulelogo$List (data) {
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
     url: '/$RoutePrefix$/get$Modulelogo$List',
+	baseURL: config.wip_domain,
     timeout: defaultTimeout
   })
 }
@@ -15,6 +16,7 @@ export function getSingle$Modulelogo$ (data) {
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
     url: '/$RoutePrefix$/getSingle$Modulelogo$',
+	baseURL: config.wip_domain,
     timeout: defaultTimeout
   })
 }
@@ -25,6 +27,7 @@ export function update$Modulelogo$ (data) {
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
     url: '/$RoutePrefix$/update$Modulelogo$',
+	baseURL: config.wip_domain,
     timeout: defaultTimeout
   })
 }
@@ -35,6 +38,7 @@ export function insert$Modulelogo$ (data) {
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
     url: '/$RoutePrefix$/insert$Modulelogo$',
+	baseURL: config.wip_domain,
     timeout: defaultTimeout
   })
 }
@@ -45,6 +49,7 @@ export function enable$Modulelogo$ (data) {
     headers: {'Content-Type': 'application/json;charset=UTF-8'},
     data: data,
     url: '/$RoutePrefix$/enable$Modulelogo$',
+	baseURL: config.wip_domain,
     timeout: defaultTimeout
   })
 }
