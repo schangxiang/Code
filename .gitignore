@@ -4,3 +4,17 @@
 /设计模式/设计模式/bin
 /设计模式/单例模式/obj
 /设计模式/单例模式/bin
+/抽象工厂模式/DALFactory/bin
+/抽象工厂模式/DALFactory/obj
+/抽象工厂模式/DBUtility/bin
+/抽象工厂模式/DBUtility/obj
+/抽象工厂模式/EasyMVC/bin
+/抽象工厂模式/EasyMVC/obj
+/抽象工厂模式/IDAL/bin
+/抽象工厂模式/IDAL/obj
+/抽象工厂模式/SchoolBLL/bin
+/抽象工厂模式/SchoolBLL/obj
+/抽象工厂模式/SchoolDAL/bin
+/抽象工厂模式/SchoolDAL/obj
+/抽象工厂模式/SchoolModel/bin
+/抽象工厂模式/SchoolModel/obj
