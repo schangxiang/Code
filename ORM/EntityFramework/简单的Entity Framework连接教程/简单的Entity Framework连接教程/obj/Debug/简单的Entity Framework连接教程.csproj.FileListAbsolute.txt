@@ -1,0 +1,18 @@
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.dll.config
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.pdb
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.SqlServer.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.xml
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.SqlServer.xml
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\obj\Debug\简单的Entity Framework连接教程.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\设计模式\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\obj\Debug\简单的Entity Framework连接教程.pdb
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.dll.config
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\简单的Entity Framework连接教程.pdb
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.SqlServer.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.xml
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\bin\EntityFramework.SqlServer.xml
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\obj\Debug\简单的Entity Framework连接教程.dll
+F:\云盘同步文件夹\技能\我电脑上的资料\专题\学习及使用项目\ORM\EntityFramework\简单的Entity Framework连接教程\简单的Entity Framework连接教程\obj\Debug\简单的Entity Framework连接教程.pdb
