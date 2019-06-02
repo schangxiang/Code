@@ -1,0 +1,11 @@
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Web.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Web.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Utility.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\Newtonsoft.Json.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\System.Web.Mvc.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Utility.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.pdb

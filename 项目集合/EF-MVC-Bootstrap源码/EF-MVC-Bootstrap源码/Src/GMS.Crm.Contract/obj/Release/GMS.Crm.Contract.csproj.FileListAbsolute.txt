@@ -1,0 +1,11 @@
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Crm.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Crm.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\EntityFramework.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Framework.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Framework.Utility.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\Newtonsoft.Json.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Framework.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\GMS.Framework.Utility.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\bin\Release\EntityFramework.xml
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\obj\Release\GMS.Crm.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.Contract\obj\Release\GMS.Crm.Contract.pdb

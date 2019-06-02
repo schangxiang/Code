@@ -1,0 +1,15 @@
+E:\淘宝仓库\GMS\bin\GMS.Crm.BLL.dll
+E:\淘宝仓库\GMS\bin\GMS.Crm.BLL.pdb
+E:\淘宝仓库\GMS\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.csprojResolveAssemblyReference.cache
+E:\淘宝仓库\GMS\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.dll
+E:\淘宝仓库\GMS\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Crm.BLL.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Crm.BLL.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Crm.BLL.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Crm.BLL.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.BLL\obj\Debug\GMS.Crm.BLL.pdb

@@ -1,0 +1,12 @@
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Account.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Account.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\EntityFramework.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Framework.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Framework.Utility.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\Newtonsoft.Json.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Framework.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\GMS.Framework.Utility.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\bin\Release\EntityFramework.xml
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\obj\Release\GMS.Account.Contract.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\obj\Release\GMS.Account.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Account.Contract\obj\Release\GMS.Account.Contract.pdb

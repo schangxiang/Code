@@ -1,0 +1,15 @@
+E:\淘宝仓库\GMS\bin\GMS.Cms.Contract.dll
+E:\淘宝仓库\GMS\bin\GMS.Cms.Contract.pdb
+E:\淘宝仓库\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
+E:\淘宝仓库\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb
+E:\淘宝仓库\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Cms.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Cms.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Cms.Contract.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Cms.Contract.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb

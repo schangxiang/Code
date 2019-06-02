@@ -1,0 +1,15 @@
+E:\淘宝仓库\GMS\bin\GMS.OA.Contract.dll
+E:\淘宝仓库\GMS\bin\GMS.OA.Contract.pdb
+E:\淘宝仓库\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.dll
+E:\淘宝仓库\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.pdb
+E:\淘宝仓库\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.OA.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.OA.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.OA.Contract.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.OA.Contract.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.pdb

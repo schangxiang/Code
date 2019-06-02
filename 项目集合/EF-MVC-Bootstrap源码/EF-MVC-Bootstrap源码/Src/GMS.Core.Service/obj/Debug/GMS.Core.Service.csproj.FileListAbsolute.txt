@@ -1,0 +1,15 @@
+E:\淘宝仓库\GMS\bin\GMS.Core.Service.dll
+E:\淘宝仓库\GMS\bin\GMS.Core.Service.pdb
+E:\淘宝仓库\GMS\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.csprojResolveAssemblyReference.cache
+E:\淘宝仓库\GMS\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.dll
+E:\淘宝仓库\GMS\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Core.Service.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Core.Service.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Core.Service.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Core.Service.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Core.Service\obj\Debug\GMS.Core.Service.pdb

@@ -1,0 +1,15 @@
+E:\淘宝仓库\GMS\bin\GMS.Crm.DAL.dll
+E:\淘宝仓库\GMS\bin\GMS.Crm.DAL.pdb
+E:\淘宝仓库\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.csprojResolveAssemblyReference.cache
+E:\淘宝仓库\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.dll
+E:\淘宝仓库\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Crm.DAL.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\bin\GMS.Crm.DAL.pdb
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.csprojResolveAssemblyReference.cache
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.dll
+D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Crm.DAL.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\bin\GMS.Crm.DAL.pdb
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.csprojResolveAssemblyReference.cache
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.dll
+C:\迅雷下载\EF-MVC-Bootstrap源码_20150726\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.pdb
