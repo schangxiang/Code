@@ -23,8 +23,14 @@ namespace CodeFirstDemo.Model
     class UserInfo
     {
         [Key]
-        public int id { get; set; }
+        public int ID { get; set; }
 
-        public string name { get; set; }
+        public string SName { get; set; }
+
+        public string Note { get; set; }
+
+        public int Age { get; set; }
+
+        public List<OrderInfo> OrderInfo { get; set; }
     }
 }
