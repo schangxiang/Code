@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[BAS_NAME](
+    [ID] [INT] NULL,
+    [NAME] [VARCHAR](50) NULL,
+    [OTHER] [VARCHAR](50) NULL,
+    [DATE] [DATETIME] NULL
+) ON [PRIMARY]
