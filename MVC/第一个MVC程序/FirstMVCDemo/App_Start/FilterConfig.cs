@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using FirstMVCDemo.Attribute;
+using System.Web;
 using System.Web.Mvc;
 
 namespace FirstMVCDemo
@@ -8,6 +9,8 @@ namespace FirstMVCDemo
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //注册全局过滤器
+            filters.Add(new LoginFilterAttribute() { IsCheck = true });
         }
     }
 }
