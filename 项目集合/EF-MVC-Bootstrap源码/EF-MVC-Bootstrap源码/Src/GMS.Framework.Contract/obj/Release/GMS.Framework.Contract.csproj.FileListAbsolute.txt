@@ -1,8 +1,0 @@
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Contract.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Contract.pdb
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Utility.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\bin\Release\Newtonsoft.Json.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Utility.pdb
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.pdb

@@ -1,8 +1,0 @@
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\bin\Release\GMS.Core.Config.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\bin\Release\GMS.Core.Config.pdb
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\bin\Release\GMS.Framework.Utility.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\bin\Release\log4net.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\bin\Release\GMS.Framework.Utility.pdb
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.csprojResolveAssemblyReference.cache
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.dll
-D:\Workspaces\EF-MVC-Bootstrap源码\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.pdb
