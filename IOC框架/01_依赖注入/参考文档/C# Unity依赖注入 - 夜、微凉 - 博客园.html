@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.cnblogs.com/wwj1992/p/6728370.html#top -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>C# Unity依赖注入 - 夜、微凉 - 博客园</title>
+    <meta property="og:description" content="简介： 控制反转：我们向IOC容器发出获取一个对象实例的一个请求，IOC容器便把这个对象实例“注入”到我们的手中，在这个过程中你不是一个控制者而是一个请求者，依赖于容器提供给你的资源，控制权落到了容器">
+    <link type="text/css" rel="stylesheet" href="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/bundle-BlackSun.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/bundle-BlackSun-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wwj1992/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wwj1992/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wwj1992/wlwmanifest.xml">
+    <script src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/amp4ads-host-v0.js"></script><script src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/pubads_impl_rendering_2019053001.js"></script><script async="" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/analytics.js"></script><script type="text/javascript" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/encoder.js"></script><script src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=226732;var currentBlogApp='wwj1992',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/blog-common.js" type="text/javascript"></script>
+<link rel="preload" href="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/integrator.js" as="script"><script type="text/javascript" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/integrator.js"></script><script src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/pubads_impl_2019053001.js" async=""></script></head>
+<body>
+<a name="top"></a>
+
+
+<div id="top">
+	
+<div>
+	<table class="HeaderTitles">
+		<tbody><tr>
+			<td>
+				<h1 class="HeaderTitle"><a id="Header1_HeaderTitle" class="HeaderMainTitle" href="https://www.cnblogs.com/wwj1992/">夜微凉、的博客</a></h1>
+				<p id="tagline"></p>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<div>
+	<table id="HeaderBar" class="HeaderBar">
+		<tbody><tr>
+			<td class="HeaderBarTab" nowrap="">
+				
+&nbsp;
+<a id="blog_nav_sitehome" href="https://www.cnblogs.com/">博客园</a>&nbsp;::
+<a id="blog_nav_myhome" href="https://www.cnblogs.com/wwj1992/">首页</a>&nbsp;::
+<a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>&nbsp;::
+<a id="blog_nav_contact" accesskey="9" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%A4%9C%E3%80%81%E5%BE%AE%E5%87%89">联系</a>&nbsp;::
+<a id="blog_nav_rss" href="https://www.cnblogs.com/wwj1992/rss">订阅</a>
+<a id="blog_nav_rss_image" class="XMLLink" href="https://www.cnblogs.com/wwj1992/rss"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/xml.gif" alt="订阅"></a>&nbsp;::
+<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a>
+
+			</td>
+			
+			<td class="HeaderBarTabBack" nowrap="" width="100%">
+				<div id="blog_stats">
+
+	<table class="BlogStatsBar">
+		<tbody><tr>
+			<td width="100%">
+			</td>
+			<td class="BlogStatsBar" nowrap="">
+				&nbsp;
+				63 
+				Posts&nbsp;::
+				0 Stories
+				::
+				13 Comments
+				::
+				0 Trackbacks
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+</div>
+<table id="maintable">
+	<tbody><tr><td id="leftmenu">
+	
+		
+<h3>公告</h3>
+<div class="News">
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/wwj1992/">夜、微凉</a><br>园龄：<a href="https://home.cnblogs.com/u/wwj1992/" title="入园时间：2015-05-07">4年1个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/wwj1992/followers/">28</a><br>关注：<a href="https://home.cnblogs.com/u/wwj1992/followees/">1</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;822a8cea-54f4-e411-b908-9dcfd8948a71&#39;)">+加关注</a></div><script>getFollowStatus('822a8cea-54f4-e411-b908-9dcfd8948a71')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+		<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/wwj1992/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/wwj1992/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/wwj1992/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/wwj1992/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/wwj1992/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="https://www.cnblogs.com/wwj1992/tag/C%23%E5%9F%BA%E7%A1%80/">C#基础</a>(9)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>(7)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/Java%E7%82%B9%E6%BB%B4%E8%AE%B0%E5%BD%95/">Java点滴记录</a>(4)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/spring/">spring</a>(4)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/MSMQ/">MSMQ</a>(3)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/Java/">Java</a>(3)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/.Net/">.Net</a>(3)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/AOP/">AOP</a>(2)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/C%23%20%E6%96%87%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C%28.txt/">C# 文件的操作(.txt</a>(2)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/C%23%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1/">C#多线程和异步任务</a>(2)</li><li><a href="https://www.cnblogs.com/wwj1992/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="mainMenuBackground">
+
+		<h3>随笔分类</h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/wwj1992/category/887069.html">ASP.Net(19)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/wwj1992/category/688392.html">C#记录(27)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/wwj1992/category/688391.html">CSS+HTML</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/wwj1992/category/862536.html">highcharts(2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/wwj1992/category/934482.html">Java(5)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/wwj1992/category/917239.html">Java Web(7)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/wwj1992/category/862534.html">JQuery和JavaScript(4)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/wwj1992/category/1100389.html">Oracle记录(1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/wwj1992/category/1104569.html">Spring和Spring MVC(5)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/wwj1992/category/934499.html">SQL Server(1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/wwj1992/category/1406980.html">消息队列(4)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/wwj1992/archive/2019/04.html">2019年4月 (4)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/wwj1992/archive/2019/03.html">2019年3月 (3)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/wwj1992/archive/2019/02.html">2019年2月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/wwj1992/archive/2018/09.html">2018年9月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/wwj1992/archive/2018/06.html">2018年6月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/wwj1992/archive/2018/03.html">2018年3月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/wwj1992/archive/2018/02.html">2018年2月 (7)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/wwj1992/archive/2018/01.html">2018年1月 (4)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/wwj1992/archive/2017/11.html">2017年11月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/wwj1992/archive/2017/10.html">2017年10月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/wwj1992/archive/2017/06.html">2017年6月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/wwj1992/archive/2017/04.html">2017年4月 (3)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/wwj1992/archive/2017/03.html">2017年3月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/wwj1992/archive/2017/02.html">2017年2月 (3)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/wwj1992/archive/2017/01.html">2017年1月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_15" href="https://www.cnblogs.com/wwj1992/archive/2016/12.html">2016年12月 (4)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_16" href="https://www.cnblogs.com/wwj1992/archive/2016/11.html">2016年11月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_17" href="https://www.cnblogs.com/wwj1992/archive/2016/09.html">2016年9月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_18" href="https://www.cnblogs.com/wwj1992/archive/2016/08.html">2016年8月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_19" href="https://www.cnblogs.com/wwj1992/archive/2016/07.html">2016年7月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_20" href="https://www.cnblogs.com/wwj1992/archive/2016/06.html">2016年6月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_21" href="https://www.cnblogs.com/wwj1992/archive/2016/05.html">2016年5月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_22" href="https://www.cnblogs.com/wwj1992/archive/2016/04.html">2016年4月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_23" href="https://www.cnblogs.com/wwj1992/archive/2016/03.html">2016年3月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_24" href="https://www.cnblogs.com/wwj1992/archive/2016/01.html">2016年1月 (3)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_25" href="https://www.cnblogs.com/wwj1992/archive/2015/12.html">2015年12月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_26" href="https://www.cnblogs.com/wwj1992/archive/2015/11.html">2015年11月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_27" href="https://www.cnblogs.com/wwj1992/archive/2015/10.html">2015年10月 (1)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				<li class="menuItemList">
+					<a id="CatList_LinkList_1_Link_28" href="https://www.cnblogs.com/wwj1992/archive/2015/05.html">2015年5月 (2)</a>
+					<span style="width:10px">
+						
+					</span> 
+				</li>
+			
+				</ul>
+			
+	
+</div></div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/wwj1992/p/5976096.html#4199916">1. Re:C#多线程和线程池</a></li>
+        <li class="recent_comment_body">楼主的文章不错，通俗易懂！上面有的ThreadMethod方法没有加static修饰，还请运行后，再将代码粘贴过来！！</li>
+        <li class="recent_comment_author">--13913130273</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/wwj1992/p/5976096.html#4193732">2. Re:C#多线程和线程池</a></li>
+        <li class="recent_comment_body">非常感谢，很全</li>
+        <li class="recent_comment_author">--小飞龙的爸爸</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/wwj1992/p/5976096.html#4103349">3. Re:C#多线程和线程池</a></li>
+        <li class="recent_comment_body">很全！感谢</li>
+        <li class="recent_comment_author">--九零后的乔治</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#4099865">4. Re:C# Unity依赖注入</a></li>
+        <li class="recent_comment_body">@豆丁小哥哥因为Unity4.0以后，微软把它放到开源社区了，由开源社区的人来维护，用法和命名空间都有变化。而且新版本是没有文档的，项目github地址如下：...</li>
+        <li class="recent_comment_author">--zhaotianff</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3949958">5. Re:C# Unity依赖注入</a></li>
+        <li class="recent_comment_body">@h1nson也可以注册类型的...</li>
+        <li class="recent_comment_author">--周岩</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/wwj1992/p/5976096.html">1. C#多线程和线程池(47001)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/6728370.html">2. C# Unity依赖注入(13374)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/5650957.html">3. List&lt;T&gt;.Sort() 排序的用法(12335)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/5906727.html">4. C#利用反射动态调用DLL并返回结果，和获取程序集的信息(5850)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/8387360.html">5. C#内存管理和垃圾回收机制(5230)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/wwj1992/p/5976096.html">1. C#多线程和线程池(8)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/6728370.html">2. C# Unity依赖注入(4)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/4484525.html">3. （浅谈）.Net控件GridView绑定数据(1)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/wwj1992/p/5976096.html">1. C#多线程和线程池(13)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/6728370.html">2. C# Unity依赖注入(2)</a></li><li><a href="https://www.cnblogs.com/wwj1992/p/5603393.html">3. JQuery Validate验证显示错误提示位置(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+	
+</td><td id="main">
+	
+        <div id="post_detail">
+<div class="post">
+			<div class="postTitle">
+				<a id="cb_post_title_url" href="https://www.cnblogs.com/wwj1992/p/6728370.html">C# Unity依赖注入</a>
+			</div>
+	
+	<div class="postText">
+		<div id="cnblogs_post_body" class="blogpost-body"><h1><strong><span style="font-family: 宋体;">简介：</span></strong></h1>
+<p><strong><span style="font-family: 宋体;">　　　<span style="font-size: 18px; font-family: 黑体;">控制反转：</span></span></strong><span style="font-family: 黑体; font-size: 14px;"><span style="color: #ff0000; font-size: 15px;">我们向IOC容器发出获取一个对象实例的一个请求，IOC容器便把这个对象实例“注入”到我们的手中，在这个过程中你不是一个控制者而是一个请求者，依赖于容器提供给你的资源，控制权落到了容器身上。这个过程就是控制反转。</span>　</span></p>
+<p><span style="font-family: 黑体;">　　 &nbsp;<span style="font-size: 18px;"><strong>依赖注入：</strong></span><span style="font-size: 14px; color: #ff0000;">我们向容器发出请求以后，获得这个对象实例的过程就叫依赖注入。</span></span></p>
+<p><strong><span style="font-family: 宋体;">　　 关于Ioc的框架有很多，比如astle Windsor、Unity、Spring.NET、StructureMap，我们这边使用微软提供的Unity做示例，你可以使用&nbsp;Nuget&nbsp;添加&nbsp;Unity&nbsp;，也可以引用Microsoft.Practices.Unity.dll和Microsoft.Practices.Unity.Configuration.dll，下面我们就一步一步的学习下&nbsp;Unity依赖注入&nbsp;的详细使用。</span></strong></p>
+<h2><span style="font-family: 宋体;">一、使用 Nuget&nbsp;添加&nbsp;Unity&nbsp;</span></h2>
+<p><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/754191-20170418160300321-808801129.png" alt=""></p>
+<h2>二、实现构造注入</h2>
+<p>添加一个接口和一个实现类，通过Main()方法调用测试。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #808080;">    ///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+    <span style="color: #808080;">///</span><span style="color: #008000;"> 显示信息
+    </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> IUserDao
+    {
+        </span><span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes);
+    }
+
+    </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> UserImpl : IUserService
+    {
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> IUserDao IUserDao;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">构造函数设置值</span>
+        <span style="color: #0000ff;">public</span><span style="color: #000000;"> UserImpl(IUserDao UserDao)
+        {
+            IUserDao </span>=<span style="color: #000000;"> UserDao;
+        }
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 显示信息
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="mes"&gt;&lt;/param&gt;</span>
+        <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes)
+        {
+            IUserDao.Display(mes);
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #808080;">    ///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+    <span style="color: #808080;">///</span><span style="color: #008000;"> 显示信息
+    </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> IUserDao
+    {
+        </span><span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes);
+    }
+
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> UserDaoImpl : IUserDao
+    {
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes)
+        {
+            Console.WriteLine(mes);
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">class</span><span style="color: #000000;"> Program
+    {
+        </span><span style="color: #0000ff;">public</span> IUserService IUserService { <span style="color: #0000ff;">get</span>; <span style="color: #0000ff;">set</span><span style="color: #000000;">; }
+
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span> Main(<span style="color: #0000ff;">string</span><span style="color: #000000;">[] args)
+        {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">创建容器</span>
+            UnityContainer container = <span style="color: #0000ff;">new</span><span style="color: #000000;"> UnityContainer();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">注册依赖对象</span>
+            container.RegisterType&lt;IUserService, UserImpl&gt;<span style="color: #000000;">();
+            container.RegisterType</span>&lt;IUserDao, UserDaoImpl&gt;<span style="color: #000000;">();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">返回调用者</span>
+            IUserService IUser = container.Resolve&lt;UserImpl&gt;<span style="color: #000000;">();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">执行</span>
+            IUser.Display(<span style="color: #800000;">"</span><span style="color: #800000;">王建</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+            Console.ReadLine();
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>点击运行，成功输出。</p>
+<pre><span style="font-size: 14px; color: #ff0000;">构造器注入
+构造器注入（Constructor Injection）：IoC容器会智能地选择选择和调用适合的构造函数以创建依赖的对象。
+如果被选择的构造函数具有相应的参数，IoC容器在调用构造函数之前解析注册的依赖关系并自行获得相应参数对象。
+RegisterType：可以看做是自来水厂决定用什么作为水源，可以是水库或是地下水，我只要“注册”开关一下就行了。
+Resolve：可以看做是自来水厂要输送水的对象，可以是农村或是城市，我只要“控制”输出就行了。 </span></pre>
+<h2>三、属性注入</h2>
+<p>&nbsp;属性注入（Property Injection），就是通过 set 设值对对象进行设值，只需要在调用对象的上面加上&nbsp;<strong><span style="color: #339966;">[Dependency] </span></strong><span style="color: #339966;"><span style="color: #000000;">标记即可。当依赖对象被容器初始化以后，会自动对该对象设值。</span></span></p>
+<p>&nbsp;</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">class</span><span style="color: #000000;"> UserImpl : IUserService
+    {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">只需要在对象成员前面加上[Dependency]，
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">就是把构造函数去掉，成员对象上面加[Dependency]注入</span>
+<span style="color: #000000;">        [Dependency]
+        </span><span style="color: #0000ff;">public</span> IUserDao IUserDao { <span style="color: #0000ff;">get</span>; <span style="color: #0000ff;">set</span><span style="color: #000000;">; }
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">public UserImpl(IUserDao UserDao)
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">{
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">    IUserDao = UserDao;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">}</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 显示信息
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="mes"&gt;&lt;/param&gt;</span>
+        <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes)
+        {
+            IUserDao.Display(mes);
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>点击运行，实现的结果是一样的。</p>
+<h3>配置文件注册：</h3>
+<p>　　其实使用上面&nbsp;RegisterType 方法进行注册，每次添加和删除一个注册都需要去修改代码和重新编译，这样不符合“高内聚、低耦合”的编程思想，所以我们可以采用配置文件的方式去注册，这样每次添加和修改注册就不需要去修改代码和重新发布了。配置文件注册用 UnityConfigurationSection 的 Configure加载配置文件注册。</p>
+<p><strong><span style="color: #ff0000;">代码（如果是控制台程序，配置写在App.config，如果是Web程序，就写在 Web.config）：</span></strong></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="utf-8" </span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">configuration</span><span style="color: #0000ff;">&gt;</span> 
+
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">configSections</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">section </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="unity"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection,
+             Microsoft.Practices.Unity.Configuration"</span> <span style="color: #0000ff;">/&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">configSections</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">unity </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/practces/2010/unity"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">containers</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">MyContainer为自定义名称 只需要和调用时名称保持一致即可</span><span style="color: #008000;">--&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">container </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="MyContainer"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">type为对象的名称,mapTo为注入对象的名称 写法为用逗号隔开两部分，一是类的全部，包括命名空间，二是程序集名称</span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">register </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="ThreadDemo.Bll.IUserBll,ThreadDemo"</span><span style="color: #ff0000;"> mapTo</span><span style="color: #0000ff;">="ThreadDemo.Bll.impl.UserBll,ThreadDemo"</span><span style="color: #0000ff;">&gt;</span>
+          <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">lifetime </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="singleton"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">register</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">register </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="ThreadDemo.Dal.IUserDal,ThreadDemo"</span><span style="color: #ff0000;"> mapTo</span><span style="color: #0000ff;">="ThreadDemo.Dal.impl.UserDal,ThreadDemo"</span><span style="color: #0000ff;">/&gt;</span>
+      <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">container</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">containers</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">unity</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">startup必须放在&lt;configSections&gt;节点下面，否则报错</span><span style="color: #008000;">--&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">startup</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">supportedRuntime </span><span style="color: #ff0000;">version</span><span style="color: #0000ff;">="v4.0"</span><span style="color: #ff0000;"> sku</span><span style="color: #0000ff;">=".NETFramework,Version=v4.5.2"</span> <span style="color: #0000ff;">/&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">startup</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">configuration</span><span style="color: #0000ff;">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">class</span><span style="color: #000000;"> Program
+    {
+        </span><span style="color: #0000ff;">public</span> IUserBll UserBll { <span style="color: #0000ff;">get</span>; <span style="color: #0000ff;">set</span><span style="color: #000000;">; }
+
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span> Main(<span style="color: #0000ff;">string</span><span style="color: #000000;">[] args)
+        { 
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">创建容器
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">UnityContainer container = new UnityContainer();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">注册依赖对象
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">container.RegisterType&lt;IUserService, UserImpl&gt;();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">container.RegisterType&lt;IUserDao, UserDaoImpl&gt;();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">返回调用者
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">IUserService IUser = container.Resolve&lt;UserImpl&gt;();
+
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">创建容器</span>
+            UnityContainer container = <span style="color: #0000ff;">new</span><span style="color: #000000;"> UnityContainer();
+            UnityConfigurationSection config </span>=<span style="color: #000000;"> (UnityConfigurationSection)ConfigurationManager.GetSection(UnityConfigurationSection.SectionName);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">加载到容器</span>
+            config.Configure(container, <span style="color: #800000;">"</span><span style="color: #800000;">MyContainer</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">返回调用者</span>
+            IUserBll IUser = container.Resolve&lt;IUserBll&gt;<span style="color: #000000;">();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">执行</span>
+            IUser.Display(<span style="color: #800000;">"</span><span style="color: #800000;">王建</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+            Console.ReadLine();
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>四、方法注入</h2>
+<p>　　方法注入和构造注入差不多，只不过把构造函数变成了一个普通的方法，在方法前面加 &nbsp;<span style="color: #ff6600;">[InjectionMethod] </span>&nbsp;属性。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> ThreadDemo.Bll.impl
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> UserBll : IUserBll
+    { 
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> IUserDal IDal; 
+
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 方法注入-加[InjectionMethod]属性
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="IUserDal"&gt;&lt;/param&gt;</span>
+<span style="color: #000000;">        [InjectionMethod]
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> SetInjection(IUserDal IUserDal)
+        {
+            IDal </span>=<span style="color: #000000;"> IUserDal;
+        }
+
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 显示信息
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="mes"&gt;&lt;/param&gt;</span>
+        <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> Display(<span style="color: #0000ff;">string</span><span style="color: #000000;"> mes)
+        {
+            IDal.Display(mes);
+        }
+    }
+}</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>这几种方法运行结果都是一样的。</p>
+<h2>五、Unity.MVC在Web中的应用</h2>
+<p>下面的例子是在Unity在Web项目中的使用:</p>
+<h4>1、安装Unity.MVC</h4>
+<p><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/754191-20170419152906087-2128976824.png" alt=""></p>
+<h4>2、在目录下会生成一个 BootStrapper.cs &nbsp;的类文件，打开进行 编辑(如果没有生成，自己创建，名称随意)。</h4>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> ShowWeatherWebUI
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> BootStrapper
+    {
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 获取容器-注册依赖关系
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;returns&gt;&lt;/returns&gt;</span>
+        <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span><span style="color: #000000;"> IUnityContainer Initialise()
+        {
+            </span><span style="color: #0000ff;">var</span> container =<span style="color: #000000;"> BuildUnityContainer();
+
+            DependencyResolver.SetResolver(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> UnityDependencyResolver(container));
+
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> container;
+        }
+
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 加载容器
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;returns&gt;&lt;/returns&gt;</span>
+        <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span><span style="color: #000000;"> IUnityContainer BuildUnityContainer()
+        {
+            </span><span style="color: #0000ff;">var</span> container = <span style="color: #0000ff;">new</span><span style="color: #000000;"> UnityContainer();
+ 
+            RegisterTypes(container);
+
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> container;
+        }
+
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 实施依赖注入
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="container"&gt;&lt;/param&gt;</span>
+        <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> RegisterTypes(UnityContainer container)
+        {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">依赖关系可以选择代码形式，也可以用配置文件的形式
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">UnityConfigurationSection config = (UnityConfigurationSection)ConfigurationManager.GetSection(UnityConfigurationSection.SectionName);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">加载到容器
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">config.Configure(container, "MyContainer");</span>
+<span style="color: #000000;">
+            container.RegisterType</span>&lt;IUerBll, UerBll&gt;<span style="color: #000000;">();
+            container.RegisterType</span>&lt;IUserDal, UserDal&gt;<span style="color: #000000;">();
+        }
+    }
+}</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h4>3、在 Global.asax 文件中添加&nbsp;BootStrapper.Initialise() 的方法。</h4>
+<p>　　因为Global.asax是应用程序启动的时候会执行，所以会去加载容器</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> MvcApplication : System.Web.HttpApplication
+    {
+        </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">加载容器-注册依赖</span>
+<span style="color: #000000;">            BootStrapper.Initialise();
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h4>4、在Controller里调用，</h4>
+<p>&nbsp;在每个调用的接口添加&nbsp;[Dependency] 属性即可，也就是属性输入，也可以采用构造函数注入和方法注入。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> HomeController : Controller
+    {
+        [Dependency]
+        </span><span style="color: #0000ff;">public</span> IUerBll bll { <span style="color: #0000ff;">get</span>; <span style="color: #0000ff;">set</span><span style="color: #000000;">; }
+
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> ActionResult Index()
+        {
+            bll.Display(</span><span style="color: #800000;">"</span><span style="color: #800000;">王文建</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> View();
+        }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p><span>&nbsp;</span></p>
+<p><span style="font-size: 18px;"><a href="http://files.cnblogs.com/files/wwj1992/ThreadDemo.rar" target="_blank">&nbsp;代码下载</a></span></p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/wwj1992/category/688392.html" target="_blank">C#记录</a></div>
+<div id="EntryTag">标签: <a href="https://www.cnblogs.com/wwj1992/tag/C%23%E5%9F%BA%E7%A1%80/">C#基础</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6728370,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;822a8cea-54f4-e411-b908-9dcfd8948a71&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/wwj1992/" target="_blank"><img src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/20180130231233.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/wwj1992/">夜、微凉</a><br>
+            <a href="https://home.cnblogs.com/u/wwj1992/followees">关注 - 1</a><br>
+            <a href="https://home.cnblogs.com/u/wwj1992/followers">粉丝 - 28</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;822a8cea-54f4-e411-b908-9dcfd8948a71&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6728370,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">2</span>
+    </div>
+    <div class="buryit" onclick="votePost(6728370,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/wwj1992/p/6639622.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/wwj1992/p/6639622.html" title="发布于2017-03-29 14:30">Spring学习总结</a><br><a href="https://www.cnblogs.com/wwj1992/p/6737204.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/wwj1992/p/6737204.html" title="发布于2017-04-20 10:03">C# 反射常见用法</a><br></div>
+</div>
+
+
+	</div>
+	
+	<div class="postfoot">
+		posted on <span id="post-date">2017-04-18 16:14</span> <a href="https://www.cnblogs.com/wwj1992/">夜、微凉</a> 阅读(<span id="post_view_count">13374</span>) 评论(<span id="post_comment_count">4</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6728370" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/wwj1992/p/6728370.html#" onclick="AddToWz(6728370);return false;">收藏</a>
+	</div>
+</div>
+<script type="text/javascript">var allowComments=true,cb_blogId=226732,cb_entryId=6728370,cb_blogApp=currentBlogApp,cb_blogUserGuid='822a8cea-54f4-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2017/4/18 16:14:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<a name="feedback"></a>
+<div id="comments">
+<h3>Feedback</h3>
+
+
+<div class="comment_block">			
+<div class="commentTitle"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3762609" class="layer">#1楼</a><a name="3762609" id="comment_anchor_3762609"></a><span> <span class="comment_date">2017-08-21 14:48</span></span><a id="a_comment_author_3762609" href="https://www.cnblogs.com/h1nson/" target="_blank">友个人</a> <a href="http://msg.cnblogs.com/send/%E5%8F%8B%E4%B8%AA%E4%BA%BA" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+<div class="commentText"><div id="comment_body_3762609" class="blog_comment_body">我很好奇，一个类如果要构造方法注入IUserService接口，那么它为什么也必须实现一个接口呢？不能是普通的类吗。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3762609,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3762609,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3762609_avatar" style="display:none;">http://pic.cnblogs.com/face/608328/20180816144949.png</span></div>
+<div class="commentFooter">&nbsp;&nbsp;<span class="comment_actions"></span></div>
+</div>
+
+<div class="comment_block">			
+<div class="commentTitle"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3922237" class="layer">#2楼</a><a name="3922237" id="comment_anchor_3922237"></a><span> <span class="comment_date">2018-03-14 00:40</span></span><a id="a_comment_author_3922237" href="https://www.cnblogs.com/sqlyuju/" target="_blank">豆丁小哥哥</a> <a href="http://msg.cnblogs.com/send/%E8%B1%86%E4%B8%81%E5%B0%8F%E5%93%A5%E5%93%A5" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+<div class="commentText"><div id="comment_body_3922237" class="blog_comment_body">为什么都用的4.0.1的版本呢,在新版本代码是不能运行的</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3922237,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3922237,&#39;Bury&#39;,this)">反对(0)</a></div></div>
+<div class="commentFooter">&nbsp;&nbsp;<span class="comment_actions"></span></div>
+</div>
+
+<div class="comment_block">			
+<div class="commentTitle"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3949958" class="layer">#3楼</a><a name="3949958" id="comment_anchor_3949958"></a><span> <span class="comment_date">2018-04-12 16:26</span></span><a id="a_comment_author_3949958" href="http://home.cnblogs.com/u/665020/" target="_blank">周岩</a> <a href="http://msg.cnblogs.com/send/%E5%91%A8%E5%B2%A9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+<div class="commentText"><div id="comment_body_3949958" class="blog_comment_body"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3762609" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3762609);">@</a>
+h1nson<br>也可以注册类型的</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3949958,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3949958,&#39;Bury&#39;,this)">反对(0)</a></div></div>
+<div class="commentFooter">&nbsp;&nbsp;<span class="comment_actions"></span></div>
+</div>
+
+<div class="comment_block">			
+<div class="commentTitle"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#4099865" class="layer">#4楼</a><a name="4099865" id="comment_anchor_4099865"></a><span id="comment-maxId" style="display:none;">4099865</span><span id="comment-maxDate" style="display:none;">2018/10/27 16:45:27</span><span> <span class="comment_date">2018-10-27 16:45</span></span><a id="a_comment_author_4099865" href="https://www.cnblogs.com/zhaotianff/" target="_blank">zhaotianff</a> <a href="http://msg.cnblogs.com/send/zhaotianff" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+<div class="commentText"><div id="comment_body_4099865" class="blog_comment_body"><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#3922237" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3922237);">@</a>
+豆丁小哥哥<br>因为Unity4.0以后，微软把它放到开源社区了，由开源社区的人来维护，用法和命名空间都有变化。而且新版本是没有文档的，项目github地址如下：<a href="https://github.com/unitycontainer/unity" target="_blank">https://github.com/unitycontainer/unity</a></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4099865,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4099865,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4099865_avatar" style="display:none;">http://pic.cnblogs.com/face/826348/20180726113631.png</span></div>
+<div class="commentFooter">&nbsp;&nbsp;<span class="comment_actions"></span></div>
+</div>
+
+</div><div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/wwj1992/p/6728370.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://www.grapecity.com.cn/developer/spreadjs?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS&amp;utm_campaign=community" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-SpreadJS&#39;)">【前端】SpreadJS表格控件，可嵌入系统开发的在线Excel</a><br><a href="https://q.cnblogs.com/" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-博问&#39;)">【推荐】程序员问答平台，解决您开发中遇到的技术难题</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CP2L1cvE2OICFdpwYAodYZYCPQ"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="recomm-block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/shiyh/p/10648729.html" target="_blank" onclick="clickRecomItmem(10648729)">C#Unity依赖注入</a><br>·  <a href="https://www.cnblogs.com/sjqq/p/8436176.html" target="_blank" onclick="clickRecomItmem(8436176)">C# Unity依赖注入</a><br>·  <a href="https://www.cnblogs.com/tuyile006/p/6929796.html" target="_blank" onclick="clickRecomItmem(6929796)">C# Unity依赖注入</a><br>·  <a href="https://www.cnblogs.com/NotEnough/p/7515379.html" target="_blank" onclick="clickRecomItmem(7515379)">Unity 依赖注入</a><br>·  <a href="https://www.cnblogs.com/GreenLeaves/p/7086303.html" target="_blank" onclick="clickRecomItmem(7086303)">Unity 依赖注入</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CJWV1svE2OICFdpwYAodYZYCPQ"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./C# Unity依赖注入 - 夜、微凉 - 博客园_files/saved_resource(1).html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/626541/" target="_blank">雷军晒小米手环4：更加绚丽的16000色屏幕</a><br> ·  <a href="https://news.cnblogs.com/n/626540/" target="_blank">Facebook正阻止华为预先安装其应用程序</a><br> ·  <a href="https://news.cnblogs.com/n/626538/" target="_blank">火星大气中有个大洞？正把大量水排入太空</a><br> ·  <a href="https://news.cnblogs.com/n/626539/" target="_blank">中医首次被WHO纳入《国际疾病分类》</a><br> ·  <a href="https://news.cnblogs.com/n/626537/" target="_blank">科学家观测到星系团的连接方式</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+</td></tr>
+</tbody></table>
+
+<p id="footer">
+	Copyright @
+	夜、微凉<br>
+	Powered by:
+	<a href="http://scottwater.com/blog" target="_blank">.Text</a> and 
+	<a href="http://asp.net/" target="_blank">ASP.NET</a>
+	<br>
+	Theme by: <a href="http://www.dotnetmonster.com/" target="_blank">.NET Monster</a>
+</p>
+
+
+
+
+
+</body></html>

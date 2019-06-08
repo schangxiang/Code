@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _04_Unity在MVC中引用
+{
+    class UserDao:IUserDao
+    {
+        public string Display(string msg)
+        {
+            return msg;
+        }
+    }
+}
