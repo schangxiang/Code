@@ -31,10 +31,16 @@ namespace sso_client2.Controllers
                     }
                 }
             }
+            //判断是否是登录状态
             if (Session["token"] == null || !Tokens.Contains(Session["token"].ToString()))
             {
                 return Redirect("http://localhost:8018/Home/Verification?backUrl=http://localhost:29151/Home");
-            }  
+            }
+            else
+            {
+                if (Session["token"] != null)
+                    Session["token"] = null;
+            }
             return View();
         }
 
