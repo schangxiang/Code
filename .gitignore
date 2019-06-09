@@ -100,3 +100,10 @@
 /IOC框架/01_依赖注入/02_属性注入/packages
 /IOC框架/01_依赖注入/01_实现构造注入/packages
 /IOC框架/01_依赖注入/04_Unity在MVC中引用/packages
+/SSO(单点登录)/SSODemo/sso-client1/bin
+/SSO(单点登录)/SSODemo/sso-client2/bin
+/SSO(单点登录)/SSODemo/sso-service/bin
+/SSO(单点登录)/SSODemo/sso-client1/obj
+/SSO(单点登录)/SSODemo/sso-client2/obj
+/SSO(单点登录)/SSODemo/sso-service/obj
+/SSO(单点登录)/SSODemo/packages
