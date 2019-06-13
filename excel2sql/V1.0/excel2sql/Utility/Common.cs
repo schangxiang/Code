@@ -61,7 +61,7 @@ namespace GenerateModel
                         str_isNull = " NOT NULL ";
                     }
                     //获取数据类型
-                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + item.DataType);
+                    DataTypeEnum enumDT = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), "dt_" + item.DataType.ToLower());
                     switch (enumDT)
                     {
                         case DataTypeEnum.dt_char:

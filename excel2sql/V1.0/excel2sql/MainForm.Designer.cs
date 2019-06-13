@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_CeShiYongLi = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_InsertSQLForCodeTable
@@ -148,11 +149,21 @@
             this.btn_CeShiYongLi.UseVisualStyleBackColor = true;
             this.btn_CeShiYongLi.Click += new System.EventHandler(this.btn_CeShiYongLi_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(328, 196);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 12);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "（多个用逗号分隔）";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 490);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_CeShiYongLi);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.tb_PrimaryKey);
@@ -187,6 +198,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_CeShiYongLi;
+        private System.Windows.Forms.Label label1;
     }
 }
 
