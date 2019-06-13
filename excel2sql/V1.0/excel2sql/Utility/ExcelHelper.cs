@@ -338,7 +338,7 @@ namespace Excel2SQL
             switch (valueDataType.ToLower()) // 以防出错，全部小写
             {
                 case "string":
-                    rs = sourceValue.ToString();
+                    rs = sourceValue.ToString().Trim();//移除空格
                     break;
                 case "int":
                 case "int16":
