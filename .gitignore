@@ -107,3 +107,7 @@
 /SSO(单点登录)/SSODemo/sso-client2/obj
 /SSO(单点登录)/SSODemo/sso-service/obj
 /SSO(单点登录)/SSODemo/packages
+/excel2sql/V1.0/excel2sql/obj
+/excel2sql/V1.0/excel2sql/bin
+/AOP/PostSharpExample/PostSharpExample/obj
+/AOP/PostSharpExample/PostSharpExample/bin
