@@ -22,7 +22,7 @@ namespace 堆和栈
             Student s2 = s;//给引用类型赋值的时候，其实只是赋值了对象的引用【即是在栈中赋值了对象的引用，s和s2的引用地址都指向同一个堆上的地址】
             s2.Age = 44;
             Console.WriteLine("引用类型赋值后对象s2的Age是:" + s2.Age.ToString());// 输出：44
-            Console.WriteLine("引用类型赋值后对象s的Age是:" + s.Age.ToString());// 输出：88
+            Console.WriteLine("引用类型赋值后对象s的Age是:" + s.Age.ToString());// 输出：44
 
             #endregion
 
