@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "堆和栈", "推和栈\堆�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "装箱和拆箱", "装箱和拆箱\装箱和拆箱.csproj", "{7763AFFC-758A-4147-A013-1767AB7887F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展4-泛型委托", "lambda表达式\lambda表达式发展4-泛型委托.csproj", "{29A8D39D-B61D-489B-93F5-847B684BF3A6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lambda表达式总结", "lambda表达式总结", "{307A7F72-F146-4A24-A391-D39C87AD845A}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.txt = Readme.txt
@@ -19,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展2-匿名方法", "lambda表达式发展2-匿名方法\lambda表达式发展2-匿名方法.csproj", "{34BDA50E-B3F3-440A-957C-B918097A6C62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展3-lambda表达式", "lambda表达式发展3-lambda表达式\lambda表达式发展3-lambda表达式.csproj", "{C59D3293-A525-4244-8171-1BD3DB79C2B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展4-泛型委托", "lambda表达式发展4-泛型委托\lambda表达式发展4-泛型委托.csproj", "{29A8D39D-B61D-489B-93F5-847B684BF3A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,6 @@ Global
 		{7763AFFC-758A-4147-A013-1767AB7887F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7763AFFC-758A-4147-A013-1767AB7887F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7763AFFC-758A-4147-A013-1767AB7887F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C330BCD8-E29D-4140-A0F2-92BDF95FAA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C330BCD8-E29D-4140-A0F2-92BDF95FAA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C330BCD8-E29D-4140-A0F2-92BDF95FAA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,14 +46,18 @@ Global
 		{C59D3293-A525-4244-8171-1BD3DB79C2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59D3293-A525-4244-8171-1BD3DB79C2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59D3293-A525-4244-8171-1BD3DB79C2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{29A8D39D-B61D-489B-93F5-847B684BF3A6} = {307A7F72-F146-4A24-A391-D39C87AD845A}
 		{C330BCD8-E29D-4140-A0F2-92BDF95FAA50} = {307A7F72-F146-4A24-A391-D39C87AD845A}
 		{34BDA50E-B3F3-440A-957C-B918097A6C62} = {307A7F72-F146-4A24-A391-D39C87AD845A}
 		{C59D3293-A525-4244-8171-1BD3DB79C2B6} = {307A7F72-F146-4A24-A391-D39C87AD845A}
+		{29A8D39D-B61D-489B-93F5-847B684BF3A6} = {307A7F72-F146-4A24-A391-D39C87AD845A}
 	EndGlobalSection
 EndGlobal
