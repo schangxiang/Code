@@ -54,6 +54,8 @@ namespace Dapper学习
             #endregion
 
             #region Select操作
+
+            //查询列表
             /*
             string selectSql = "SELECT * FROM BAS_NAME";
             List<BAS_NAME> basNameList = conn.Query<BAS_NAME>(selectSql).ToList();
@@ -63,6 +65,13 @@ namespace Dapper学习
             selectSql = "SELECT * FROM BAS_NAME WHERE ID = @ID";
             basNameList = conn.Query<BAS_NAME>(selectSql, new { ID = 1 }).ToList();
             Console.WriteLine("Select操作结果2:" + JsonConvert.SerializeObject(basNameList));
+            Console.ReadKey();
+            //*/
+
+            //查询单个
+            string selectSql = "SELECT * FROM BAS_NAME WHERE ID = @ID";
+            BAS_NAME t = conn.Query<BAS_NAME>(selectSql, new { ID = 1 }).SingleOrDefault();
+            Console.WriteLine("Select操作结果2:" + JsonConvert.SerializeObject(t));
             Console.ReadKey();
             //*/
 
