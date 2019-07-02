@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_LINQ基本概念", "01_LINQ基本概念", "{AFE76400-A819-4986-8871-E691CD573943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_1_隐式类型局部变量", "01_1_隐式类型局部变量\01_1_隐式类型局部变量.csproj", "{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_2_匿名类型", "01_2_匿名类型\01_2_匿名类型.csproj", "{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_3_匿名方法", "01_3_匿名方法\01_3_匿名方法.csproj", "{6F8B0042-0F8B-400E-9557-67A01FE27F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_4_Lambda表达式", "01_4_Lambda表达式\01_4_Lambda表达式.csproj", "{B2615EC5-823A-4F23-BD5A-00210D7734C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8B0042-0F8B-400E-9557-67A01FE27F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8B0042-0F8B-400E-9557-67A01FE27F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8B0042-0F8B-400E-9557-67A01FE27F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8B0042-0F8B-400E-9557-67A01FE27F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2615EC5-823A-4F23-BD5A-00210D7734C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2615EC5-823A-4F23-BD5A-00210D7734C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2615EC5-823A-4F23-BD5A-00210D7734C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2615EC5-823A-4F23-BD5A-00210D7734C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C2453DC-6EA3-4AC9-BE11-61B79760AD2A} = {AFE76400-A819-4986-8871-E691CD573943}
+		{919B579B-EFD5-4CB0-A3A6-F1AC5E43AE34} = {AFE76400-A819-4986-8871-E691CD573943}
+		{6F8B0042-0F8B-400E-9557-67A01FE27F81} = {AFE76400-A819-4986-8871-E691CD573943}
+		{B2615EC5-823A-4F23-BD5A-00210D7734C2} = {AFE76400-A819-4986-8871-E691CD573943}
+	EndGlobalSection
+EndGlobal
