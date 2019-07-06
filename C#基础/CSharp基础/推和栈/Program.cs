@@ -43,13 +43,17 @@ namespace 堆和栈
 
             int i = 3;
             int j = 3;
-            Console.WriteLine(i == j);// 输出:true ,值类型等值判断直接比较值
+            Console.WriteLine("值类型等值判断："+(i == j).ToString());// 输出:true ,值类型等值判断直接比较值本身
 
             Student a = new Student();
             a.Age = 3;
             Student b = new Student();
             b.Age = 3;
-            Console.WriteLine(a == b);// 输出:false ,引用类型等值判断的是栈中的地址，不是比较数据的本身
+            Console.WriteLine("引用类型等值判断："+(a == b).ToString());// 输出:false ,引用类型等值判断的是栈中的地址，不是比较数据的本身
+
+            //引用类型变量的赋值操作，复制的是引用，即内存地址，由于赋值后二者都指向同一内存地址，所以改变其中一个，另一个也会跟着改变，二者就像绑定在了一起。
+            Student c = a;
+            Console.WriteLine("引用类型等值判断：" + (a == c).ToString());// 输出:true ,引用类型等值判断的是栈中的地址，不是比较数据的本身
 
             #endregion
 
