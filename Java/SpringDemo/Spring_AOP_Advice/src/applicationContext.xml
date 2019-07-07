@@ -3,7 +3,7 @@
 "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
     <!-- 建立目标对象实例 -->
-	<bean id="hello" class="com.pb.Hello" />
+	<bean id="bean_hello" class="com.pb.Hello" />
 	<!-- 创建advice实例 -->
 	<bean id="sba" class="com.pb.SayBeforeAdvice" />
 	<!-- 建立代理对象 -->
@@ -14,7 +14,7 @@
 		</property>
 		<!-- 设置目标对象实例 -->
 		<property name="target">
-			<ref bean="hello"/>
+			<ref bean="bean_hello"/>
 		</property>
 		<!-- 设置Advice实例 -->
 		<property name="interceptorNames">
