@@ -4,8 +4,14 @@
 <beans>
     <!-- 建立目标对象实例 -->
 	<bean id="bean_hello" class="com.pb.Hello" />
-	<!-- 创建advice实例 -->
+	<!-- 创建执行前advice实例 -->
 	<bean id="sba" class="com.pb.SayBeforeAdvice" />
+	<!-- 创建执行后advice实例 -->
+	<bean id="sfa" class="com.pb.SayAfterAdvice" />
+	<!-- 创建Around advice实例 -->
+	<bean id="ssd" class="com.pb.SayAroundAdvice" />
+	<!-- 创建Throw advice实例 -->
+	<bean id="sta" class="com.pb.SayThrowAdvice" />
 	<!-- 建立代理对象 -->
 	<bean id="helloProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 	    <!-- 设置代理的接口 -->
@@ -19,7 +25,12 @@
 		<!-- 设置Advice实例 -->
 		<property name="interceptorNames">
 			<list>
+			   <!-- 
 			 	<value>sba</value>
+			 	<value>sfa</value>
+			 	 -->
+			 	 <value>ssd</value>
+			 	 <value>sta</value>
 			</list>
 		</property>
 	</bean>

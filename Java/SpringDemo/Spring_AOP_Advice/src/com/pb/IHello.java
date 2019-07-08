@@ -2,5 +2,5 @@ package com.pb;
 
 
 public interface IHello {
-   public void sayHello(String str);
+   public void sayHello(String str) throws Exception;
 }

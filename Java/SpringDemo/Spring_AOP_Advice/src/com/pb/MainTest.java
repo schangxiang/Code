@@ -10,7 +10,13 @@ public class MainTest {
 	    ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
 	    
 	    IHello hello=(IHello)context.getBean("helloProxy");
-	    hello.sayHello("련와");
+	    
+	    try {
+	    	hello.sayHello("련와");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	    
 	}
 
 }
