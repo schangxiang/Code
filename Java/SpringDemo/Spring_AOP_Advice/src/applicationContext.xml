@@ -34,4 +34,24 @@
 			</list>
 		</property>
 	</bean>
+	<!-- 引入Spring内建的advisor- RegexpMethodPointcutAdvisor方式-->
+	<!-- 
+	<bean id="helloPerson" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="pattern">
+			<value>.*hello.*</value>
+		</property>
+		<property name="advice">
+			<ref bean="sba"></ref>
+		</property>
+	</bean>
+	 -->
+    <!-- 引入Spring内建的advisor- NameMatchMethodPointcutAdvisor方式-->
+	<bean id="helloPerson" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+	 <property name="mappedName">
+			<value>hello*</value>
+		</property>
+		<property name="advice">
+			<ref bean="sba"></ref>
+		</property>
+	</bean>
 </beans>

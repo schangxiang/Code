@@ -11,11 +11,16 @@ public class MainTest {
 	    
 	    IHello hello=(IHello)context.getBean("helloProxy");
 	    
+	    /*
 	    try {
 	    	hello.sayHello("访客");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	    //*/
+	    
+	    hello.sayHelloChina("中国");
+	    hello.sayHelloEnglish("美国");
 	    
 	}
 

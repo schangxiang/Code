@@ -21,6 +21,9 @@ using 策略模式.CashFactory.Default;
 
 namespace 策略模式
 {
+    /// <summary>
+    /// 策略上下文
+    /// </summary>
     class CashContext
     {
         CashSuper cashSuper = null;
