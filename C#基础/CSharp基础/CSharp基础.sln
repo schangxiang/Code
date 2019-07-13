@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展3-lamb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda表达式发展4-泛型委托", "lambda表达式发展4-泛型委托\lambda表达式发展4-泛型委托.csproj", "{29A8D39D-B61D-489B-93F5-847B684BF3A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "字符串操作", "字符串操作\字符串操作.csproj", "{A4C1222B-041D-48E6-B345-B24B3B5C70D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A8D39D-B61D-489B-93F5-847B684BF3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C1222B-041D-48E6-B345-B24B3B5C70D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C1222B-041D-48E6-B345-B24B3B5C70D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C1222B-041D-48E6-B345-B24B3B5C70D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C1222B-041D-48E6-B345-B24B3B5C70D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
