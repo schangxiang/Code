@@ -39,9 +39,16 @@ namespace Base关键字用法
             Console.WriteLine("c2的age是:" + c2.age);//输出 99 
             //*/
             #endregion
-    
-          
-            B b = new B("祥子");
+
+            #region 实例化子类，转为父类对象，输出的成员变量是父类的值,调用的方法是字类重写的方法
+
+            A a2 = new C();
+            Console.WriteLine("年龄： " + a2.age);//输出 11
+            a2.Hello();
+
+            #endregion
+
+            //B b = new B("祥子");
 
             Console.ReadLine();
         }
