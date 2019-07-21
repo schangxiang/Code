@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "面向对象的六大原则
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPPrinciple_1_接口隔离原则", "OOPPrinciple_1_接口隔离原则\OOPPrinciple_1_接口隔离原则.csproj", "{665BE349-0C79-4F23-826C-DCA8ECC644F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPPrinciple_2_单一职责原则", "OOPPrinciple_2_单一职责原则\OOPPrinciple_2_单一职责原则.csproj", "{4F5D60F1-3187-45D2-890F-17B35F1ECA52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,11 +37,16 @@ Global
 		{665BE349-0C79-4F23-826C-DCA8ECC644F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{665BE349-0C79-4F23-826C-DCA8ECC644F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{665BE349-0C79-4F23-826C-DCA8ECC644F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5D60F1-3187-45D2-890F-17B35F1ECA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5D60F1-3187-45D2-890F-17B35F1ECA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5D60F1-3187-45D2-890F-17B35F1ECA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5D60F1-3187-45D2-890F-17B35F1ECA52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{665BE349-0C79-4F23-826C-DCA8ECC644F6} = {863C625B-E066-4E76-850C-C545FE15BC8B}
+		{4F5D60F1-3187-45D2-890F-17B35F1ECA52} = {863C625B-E066-4E76-850C-C545FE15BC8B}
 	EndGlobalSection
 EndGlobal
