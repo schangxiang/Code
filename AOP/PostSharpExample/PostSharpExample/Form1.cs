@@ -20,7 +20,16 @@ namespace PostSharpExample
         private void btn_Subscribe_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(tb_MemberName.Text.Trim()) && !String.IsNullOrEmpty(tb_Room.Text.Trim()))
-                CoreBusiness.Describe(tb_MemberName.Text.Trim(), tb_Room.Text.Trim());
+            {
+                AgvMap myParam = new AgvMap()
+                {
+                    agvCode = "111",
+                    agvNumber = "222",
+                    rfid = "555"
+                };
+                new CoreBusiness().Describe(tb_MemberName.Text.Trim(), tb_Room.Text.Trim(), myParam);
+            }
+
             else
                 MessageBox.Show("信息不完整", "提示");
         }

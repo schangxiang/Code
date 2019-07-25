@@ -1,7 +1,9 @@
-﻿using PostSharp.Aspects;
+﻿using Newtonsoft.Json;
+using PostSharp.Aspects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,14 +19,27 @@ namespace PostSharpExample
      * 这与PostSharp内部对Aspect的生命周期管理有关
      */
     [Serializable]
-    [AttributeUsage(AttributeTargets.Method,AllowMultiple =true,Inherited =true)]
-    public sealed class LoggingAttribute:OnMethodBoundaryAspect
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
+    public sealed class LoggingAttribute : OnMethodBoundaryAspect
     {
         public string BusinessName { get; set; }
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            LoggingHelper.Writelog(BusinessName+"开始执行");
+            LoggingHelper.Writelog(BusinessName + "开始执行");
+            string aa = args.Method.Name;//方法名
+            Arguments arguments = args.Arguments;//参数值列表
+            ParameterInfo[] parameters = args.Method.GetParameters();//参数名列表
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; arguments != null && i < arguments.Count; i++)
+            {
+                //进入的参数的值
+                sb.Append(parameters[i].Name + "=" + JsonConvert.SerializeObject(arguments[i]) + "");
+            }
+            string message = string.Format("{0}.{1} Method. The Entry Arg Is：{2}",
+               args.Method.DeclaringType.FullName, args.Method.Name, sb.ToString());
+            LoggingHelper.Writelog(BusinessName + "的参数：" + message);
+
         }
         public override void OnExit(MethodExecutionArgs args)
         {

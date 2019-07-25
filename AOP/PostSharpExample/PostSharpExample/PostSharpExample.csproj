@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PostSharp, Version=4.3.26.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
       <HintPath>..\packages\PostSharp.4.3.26\lib\net35-client\PostSharp.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreBusiness.cs" />
+    <Compile Include="Entity\AgvMap.cs" />
+    <Compile Include="ExceptionAspectDemoAttribute.cs" />
+    <Compile Include="Exception\MyExceptionLevel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,7 @@
     </Compile>
     <Compile Include="LoggingAttribute.cs" />
     <Compile Include="LoggingHelper.cs" />
+    <Compile Include="Exception\MyException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
