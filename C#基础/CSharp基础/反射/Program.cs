@@ -12,6 +12,9 @@ namespace 反射
     {
         static void Main(string[] args)
         {
+            #region 获取类的属性
+
+            /*
             //得到类的属性
             PropertyInfo[] propertys = typeof(Student).GetProperties();//注意：这里读取的是公共属性，像本例中age是私有的，所以读不出去
             foreach (var item in propertys)
@@ -44,6 +47,43 @@ namespace 反射
 
             }
 
+            //*/
+            #endregion
+
+            #region 获取自定义特性
+            #endregion
+
+            object[] customAttributes = typeof(Student).GetCustomAttributes(true);//取得类上面的特性
+            foreach (var item in customAttributes)
+            {
+                if (item is MyAttribute)
+                {
+                    var myAttr = item as MyAttribute;
+                    Console.WriteLine("MyAttribute的Name属性是：" + myAttr.Name);
+                }
+            }
+
+            //取得属性上的特性
+            PropertyInfo[] propertys = typeof(Student).GetProperties();//注意：这里读取的是公共属性，像本例中age是私有的，所以读不出去
+            foreach (var item in propertys)
+            {
+                Attribute attr = item.GetCustomAttribute(typeof(XiangziAttribute));
+                if (attr != null)
+                {
+                    var aa = attr as XiangziAttribute;
+                    Console.WriteLine("XiangziAttribute的age属性是：" + aa.age + ";属性名字是:" + item.Name);
+                }
+
+                attr = item.GetCustomAttribute(typeof(TestAttribute));
+                if (attr != null)
+                {
+                    var aa = attr as XiangziAttribute;
+                    Console.WriteLine("TestAttribute有;属性名字是:" + item.Name);
+                }
+            }
+
+
+            Console.WriteLine("自定义特性TestAttribute的typeof名字：" + typeof(TestAttribute).FullName);
 
 
             Console.ReadKey();

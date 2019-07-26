@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace 反射
 {
+    [MyAttribute("我是猪")]
     public class Student
     {
         /// <summary>
@@ -16,6 +17,8 @@ namespace 反射
         /// <summary>
         /// 姓名
         /// </summary>
+        [XiangziAttribute(55)]
+        [TestAttribute]
         public string Name { get; set; }
 
         /// <summary>
