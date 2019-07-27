@@ -7,7 +7,7 @@ using System.Runtime.Remoting.Messaging;
 
 namespace KAOP
 {
-    public class KibaContextProperty : IContextProperty, IContributeObjectSink
+    internal class KibaContextProperty : IContextProperty, IContributeObjectSink
     {
         public KAopClassAttribute _kaopAttr = null;
         public KibaContextProperty(KAopClassAttribute kaopAttr)

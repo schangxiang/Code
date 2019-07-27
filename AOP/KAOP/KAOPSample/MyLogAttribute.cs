@@ -36,6 +36,21 @@ namespace KAOPSample
                 string paramXMLstr = JsonConvert.SerializeObject((InParams[i]));
                 Logger.Info(paramXMLstr);
             }
+
+            for (int i = 0; i < InParams.Count(); i++)
+            {
+                var para = InParams[i];
+                var type = para.GetType();
+                string typename = type.ToString().Replace("System.Nullable`1[", "").Replace("]", "").Replace("System.", "").ToLower();
+                if (typename == "int32")
+                {
+                    int inparame = Convert.ToInt16(InParams[i]);
+                    if (inparame < 0)
+                    {
+                        throw new Exception("异常出现了哦");
+                    }
+                }
+            }
         }
 
         /// <summary>

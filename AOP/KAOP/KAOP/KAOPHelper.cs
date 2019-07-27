@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace KAOP
 {
-    class KAOPHelper
+    internal  class KAOPHelper
     {
         /// <summary>
         /// 验证是否KAopMethodAttribute特性

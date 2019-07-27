@@ -9,7 +9,7 @@ namespace KAOP
     /// <summary>
     /// 定义消息接收器。
     /// </summary>
-    public class KibaMessageSink : IMessageSink
+    internal class KibaMessageSink : IMessageSink
     {
         //private KAspec kaspec = new KAspec();
         private IMessageSink nextSink;
@@ -38,20 +38,7 @@ namespace KAOP
                     _kaopAttr.PreExcute(call.MethodName, call.InArgs);
                 }
             }
-            for (int i = 0; i < call.InArgs.Count(); i++)
-            {
-                var para = call.InArgs[i];
-                var type = para.GetType();
-                string typename = type.ToString().Replace("System.Nullable`1[", "").Replace("]", "").Replace("System.", "").ToLower();
-                if (typename == "int32")
-                {
-                    int inparame = Convert.ToInt16(call.InArgs[i]);
-                    if (inparame < 0)
-                    {
-                        throw new Exception("异常出现了哦");
-                    }
-                }
-            }
+
             //传递消息给下一个接收器 
             IMessage retMsg = nextSink.SyncProcessMessage(call as IMessage);
             IMethodReturnMessage dispose = retMsg as IMethodReturnMessage;
