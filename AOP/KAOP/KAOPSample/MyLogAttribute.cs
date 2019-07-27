@@ -24,27 +24,31 @@ namespace KAOPSample
     [AttributeUsage(AttributeTargets.All)]
     public class MyLogAttribute : KAopClassAttribute
     {
-        public override void PreExcute(string MethodName, object[] InParams)
+        public override void PreExcute(string MethodName, IDictionary<string, object> InParams)
         {
+
             Logger.Info("==================== " + MethodName + ":" + " Start====================");
             Logger.Info(string.Format("参数数量：{0}", InParams.Count()));
 
-            for (int i = 0; i < InParams.Count(); i++)
+            int i = 0;
+            foreach (var item in InParams)
             {
-                Logger.Info(string.Format("参数序号[{0}] ============    参数类型：{1}    执行类：{1}", i + 1, InParams[i]));
+                Logger.Info(string.Format("参数序号[{0}] ============    参数类型：{1}    执行类：{1}", i + 1, item.Value));
                 Logger.Info("传入参数：");
-                string paramXMLstr = JsonConvert.SerializeObject((InParams[i]));
+                string paramXMLstr = JsonConvert.SerializeObject((item.Value));
                 Logger.Info(paramXMLstr);
+                //Console.WriteLine(paramXMLstr);
+                i++;
             }
 
-            for (int i = 0; i < InParams.Count(); i++)
+            foreach (var item in InParams)
             {
-                var para = InParams[i];
+                var para = item.Value;
                 var type = para.GetType();
                 string typename = type.ToString().Replace("System.Nullable`1[", "").Replace("]", "").Replace("System.", "").ToLower();
                 if (typename == "int32")
                 {
-                    int inparame = Convert.ToInt16(InParams[i]);
+                    int inparame = Convert.ToInt16(item.Value);
                     if (inparame < 0)
                     {
                         throw new Exception("异常出现了哦");
@@ -56,7 +60,7 @@ namespace KAOPSample
         /// <summary>
         /// 后处理
         /// </summary> 
-        public override void EndExcute(string MethodName, object[] OutParams, object ReturnValue, Exception ex)
+        public override void EndExcute(string MethodName, IDictionary<string, object> InParams, object[] OutParams, object ReturnValue, Exception ex)
         {
             Type myType = ReturnValue.GetType();
             Logger.Info(string.Format("返回值类型：{0}", myType.Name));

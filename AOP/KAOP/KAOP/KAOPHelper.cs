@@ -27,9 +27,23 @@ namespace KAOP
     internal class KAOPHelper
     {
         /// <summary>
+        /// 获取参数字典（不包括out参数）
+        /// </summary>
+        /// <param name="call">方法调用消息接口</param>
+        /// <returns>参数字典</returns>
+        public static IDictionary<string, object> GetParamDictionary(IMethodCallMessage call)
+        {
+            IDictionary<string, object> paramDict = new Dictionary<string, object>();
+            for (int i = 0; i < call.InArgs.Length; i++)
+            {
+                paramDict.Add(call.GetInArgName(i), call.InArgs[i]);
+            }
+            return paramDict;
+        }
+        /// <summary>
         /// 验证是否KAopMethodAttribute特性
         /// </summary>
-        /// <param name="call"></param>
+        /// <param name="call">方法调用消息接口</param>
         /// <returns>true：是；false：否</returns>
         public static bool IsHaveKAopMethod(IMethodCallMessage call)
         {

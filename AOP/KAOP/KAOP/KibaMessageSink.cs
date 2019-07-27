@@ -29,13 +29,15 @@ namespace KAOP
         public IMessage SyncProcessMessage(IMessage msg)
         {
             IMethodCallMessage call = msg as IMethodCallMessage;
+            IDictionary<string, object> paramDict = null;
             if (call != null)
             {
                 //拦截消息，做前处理
                 //kaspec.PreExcute(call.MethodName, call.InArgs);
                 if (KAOPHelper.IsHaveKAopMethod(call))
                 {
-                    _kaopAttr.PreExcute(call.MethodName, call.InArgs);
+                    paramDict = KAOPHelper.GetParamDictionary(call);
+                    _kaopAttr.PreExcute(call.MethodName, paramDict);
                 }
             }
 
@@ -47,7 +49,7 @@ namespace KAOP
                 //调用返回时进行拦截，并进行后处理
                 if (KAOPHelper.IsHaveKAopMethod(call))
                 {
-                    _kaopAttr.EndExcute(dispose.MethodName, dispose.OutArgs, dispose.ReturnValue, dispose.Exception);
+                    _kaopAttr.EndExcute(dispose.MethodName, paramDict, dispose.OutArgs, dispose.ReturnValue, dispose.Exception);
                 }
             }
             return retMsg;
@@ -56,8 +58,6 @@ namespace KAOP
         {
             return null;
         }
-
-
     }
 
 }

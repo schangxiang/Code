@@ -37,7 +37,7 @@ namespace KAOP
         /// </summary>
         /// <param name="MethodName">方法名</param>
         /// <param name="InParams">方法参数</param>
-        public abstract void PreExcute(string MethodName, object[] InParams);
+        public abstract void PreExcute(string MethodName, IDictionary<string, object> InParams);
 
         /// <summary>
         /// 方法执行后的动作
@@ -46,7 +46,7 @@ namespace KAOP
         /// <param name="OutParams">方法参数</param>
         /// <param name="ReturnValue">返回值</param>
         /// <param name="ex">异常信息</param>
-        public abstract void EndExcute(string MethodName, object[] OutParams, object ReturnValue, Exception ex);
+        public abstract void EndExcute(string MethodName, IDictionary<string, object> InParams, object[] OutParams, object ReturnValue, Exception ex);
 
         /// <summary>
         /// IConstructionCallMessage
