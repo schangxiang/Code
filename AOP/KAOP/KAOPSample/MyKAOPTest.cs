@@ -28,7 +28,7 @@ namespace KAOPSample
      * 4、类要继承KAopContextBoundObject
      */
     [MyLog]
-    public class MyKAOPTest : KAopContextBoundObject
+    public class MyKAOPTest : KAopContextBoundObject, IMyKAOPTest
     {
         public string KibaName { get; set; }
 
