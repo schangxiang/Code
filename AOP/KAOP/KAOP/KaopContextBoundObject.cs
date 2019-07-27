@@ -19,8 +19,14 @@ using System.Threading.Tasks;
 
 namespace KAOP
 {
+    /// <summary>
+    /// KAOP上下文绑定类
+    /// </summary>
     public class KAopContextBoundObject : ContextBoundObject
     {
+        /// <summary>
+        ///  构造函数
+        /// </summary>
         public KAopContextBoundObject() { }
     }
 }

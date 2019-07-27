@@ -21,13 +21,16 @@ using System.Threading.Tasks;
 
 namespace KAOP
 {
-    internal  class KAOPHelper
+    /// <summary>
+    /// KAOP帮助类
+    /// </summary>
+    internal class KAOPHelper
     {
         /// <summary>
         /// 验证是否KAopMethodAttribute特性
         /// </summary>
         /// <param name="call"></param>
-        /// <returns></returns>
+        /// <returns>true：是；false：否</returns>
         public static bool IsHaveKAopMethod(IMethodCallMessage call)
         {
             Type _type = KAOPHelper.FindTypeInCurrentDomain(call.TypeName);
@@ -36,6 +39,11 @@ namespace KAOP
                 return true;
             return false;
         }
+        /// <summary>
+        /// 根据类型名获取类型
+        /// </summary>
+        /// <param name="typeName">类型名</param>
+        /// <returns>类型</returns>
         private static Type FindTypeInCurrentDomain(string typeName)
         {
             Type type = null;
