@@ -14,7 +14,7 @@ namespace FirstMVCDemo
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);//网站第一次运行会创建RouteTable对象，实现URL到Controller的映射
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

@@ -18,6 +18,7 @@ namespace FirstMVCDemo.Controllers
     {
         //
         // GET: /News/
+        //控制器中的方法必须是public,如果是内部方法，将被设置为[NonActionAttribute]
         public ActionResult Index()
         {
             ViewData["message"] = "你好啊，长祥";//字典类型
@@ -30,6 +31,11 @@ namespace FirstMVCDemo.Controllers
         {
             TempData["Message"] = "我是猪";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Home()
+        {
+            return View();//返回类型是ActionResult，其实这是个抽象类，实际返回的都是ActionResult的子类！！！！
         }
     }
 }
