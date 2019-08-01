@@ -16,8 +16,15 @@ namespace VirtualFunction
              * 父类的还是子类的呢？
              * 实验证明：调的是子类的被重写的方法。
              */
+            Console.WriteLine("实例化son对象");
             Father f = new Son();
             f.SetFather();
+
+            Console.WriteLine("========================我是华丽的分割线========================");
+
+            Console.WriteLine("实例化father对象");
+            Father f2 = new Father();
+            f2.SetFather();
 
             Console.Read();
         }

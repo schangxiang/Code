@@ -17,8 +17,8 @@ namespace VirtualFunction
 
         public void SetFather()
         {
-            var _name = this.GetName();
-            Console.WriteLine(_name);
+            var _name = this.GetName();//如果实例对象是子类的话，这里调的是子类的重写方法;如果实例对象是父类的话，调的当然是父类的方法
+            Console.WriteLine("通过GetName方法获取的值：" + _name);
             Console.WriteLine("Father的name是:" + name);
         }
     }
