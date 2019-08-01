@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_虚方法", "1_虚方法", "{E024A5B8-C6B2-4E28-BEF7-2576A52CD0E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualFunction", "VirtualFunction\VirtualFunction.csproj", "{54DDFCB4-F287-4701-879F-622BFC1D397C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54DDFCB4-F287-4701-879F-622BFC1D397C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DDFCB4-F287-4701-879F-622BFC1D397C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DDFCB4-F287-4701-879F-622BFC1D397C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DDFCB4-F287-4701-879F-622BFC1D397C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54DDFCB4-F287-4701-879F-622BFC1D397C} = {E024A5B8-C6B2-4E28-BEF7-2576A52CD0E0}
+	EndGlobalSection
+EndGlobal
