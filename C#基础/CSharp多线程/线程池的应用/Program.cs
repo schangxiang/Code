@@ -10,7 +10,10 @@ namespace 线程池的应用
     {
         static void Main(string[] args)
         {
-            CLRThread.ThreadUseAndConstruction();
+
+            //CLRThread.ThreadUseAndConstruction();
+
+            CLRThread2.ThreadMethod();
 
             Console.Read();
         }
