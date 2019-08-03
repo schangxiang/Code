@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_使用lock解决并发�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_使用Monitor解决并发问题", "03_使用Monitor解决并发问题\03_使用Monitor解决并发问题.csproj", "{12420452-F01D-42DF-B4D9-53836F6E8D7E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "线程协作问题", "线程协作问题", "{21E83C48-9AC2-40F5-8DA2-2884754CBE74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_没有线程协作的打印机工作", "01_没有线程协作的打印机工作\01_没有线程协作的打印机工作.csproj", "{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_有线程协作的打印机工作", "02_有线程协作的打印机工作\02_有线程协作的打印机工作.csproj", "{9A38EA58-F60E-458B-82C1-231AFB5FFF82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +43,14 @@ Global
 		{12420452-F01D-42DF-B4D9-53836F6E8D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12420452-F01D-42DF-B4D9-53836F6E8D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12420452-F01D-42DF-B4D9-53836F6E8D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A38EA58-F60E-458B-82C1-231AFB5FFF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A38EA58-F60E-458B-82C1-231AFB5FFF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A38EA58-F60E-458B-82C1-231AFB5FFF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A38EA58-F60E-458B-82C1-231AFB5FFF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +60,7 @@ Global
 		{3533A74F-0E5A-4E29-8C0F-E00CCF0384F6} = {52B0D86C-089D-4AC0-ADE5-CF9BBFACBCB8}
 		{B9BA0213-D139-447E-A1B7-82784CD5D02F} = {52B0D86C-089D-4AC0-ADE5-CF9BBFACBCB8}
 		{12420452-F01D-42DF-B4D9-53836F6E8D7E} = {52B0D86C-089D-4AC0-ADE5-CF9BBFACBCB8}
+		{1B1EBDDC-E16A-4D3D-BC0B-EF9ACF77B417} = {21E83C48-9AC2-40F5-8DA2-2884754CBE74}
+		{9A38EA58-F60E-458B-82C1-231AFB5FFF82} = {21E83C48-9AC2-40F5-8DA2-2884754CBE74}
 	EndGlobalSection
 EndGlobal

@@ -207,3 +207,13 @@
 /C#基础/CSharp面向对象/VirtualFunction/bin
 /C#基础/CSharp多线程/线程池的应用/obj
 /C#基础/CSharp多线程/线程池的应用/bin
+/C#基础/CSharp多线程/02_使用lock解决并发问题/bin
+/C#基础/CSharp多线程/01_线程并发出现的问题/bin
+/C#基础/CSharp多线程/03_使用Monitor解决并发问题/bin
+/C#基础/CSharp多线程/02_使用lock解决并发问题/obj
+/C#基础/CSharp多线程/01_线程并发出现的问题/obj
+/C#基础/CSharp多线程/03_使用Monitor解决并发问题/obj
+/C#基础/CSharp多线程/01_没有线程协作的打印机工作/obj
+/C#基础/CSharp多线程/01_没有线程协作的打印机工作/bin
+/C#基础/CSharp多线程/02_有线程协作的打印机工作/bin
+/C#基础/CSharp多线程/02_有线程协作的打印机工作/obj
