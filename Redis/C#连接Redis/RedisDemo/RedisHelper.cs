@@ -24,6 +24,11 @@ namespace RedisDemo
         private readonly object _lock = new object();
         /// <summary>
         /// 连接对象
+        /// volatile:volatile 关键字指示一个字段可以由多个同时执行的线程修改。
+        /// 出于性能原因，编译器，运行时系统甚至硬件都可能重新排列对存储器位置的读取和写入。 
+        /// 声明了 volatile 的字段不进行这些优化。
+        /// 添加 volatile 修饰符可确保所有线程观察易失性写入操作（由任何其他线程执行）时的观察顺序与写入操作的执行顺序一致。 
+        /// 不确保从所有执行线程整体来看时所有易失性写入操作均按执行顺序排序。
         /// </summary>
         private volatile IConnectionMultiplexer _connection;
         /// <summary>
